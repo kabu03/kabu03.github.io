@@ -1,0 +1,469 @@
+html,
+body,
+main {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Montserrat", sans-serif; /* Sets the font family for the entire document */
+  margin: 0; /* Removes default margin */
+  padding: 0; /* Removes default padding */
+  background-color: #f4f4f4; /* Sets the background color of the body */
+  color: #333; /* Sets the default text color */
+  padding-top: 40px;
+}
+
+header {
+  background-color: navy; /* Sets the background color of the header */
+  color: #fff; /* Sets the text color of the header */
+  padding: 1rem 0; /* Adds padding to the top and bottom of the header */
+  text-align: center; /* Centers the text inside the header */
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000; /* Ensures the header stays above other content */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Optional: Adds a shadow for better visibility */
+}
+
+nav ul {
+  list-style-type: none; /* Removes bullet points from the unordered list */
+  padding: 0; /* Removes default padding from the unordered list */
+  margin: 0; /* Removes default margin from the unordered list */
+  display: flex; /* Uses flexbox to align items horizontally */
+  justify-content: center; /* Centers the list items horizontally */
+}
+
+nav ul li {
+  margin: 0 40px; /* Adds horizontal space between list items */
+}
+
+nav ul li a {
+  text-decoration: none; /* Removes underline from hyperlinks */
+  color: #fff; /* Sets the text color of the links */
+  font-size: 1.3rem; /* Sets the font size of the links */
+  display: flex; /* Uses flexbox to align icon and text horizontally */
+  align-items: center; /* Vertically centers the icon and text */
+}
+
+nav ul li a i {
+  margin-right: 8px; /* Adds space between the icon and the text */
+}
+
+nav ul li a:hover {
+  color: #f4f4f4; /* Changes the text color on hover */
+  text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.7); /* Adds a text shadow effect on hover */
+}
+
+.welcome {
+  margin-top: 1rem; /* Adds space above the welcome message */
+  font-size: 1.2rem; /* Sets the font size of the welcome message */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column; /* Stacks list items vertically on small screens */
+  }
+
+  nav ul li {
+    margin: 10px 0; /* Adds vertical space between list items on small screens */
+  }
+}
+.hero-text {
+  padding-top: 150px;
+  text-align: center;
+  position: absolute;
+  top: 54%;
+  left: 35%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-shadow: 0 0 5px black, 0 0 5px black;
+}
+.hero-text p {
+  font-size: 1.5rem; /* Dictates an element's font size relative to the size of the root element. */
+  margin-bottom: 20px;
+}
+.hero-text h1 {
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+}
+.hero-image {
+  /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("/public/assets/images/me.jpg");
+  height: 100%;
+
+  /* Position and center the image to scale nicely on all screens */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  width: 100%;
+}
+.typical-section {
+  padding: 10px;
+  text-align: center;
+  color: black;
+}
+.typical-section h1 {
+  font-size: 50px;
+}
+.typical-section p {
+  font-size: 22px;
+  margin: 50px;
+}
+
+.download-button {
+  display: inline-block;
+  margin: 10px;
+  padding: 20px 20px;
+  background-color: #007bff;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.download-button:hover {
+  background-color: #0056b3;
+}
+
+.contact-buttons {
+  text-align: center;
+}
+
+.contact-button {
+  display: inline-block;
+  margin: 10px;
+  padding: 10px 20px;
+  font-size: 20px;
+  color: white;
+  background-color: #007bff;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.contact-button.email {
+  background-color: #d44638; /* Gmail Red */
+}
+
+.contact-button.linkedin {
+  background-color: #0077b5; /* LinkedIn Blue */
+}
+
+.contact-button.github {
+  background-color: #333; /* GitHub Black */
+}
+
+.contact-button i {
+  margin-right: 8px;
+}
+
+.contact-button:hover {
+  opacity: 0.9;
+}
+
+.patterns_css_1 {
+  background-color: black;
+  width: 100%;
+}
+.patterns_css_2 {
+  color: red;
+  width: 100%;
+  height: 100%;
+}
+
+.background {
+  background-image: url("../assets/images/cool-background.png");
+  background-size: cover; /* Make sure the image covers the entire element */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Prevent the image from repeating */
+  height: 100vh; /* Make the element full height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+.resume {
+  color: white;
+}
+
+/* Graphical circles code */
+
+.circle {
+  width: 100%;
+  height: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+
+  position: absolute;
+  background: radial-gradient(
+    navy 3px,
+    transparent 5px,
+    #000 7px,
+    transparent 9px,
+    navy 11px,
+    transparent 13px,
+    15px,
+    transparent 17px,
+    #000 19px,
+    transparent 21px,
+    navy 23px,
+    transparent 25px,
+    #fff 27px,
+    transparent 29px,
+    #000 31px,
+    transparent 33px
+  );
+
+  background-size: 30px 30px;
+}
+
+.a {
+  -webkit-animation: adjustHue 1s alternate infinite;
+  animation: adjustHue 1s alternate infinite;
+}
+
+@-webkit-keyframes adjustHue {
+  0% {
+    -webkit-filter: hue-rotate(30deg);
+  }
+  50% {
+    -webkit-filter: hue-rotate(60deg);
+  }
+  100% {
+    -webkit-filter: hue-rotate(90deg);
+  }
+}
+
+@keyframes adjustHue {
+  0% {
+    filter: hue-rotate(30deg);
+  }
+  50% {
+    filter: hue-rotate(60deg);
+  }
+  100% {
+    filter: hue-rotate(90deg);
+  }
+}
+@-webkit-keyframes loading {
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@-moz-keyframes loading {
+  to {
+    -moz-transform: rotate(360deg);
+  }
+}
+@-ms-keyframes loading {
+  to {
+    -ms-transform: rotate(360deg);
+  }
+}
+@keyframes loading {
+  to {
+    transform: rotate(360deg);
+  }
+}
+#circle {
+  -webkit-animation-name: blinker;
+  -webkit-animation-duration: 3s;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+  -moz-animation-name: blinker;
+  -moz-animation-duration: 3s;
+  -moz-animation-timing-function: linear;
+  -moz-animation-iteration-count: infinite;
+  animation-name: blinker;
+  animation-duration: 3s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  color: red;
+}
+
+@-moz-keyframes blinker {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes blinker {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes blinker {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.a {
+  background: radial-gradient(
+    navy 3px,
+    transparent 5px,
+    #000 7px,
+    transparent 9px,
+    navy 11px,
+    transparent 13px,
+    15px,
+    transparent 17px,
+    #000 19px,
+    transparent 21px,
+    navy 23px,
+    transparent 25px,
+    #fff 27px,
+    transparent 29px,
+    #000 31px,
+    transparent 33px
+  );
+  background-color: #000;
+  background-size: 32px 32px;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  margin: -10px;
+}
+/* End of Graphical circles code */
+
+.profile-photo,
+.nos-photo,
+.bme-photo {
+  flex: 1 1 300px;
+  margin: 10px;
+  text-align: center;
+}
+
+.profile-photo img,
+.nos-photo img,
+.bme-photo img {
+  max-width: 100%;
+  border: 2px solid black;
+}
+.profile-photo img {
+  border-radius: 10%;
+  width: 30%;
+}
+.nos-photo img,
+.bme-photo img {
+  border-radius: 10%;
+  width: 70%;
+}
+.bme-photo img {
+  height: 400px;
+  width: auto;
+  border-radius: 10%;
+}
+
+.project {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+
+}
+
+
+.project .description {
+  flex: 1;
+  padding: 1rem;
+  font-size: 22px;
+}
+
+.project .screenshot {
+  flex: 1;
+  text-align: center;
+}
+
+.project .screenshot img {
+  max-width: 100%;
+  height: auto;
+  border: 2px solid black;
+}
+
+.gdscommander-screenshot {
+  width: 400px; /* Adjust the width as needed */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.project .title-container {
+  display: flex;
+  align-items: center;
+}
+
+.project .title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.project .github-link {
+  font-size: 1.5rem;
+  color: #0366d6;
+  text-decoration: none;
+}
+
+.project .github-link:hover {
+  color: #333;
+}
+
+.technologies-used {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.technology {
+  background-color: #eee;
+  border-radius: 3px;
+  padding: 2px 5px;
+}
+
+hr {
+  margin-top: 2rem;
+  border: 0;
+  height: 1px;
+  background: #ccc;
+}
+
+#projects-container{
+margin-top: 70px;
+}
+
+.blog{
+  margin-top:300px;
+  color: white;
+  font-size: 70px;
+  font-weight: 900;
+  text-align: center;
+  background-color: transparent;
+  background: fixed;
+  text-shadow: 0 0 50px black, 0 0 50px black; /* To make it more readable */
+}
