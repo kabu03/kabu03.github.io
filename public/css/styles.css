@@ -11,7 +11,7 @@ body {
   padding: 0; /* Removes default padding */
   background-color: #f4f4f4; /* Sets the background color of the body */
   color: #333; /* Sets the default text color */
-  padding-top: 40px;
+  padding-top: 1px;
 }
 
 header {
@@ -64,10 +64,52 @@ nav ul li a:hover {
 @media (max-width: 768px) {
   nav ul {
     flex-direction: column; /* Stacks list items vertically on small screens */
+    align-items: center; /* Centers list items vertically */
   }
 
   nav ul li {
     margin: 10px 0; /* Adds vertical space between list items on small screens */
+  }
+}
+
+/* Mobile-specific adjustments */
+@media (max-width: 576px) {
+  header {
+    padding: 0.5rem 0; /* Adjust header padding for smaller screens */
+  }
+
+  nav ul li a {
+    font-size: 1rem; /* Adjust font size for smaller screens */
+  }
+}
+
+/* Hamburger Menu Styles */
+.hamburger {
+  display: none; /* Hide by default */
+  cursor: pointer;
+  color: #fff;
+}
+
+.hamburger div {
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  margin: 5px;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: block; /* Show hamburger menu on small screens */
+  }
+
+  nav ul {
+    display: none; /* Hide nav links by default */
+    flex-direction: column; /* Stack links vertically */
+    align-items: center; /* Center them */
+  }
+
+  nav ul.show {
+    display: flex; /* Show nav links when hamburger is clicked */
   }
 }
 .hero-text {
@@ -103,6 +145,7 @@ nav ul li a:hover {
 }
 .typical-section {
   padding: 10px;
+  padding-top: 30px;
   text-align: center;
   color: black;
 }

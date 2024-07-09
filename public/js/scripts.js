@@ -4,8 +4,19 @@ function loadHeader() {
     .then((response) => response.text())
     .then((data) => {
       document.querySelector("header").innerHTML = data;
+      setupHamburgerMenu(); // Initialize the hamburger menu functionality after loading the header
     })
     .catch((error) => console.error("Error loading header:", error));
+}
+
+// Function to setup hamburger menu
+function setupHamburgerMenu() {
+  const hamburger = document.querySelector('.hamburger');
+  const navUl = document.querySelector('nav ul');
+
+  hamburger.addEventListener('click', () => {
+    navUl.classList.toggle('show');
+  });
 }
 
 // Function for the projects page
