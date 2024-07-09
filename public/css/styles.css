@@ -5,6 +5,7 @@ main {
   margin: 0;
   padding: 0;
 }
+
 body {
   font-family: "Montserrat", sans-serif; /* Sets the font family for the entire document */
   margin: 0; /* Removes default margin */
@@ -55,67 +56,6 @@ nav ul li a:hover {
   text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.7); /* Adds a text shadow effect on hover */
 }
 
-.welcome {
-  margin-top: 1rem; /* Adds space above the welcome message */
-  font-size: 1.2rem; /* Sets the font size of the welcome message */
-}
-
-/* Responsive Styles */
-@media (max-width: 768px) {
-  nav ul {
-    flex-direction: column; /* Stacks list items vertically on small screens */
-    align-items: center; /* Centers list items vertically */
-  }
-
-  nav ul li {
-    margin: 10px 0; /* Adds vertical space between list items on small screens */
-  }
-}
-
-/* Mobile-specific adjustments */
-@media (max-width: 576px) {
-  header {
-    padding: 0.5rem 0; /* Adjust header padding for smaller screens */
-  }
-
-  nav ul li a {
-    font-size: 1rem; /* Adjust font size for smaller screens */
-  }
-}
-
-/* Hamburger Menu Styles */
-.hamburger {
-  display: none; /* Hide by default */
-  cursor: pointer;
-  color: #fff;
-}
-
-.hamburger div {
-  width: 25px;
-  height: 3px;
-  background-color: #fff;
-  margin: 5px;
-}
-
-@media (max-width: 768px) {
-  .hamburger {
-    display: block; /* Show hamburger menu on small screens */
-  }
-  .blog {
-    font-size: 24px; /* Smaller font size for mobile */
-}
-.contact-button {
-  font-size: 14px; /* Smaller size for mobile */
-}
-  nav ul {
-    display: none; /* Hide nav links by default */
-    flex-direction: column; /* Stack links vertically */
-    align-items: center; /* Center them */
-  }
-  nav ul.show {
-    display: flex; /* Show nav links when hamburger is clicked */
-  }
-}
 .hero-text {
   padding-top: 150px;
   text-align: center;
@@ -147,6 +87,35 @@ nav ul li a:hover {
   position: relative;
   width: 100%;
 }
+
+.blog{
+  margin-top:300px;
+  color: white;
+  font-size: 70px;
+  font-weight: 900;
+  text-align: center;
+  background-color: transparent;
+  background: fixed;
+  text-shadow: 0 0 50px black, 0 0 50px black; /* To make it more readable */
+}
+
+/* Hamburger Menu Styles */
+.hamburger {
+  display: none; /* Hide by default */
+  cursor: pointer;
+  color: #fff;
+}
+
+.hamburger div {
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  margin: 5px;
+}
+
+
+
+
 .typical-section {
   padding: 10px;
   padding-top: 30px;
@@ -503,13 +472,73 @@ hr {
 margin-top: 70px;
 }
 
-.blog{
-  margin-top:300px;
-  color: white;
-  font-size: 70px;
-  font-weight: 900;
+/*
+-
+-
+MOBILE SPECIFIC ADJUSTMENTS 
+-
+-
+*/
+
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: block; /* Show hamburger menu on small screens */
+  }
+  .blog {
+    font-size: 40px; /* Smaller font size for mobile */
+}
+.contact-button {
+  font-size: 14px; /* Smaller size for mobile */
+}
+
+.hero-text p{
+ font-size: 20px;
+ margin-bottom: 10px;
+ margin-left: 10px;
+ margin-top: 130px;
+}
+.hero-text h1{
+  font-size: 32px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+}
+
+.hero-text {
   text-align: center;
-  background-color: transparent;
-  background: fixed;
-  text-shadow: 0 0 50px black, 0 0 50px black; /* To make it more readable */
+  position: absolute;
+  top: 40%;
+  left: 35%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-shadow: 0 0 5px black, 0 0 5px black;
+}
+.typical-section h1 {
+  padding-top: 70px;
+}
+  nav ul {
+    display: none; /* Hide nav links by default */
+    flex-direction: column; /* Stack links vertically */
+    align-items: center; /* Center them */
+  }
+  nav ul.show {
+    display: flex; /* Show nav links when hamburger is clicked */
+  }
+  nav ul li {
+    margin: 10px 0; /* Adds vertical space between list items on small screens */
+  }
+  .about-body p{
+    font-size: 15px;
+    margin: 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  header {
+    padding: 0.5rem 0; /* Adjust header padding for smaller screens */
+  }
+
+  nav ul li a {
+    font-size: 1rem; /* Adjust font size for smaller screens */
+  }
 }
