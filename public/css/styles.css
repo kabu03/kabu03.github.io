@@ -101,13 +101,17 @@ nav ul li a:hover {
   .hamburger {
     display: block; /* Show hamburger menu on small screens */
   }
-
+  .blog {
+    font-size: 24px; /* Smaller font size for mobile */
+}
+.contact-button {
+  font-size: 14px; /* Smaller size for mobile */
+}
   nav ul {
     display: none; /* Hide nav links by default */
     flex-direction: column; /* Stack links vertically */
     align-items: center; /* Center them */
   }
-
   nav ul.show {
     display: flex; /* Show nav links when hamburger is clicked */
   }
@@ -239,8 +243,8 @@ nav ul li a:hover {
 /* Graphical circles code */
 
 .circle {
-  width: 100%;
-  height: auto;
+  width: 100vw;
+  height: 100vh;
   top: 0;
   left: 0;
   right: 0;
@@ -393,7 +397,6 @@ nav ul li a:hover {
   overflow: hidden;
   width: 100vw;
   height: 100vh;
-  margin: -10px;
 }
 /* End of Graphical circles code */
 
