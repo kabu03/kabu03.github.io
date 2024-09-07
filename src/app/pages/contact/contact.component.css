@@ -1,0 +1,35 @@
+.contact-buttons {
+    text-align: center;
+  }
+  
+  .contact-button {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 20px;
+    color: white;
+    background-color: #007bff;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  .contact-button.email {
+    background-color: #d44638; /* Gmail Red */
+  }
+  
+  .contact-button.linkedin {
+    background-color: #0077b5; /* LinkedIn Blue */
+  }
+  
+  .contact-button.github {
+    background-color: #333; /* GitHub Black */
+  }
+  
+  .contact-button i {
+    margin-right: 8px;
+  }
+  
+  .contact-button:hover {
+    opacity: 0.9;
+  }

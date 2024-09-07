@@ -1,0 +1,33 @@
+.profile-photo,
+.nos-photo,
+.bme-photo {
+  flex: 1 1 300px;
+  margin: 10px;
+  text-align: center;
+}
+
+.profile-photo img,
+.nos-photo img,
+.bme-photo img {
+  max-width: 100%;
+  border: 2px solid black;
+}
+
+.profile-photo img {
+  border-radius: 10%;
+  width: 30%;
+}
+
+.nos-photo img,
+.bme-photo img {
+  border-radius: 10%;
+  width: 70%;
+}
+
+.bme-photo img {
+  height: 400px;
+  width: auto;
+  border-radius: 10%;
+}
+
+

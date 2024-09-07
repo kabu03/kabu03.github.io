@@ -1,0 +1,23 @@
+.resume h1, .resume p {
+  color: white;
+  text-shadow: 0 0 5px black, 0 0 5px black;
+}
+
+.resume .download-button{
+  font-size: 20px;
+}
+
+.download-button {
+    display: inline-block;
+    margin: 10px;
+    padding: 20px 20px;
+    background-color: #007bff;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+  }
+  
+  .download-button:hover {
+    background-color: #0056b3;
+  }

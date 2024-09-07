@@ -1,0 +1,30 @@
+<header>
+    <div class="hamburger" (click)="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <nav>
+      <ul [class.show]="isMenuOpen">
+        <li>
+          <a routerLink="/"><i class="fa-solid fa-house"></i> Home</a>
+        </li>
+        <li>
+          <a routerLink="/about"><i class="fa-solid fa-user"></i> About</a>
+        </li>
+        <li>
+          <a routerLink="/projects"><i class="fa-solid fa-laptop-code"></i> Projects</a>
+        </li>
+        <li>
+          <a routerLink="/blog"><i class="fa-solid fa-pen-to-square"></i> Blog</a>
+        </li>
+        <li>
+          <a routerLink="/contact"><i class="fa-solid fa-phone"></i> Contact</a>
+        </li>
+        <li>
+          <a routerLink="/resume"><i class="fa-solid fa-file"></i> Resume</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  

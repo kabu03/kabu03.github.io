@@ -1,0 +1,75 @@
+.project {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+  
+  }
+  
+  
+  .project .description {
+    flex: 1;
+    padding: 1rem;
+    font-size: 22px;
+  }
+  
+  .project .screenshot {
+    flex: 1;
+    text-align: center;
+  }
+  
+  .project .screenshot img {
+    max-width: 100%;
+    height: auto;
+    border: 2px solid black;
+  }
+  
+  .gdscommander-screenshot {
+    width: 400px; /* Adjust the width as needed */
+    height: auto; /* Maintain aspect ratio */
+  }
+  
+  .project .title-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .project .title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-right: 10px;
+  }
+  
+  .project .github-link {
+    font-size: 1.5rem;
+    color: #0366d6;
+    text-decoration: none;
+  }
+  
+  .project .github-link:hover {
+    color: #333;
+  }
+  
+  .technologies-used {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: #555;
+  }
+  
+  .technology {
+    background-color: #eee;
+    border-radius: 3px;
+    padding: 2px 5px;
+  }
+  
+  hr {
+    margin-top: 2rem;
+    border: 0;
+     /* border: 5px solid #000; */
+  width: 100%;
+    height: 1px;
+    background: #ccc;
+  }
+  
+  #projects-container{
+  margin-top: 70px;
+  }

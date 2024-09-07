@@ -1,0 +1,10 @@
+a {
+    cursor: pointer; /* Ensure pointer cursor on hover */
+    text-decoration: none; /* Optional: Remove underline */
+    color: inherit; /* Use the inherited text color */
+  }
+  
+  a:hover {
+    text-decoration: underline; /* Optional: Add underline on hover */
+  }
+  

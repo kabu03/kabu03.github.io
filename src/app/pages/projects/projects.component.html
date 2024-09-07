@@ -1,0 +1,24 @@
+<div id="projects-container">
+  <div *ngFor="let project of projects" class="project">
+    <div class="description">
+      <div class="title-container">
+        <div class="title">{{ project.title }}</div>
+        <a *ngIf="project.github" [href]="project.github" target="_blank">
+          <i class="fab fa-github github-link"></i>
+        </a>
+      </div>
+      <p>{{ project.description }}</p>
+      <p class="technologies-used">
+        <strong>Technologies used:</strong>
+        <ng-container *ngFor="let tech of project.technologies; let last = last">
+          <span class="technology">{{ tech }}</span>{{ !last ? ', ' : '' }}
+        </ng-container>
+      </p>
+      
+    </div>
+    <div class="screenshot">
+      <img [src]="project.screenshot" [alt]="project.title + ' Screenshot'">
+    </div>
+    <hr> <!-- Horizontal line after each project -->
+  </div>
+</div>
