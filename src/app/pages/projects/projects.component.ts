@@ -1,14 +1,19 @@
 import { Component } from '@angular/core';
 import {NgFor, NgIf} from '@angular/common';
+import { Title } from '@angular/platform-browser';
+import { MatCardModule } from '@angular/material/card';
 
 @Component({
   selector: 'app-projects',
   standalone: true,
-  imports: [NgFor, NgIf],
+  imports: [NgFor, NgIf, MatCardModule],
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.css'
 })
 export class ProjectsComponent {
+  constructor(private titleService: Title) {
+    this.titleService.setTitle('Projects');
+  }
   projects = [
     {
       title: "Pipes in the Desert",
@@ -57,4 +62,7 @@ export class ProjectsComponent {
     },
     // Add more projects as needed
   ];
+  isMobile(): boolean {
+    return window.innerWidth <= 768; // Define breakpoint for mobile devices
+  }
 }

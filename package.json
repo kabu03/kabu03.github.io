@@ -10,7 +10,16 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@angular/animations": "^18.0.0 || ^19.0.0",
+    "@angular/cdk": "^18.2.3",
+    "@angular/forms": "^18.0.0 || ^19.0.0",
+    "@angular/material": "^18.2.3",
+    "@angular/router": "^18.2.3",
     "express": "^4.19.2",
     "mongoose": "^8.4.4"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "^18.2.3",
+    "typescript": "^5.5.4"
   }
 }

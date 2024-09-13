@@ -1,2 +1,60 @@
-<app-header></app-header>  <!-- Load header here -->
-<router-outlet></router-outlet> <!-- Load routed components here -->
+<mat-toolbar color="primary">
+    <button mat-icon-button (click)="sidenav.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span class="toolbar-text">Karam Abu Judom - Portfolio Website</span>
+  
+    <!-- Spacer to push the greeting to the right -->
+    <span class="spacer"></span>
+  </mat-toolbar>
+  
+  <mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #sidenav mode="side" opened class="sidenav">
+      <mat-nav-list>
+        <div class="navItems">
+            <mat-divider></mat-divider>
+          <mat-list-item>
+            <a matLine routerLink="/" class="itemText">
+              <i class="fa-solid fa-house"></i> Home
+            </a>
+          </mat-list-item>
+          <mat-divider></mat-divider>
+          <mat-list-item>
+            <a matLine routerLink="/about" class="itemText">
+              <i class="fa-solid fa-user"></i> About
+            </a>
+          </mat-list-item>
+          <mat-divider></mat-divider>
+          <mat-list-item>
+            <a matLine routerLink="/projects" class="itemText">
+              <i class="fa-solid fa-laptop-code"></i> Projects
+            </a>
+          </mat-list-item>
+          <mat-divider></mat-divider>
+          <mat-list-item>
+            <a matLine routerLink="/blog" class="itemText">
+              <i class="fa-solid fa-pen-to-square"></i> Blog
+            </a>
+          </mat-list-item>
+          <mat-divider></mat-divider>
+          <mat-list-item>
+            <a matLine routerLink="/contact" class="itemText">
+              <i class="fa-solid fa-phone"></i> Contact
+            </a>
+          </mat-list-item>
+          <mat-divider></mat-divider>
+          <mat-list-item>
+            <a matLine routerLink="/resume" class="itemText">
+              <i class="fa-solid fa-file"></i> Resume
+            </a>
+          </mat-list-item>
+          <mat-divider></mat-divider>
+        </div>
+      </mat-nav-list>
+    </mat-sidenav>
+  
+    <mat-sidenav-content>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+  

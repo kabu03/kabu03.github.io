@@ -1,24 +1,34 @@
-<div id="projects-container">
-  <div *ngFor="let project of projects" class="project">
-    <div class="description">
-      <div class="title-container">
-        <div class="title">{{ project.title }}</div>
-        <a *ngIf="project.github" [href]="project.github" target="_blank">
-          <i class="fab fa-github github-link"></i>
+<div class="projects-container">
+  <mat-card *ngFor="let project of projects" class="project-card">
+    <!-- Card Header: Title and GitHub Link -->
+    <mat-card-header class = "card-header">
+      <mat-card-title>
+        <span class="project-title">{{ project.title }}</span>
+        <a *ngIf="project.github" [href]="project.github" target="_blank" class="github-link">
+          <i class="fab fa-github"></i>
         </a>
+      </mat-card-title>
+    </mat-card-header>
+
+    <!-- Card Content: Description on the left, Image on the right -->
+    <mat-card-content class="project-content">
+      <div class="project-description">
+        <p>{{ project.description }}</p>
       </div>
-      <p>{{ project.description }}</p>
+      <div class="project-image" *ngIf="project.screenshot && !isMobile()">
+        <img [src]="project.screenshot" [alt]="project.title + ' Screenshot'" />
+      </div>
+    </mat-card-content>
+
+    <!-- Card Footer: Technologies Used -->
+    <mat-card-footer class="project-footer">
       <p class="technologies-used">
         <strong>Technologies used:</strong>
         <ng-container *ngFor="let tech of project.technologies; let last = last">
           <span class="technology">{{ tech }}</span>{{ !last ? ', ' : '' }}
         </ng-container>
       </p>
-      
-    </div>
-    <div class="screenshot">
-      <img [src]="project.screenshot" [alt]="project.title + ' Screenshot'">
-    </div>
-    <hr> <!-- Horizontal line after each project -->
-  </div>
+    </mat-card-footer>
+  </mat-card>
+  <hr> <!-- Horizontal line after each project -->
 </div>

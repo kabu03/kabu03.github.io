@@ -1,10 +1,137 @@
-a {
-    cursor: pointer; /* Ensure pointer cursor on hover */
-    text-decoration: none; /* Optional: Remove underline */
-    color: inherit; /* Use the inherited text color */
+Hamburger Menu Styles
+.hamburger {
+  display: none;
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 1100;
+  cursor: pointer;
+  color: #fff;
+  background-color: navy;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.hamburger div {
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  margin: 5px 0;
+}
+
+/* Mobile navigation - shows hamburger on smaller screens */
+@media (max-width: 768px) {
+  .sidenav-container {
+    width: 0;
+    transition: width 0.3s ease;
   }
   
-  a:hover {
-    text-decoration: underline; /* Optional: Add underline on hover */
+  .sidenav-container.open {
+    width: 250px; /* Width when the sidenav is open */
   }
   
+  .main-content {
+    margin-left: 0;
+    transition: margin-left 0.3s ease;
+  }
+  
+  .main-content.shift {
+    margin-left: 250px;
+  }
+
+  .hamburger {
+    display: block; /* Show hamburger on mobile */
+  }
+}
+
+
+/* Main container for sidenav */
+.sidenav-container {
+  width: 250px;
+  height: 100vh; /* Full height of the screen */
+  background-color: #2c3e50; /* Dark navy color */
+  position: fixed; /* Sticks to the left side of the screen */
+  top: 0;
+  left: 0;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+  padding-top: 20px;
+  z-index: 1000; /* Make sure it stays on top */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* Style for links in the sidenav */
+.sidenav-container a {
+  padding: 15px 20px; /* Spacing around the text */
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: #ecf0f1; /* Light text color */
+  display: block; /* Makes the entire area clickable */
+  width: 100%; /* Full width clickable */
+  transition: all 0.3s ease; /* Smooth transitions */
+  position: relative; /* To handle the glow */
+  margin-bottom: 10px;
+}
+
+/* Underline effect on hover */
+.sidenav-container a:hover {
+  color: #f39c12; /* Change text color to orange */
+  text-decoration: underline; /* Add underline on hover */
+  text-shadow: 0 0 10px rgba(243, 156, 18, 0.8); /* Glowing effect */
+}
+
+/* Active state for the link */
+.sidenav-container a.active {
+  background-color: #34495e; /* Darker background when active */
+  color: #f39c12; /* Text color for active link */
+}
+
+/* Glow effect - aesthetic */
+.sidenav-container a:before {
+  content: '';
+  position: absolute;
+  left: -10px;
+  top: 50%;
+  width: 0;
+  height: 2px;
+  background-color: navy; /* Same glow color as hover */
+  transition: width 0.3s ease;
+  transform: translateY(-50%);
+}
+
+.sidenav-container a:hover:before {
+  width: calc(100% + 20px); /* Glowing effect on hover expands from left to right */
+}
+
+/* Icon style inside the sidenav */
+.sidenav-container a i {
+  margin-right: 10px; /* Space between icon and text */
+}
+
+/* Header for the sidenav */
+.sidenav-header {
+  font-size: 1.5rem;
+  color: #ecf0f1;
+  padding: 20px;
+  text-align: center;
+  width: 100%;
+  background-color: #34495e; /* Darker navy */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Hover animation for links - subtle glow */
+.sidenav-container a:hover i {
+  color: #f39c12; /* Icon color changes */
+  text-shadow: 0 0 10px rgba(243, 156, 18, 0.8); /* Subtle glow on icon */
+}
+
+/* Simple responsive behavior for large desktop sizes */
+@media (min-width: 1200px) {
+  .sidenav-container {
+    width: 300px;
+  }
+}

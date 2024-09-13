@@ -2,6 +2,16 @@
     text-align: center;
   }
   
+  .contact-title{
+    color: white;
+    font-size: 50px;
+    font-weight: 400;
+    text-align: center;
+    background-color: transparent;
+    background: fixed;
+    padding-top: 30px;
+  }
+
   .contact-button {
     display: inline-block;
     margin: 10px;
@@ -33,3 +43,43 @@
   .contact-button:hover {
     opacity: 0.9;
   }
+
+  .contact-background {
+    position: relative;
+    width: 100%;
+    min-height: 100vh; /* Ensures the background takes up the full viewport height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-card {
+  max-width: 600px;
+  width: 50%;
+  height: 150px;
+  background-color: #113065;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 90px;
+  text-align: center;
+  position: relative;
+    z-index: 2; /* Ensure the card is above the background overlay */
+}
+
+.background-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #e5e5f7;
+  background-image: linear-gradient(135deg, #81b1ce 25%, transparent 25%), 
+                    linear-gradient(225deg, #81b1ce 25%, transparent 25%), 
+                    linear-gradient(45deg, #81b1ce 25%, transparent 25%), 
+                    linear-gradient(315deg, #81b1ce 25%, #e5e5f7 25%);
+  background-position: 10px 0, 10px 0, 0 0, 0 0;
+  background-size: 10px 10px;
+  background-repeat: repeat;
+  opacity: 0.9; /* Set the opacity of the background only */
+  z-index: 1;
+}
+
