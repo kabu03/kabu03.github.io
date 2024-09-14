@@ -35,7 +35,7 @@ body {
 }
 
 .background {
-  background-image: url("/assets/images/cool-background.png");
+  background-image: url("./assets/images/cool-background.png");
   background-size: cover;
   /* Make sure the image covers the entire element */
   background-position: center;
