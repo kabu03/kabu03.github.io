@@ -19,7 +19,10 @@ export class ProjectsComponent {
       title: "Pipes in the Desert",
       github: "https://github.com/kabu03/plumbers-and-saboteurs",
       description:
-        "Pipes in the Desert is a Java-based game developed by five students. In this game, two teams—plumbers and saboteurs—compete strategically to win. It combines elements of strategy and teamwork.",
+        "Pipes in the Desert is a Java-based game developed by five students. In this game, two teams—plumbers and saboteurs—compete strategically to win. It combines elements of strategy and teamwork.\
+        Plumbers attempt to use the pipe system to transport water from the spring to the cisterns through the pipe system in the harsh desert, while saboteurs try to prevent them\n\
+        from doing so by puncturing pipes and changing the direction of the pumped water. The water leaked through the desert and the water that reached the cisterns are displayed on the screen and compared at the end of the timer\
+        thus determining the winner.",
       screenshot: "/assets/images/pipesinthedesert.png",
       technologies: ["Java", "Swing GUI"],
     },
