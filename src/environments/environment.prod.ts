@@ -1,5 +1,5 @@
 export const environment = {
     production: true,
-    apiUrl: 'https://kabu03.github.io'  // Production URL
+    apiUrl: 'http://157.230.122.239:3000/api/blogs'  // Production URL
   };
   

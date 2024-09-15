@@ -6,18 +6,19 @@ require('dotenv').config();
 const app = express();
 const port = 3000;
 const uri = process.env.MONGODB_URI;
-const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
-
-app.use(cors({ origin: 'http://localhost:4200' }));
-
-async function connectDB() {
+const client = new MongoClient(uri, {
+    tls: true, // Ensure TLS/SSL is enabled
+    serverSelectionTimeoutMS: 5000, // Timeout after 5 seconds if the server is not reachable
+  });
+  
+  async function connectDB() {
     try {
-        await client.connect();
-        console.log("Connected to MongoDB");
+      await client.connect();
+      console.log("Connected to MongoDB");
     } catch (err) {
-        console.error(err);
+      console.error("Failed to connect to MongoDB:", err);
     }
-}
+  }
 
 connectDB();
 
