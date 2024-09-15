@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-blog-post',
@@ -18,7 +19,7 @@ export class BlogPostComponent implements OnInit {
   ngOnInit(): void {
     const slug = this.route.snapshot.paramMap.get('slug'); // Get slug from URL
 
-    this.http.get(`http://localhost:3000/api/blogs/${slug}`).subscribe((data: any) => {
+    this.http.get(`${environment.apiUrl}/${slug}`).subscribe((data: any) => {
       this.singleBlog = data;
     });
   }
