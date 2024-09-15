@@ -1,5 +1,5 @@
 
-.blog {
+.blogItem {
     color: whitesmoke;
     font-size: 50px;
     font-weight: 900;
@@ -7,4 +7,14 @@
     background-color: transparent;
     background: fixed;
     text-shadow: 0 0 50px black, 0 0 50px black;
+  }
+
+  .blog-title{margin-right: 10px;}
+
+  .blog-card{
+    margin: 30px;
+  }
+
+  .blogs-container{
+    margin-top:120px;
   }

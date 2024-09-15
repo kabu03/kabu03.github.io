@@ -1,28 +1,29 @@
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
+import {CommonModule } from '@angular/common';
 import { BlogService } from '../../blogservice.service';
-import { MatCard } from '@angular/material/card';
-import { MatCardContent } from '@angular/material/card';
-import { MatCardTitle } from '@angular/material/card';
+import { MatCard, MatCardHeader, MatCardContent, MatCardTitle } from '@angular/material/card';
 import {NgFor, NgIf} from '@angular/common';
+import { RouterOutlet } from '@angular/router';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-blog',
   standalone: true,
-  imports: [MatCard, MatCardContent, MatCardTitle, NgFor, NgIf],
+  imports: [MatCard, MatCardContent, MatCardTitle, MatCardHeader, NgFor, NgIf, RouterOutlet, RouterModule, CommonModule],
   providers: [BlogService],
   templateUrl: './blog.component.html',
-  styleUrl: './blog.component.css'
+  styleUrls: ['./blog.component.css']
 })
 export class BlogComponent implements OnInit {
-  blogs: any[] = [];
+  blogList: any[] = [];
 
   constructor(private blogService: BlogService, private titleService: Title) {
   this.titleService.setTitle('Blog');
   }
   ngOnInit(): void {
-    this.blogService.getMovies().subscribe(data => {
-      this.blogs = data;
+    this.blogService.getBlogs().subscribe(data => {
+      this.blogList = data;
     });
   }
 }

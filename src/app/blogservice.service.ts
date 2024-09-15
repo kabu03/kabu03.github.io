@@ -6,11 +6,11 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class BlogService {
-  private apiUrl = 'http://localhost:3000/api/blog';
+  private apiUrl = 'http://localhost:3000/api/blogs';
 
   constructor(private http: HttpClient) {}
 
-  getMovies(): Observable<any> {
+  getBlogs(): Observable<any> {
     return this.http.get<any>(this.apiUrl);
   }
 }

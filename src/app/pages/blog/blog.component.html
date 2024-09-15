@@ -1,6 +1,23 @@
-<mat-card *ngFor="let blog of blogs" class="blog-card">
-  <mat-card-title>{{ blog.title }}</mat-card-title>
-  <mat-card-content>
-    <p>{{ blog.content }}</p>
-  </mat-card-content>
-</mat-card>
+<div class="blogs-container">
+  <mat-card *ngFor="let blogItem of blogList" class="blog-card">
+    <!-- Card Header: Title and Link to Blog -->
+    <mat-card-header class="card-header">
+      <mat-card-title>
+        <span class="blog-title">{{ blogItem.title }}</span>
+        <a [routerLink]="['/blog', blogItem.slug]" class="blog-link">Read More</a>
+      </mat-card-title>
+    </mat-card-header>
+
+    <!-- Card Content: Blog body preview -->
+    <mat-card-content class="blog-content">
+      <p>{{ blogItem.body | slice:0:150 }}...</p> <!-- Show a 150-char preview of the blog body -->
+    </mat-card-content>
+
+    <!-- Optional Image -->
+    <div *ngIf="blogItem.image" class="blog-image">
+      <img [src]="blogItem.image" alt="{{ blogItem.title }}" />
+    </div>
+
+  </mat-card>
+</div>
+

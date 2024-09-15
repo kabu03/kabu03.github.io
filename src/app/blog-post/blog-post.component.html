@@ -1,0 +1,7 @@
+<div class="blogPostContainer">
+<div *ngIf="singleBlog">
+  <h1>{{ singleBlog.title }}</h1>
+  <img *ngIf="singleBlog.image" [src]="singleBlog.image" alt="{{ singleBlog.title }}">
+  <p>{{ singleBlog.body }}</p>
+</div>
+</div>

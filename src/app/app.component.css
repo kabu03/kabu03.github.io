@@ -9,7 +9,7 @@
     left: 0;
     width: 100%;
     z-index: 2;
-    background-color: #0f1056; /* Adjust the toolbar color */
+    background-color: #040133; /* Adjust the toolbar color */
   }
   .toolbar-text{
     color:white;
@@ -20,7 +20,7 @@
   
   mat-sidenav {
     width: 150px; /* Adjust the width as needed */
-    background-color: #0f1056;
+    background-color: #040133;
     color: white;
   }
   

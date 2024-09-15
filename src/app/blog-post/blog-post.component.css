@@ -1,0 +1,17 @@
+.blogPostContainer{
+    margin-top: 90px;
+    margin-left: 20px;
+}
+
+h1{
+    font-size: 36px;
+    text-align: center;
+    font-weight: 800;
+    margin-bottom: 30px;
+}
+
+p{
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
