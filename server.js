@@ -1,16 +1,16 @@
 const express = require('express');
 const { MongoClient } = require('mongodb');
 const cors = require('cors');
-
-app.use(cors({
-  origin: 'https://kabu03.github.io',
-  methods: 'GET,POST',
-  credentials: true
-}));
-
 require('dotenv').config();
 
 const app = express();
+
+// app.use(cors({
+//   origin: 'https://kabu03.github.io',
+//   methods: 'GET,POST',
+//   credentials: true
+// }));
+
 const port = 3000;
 const uri = process.env.MONGODB_URI;
 const client = new MongoClient(uri, {

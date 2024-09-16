@@ -28,8 +28,7 @@ export class ProjectsComponent {
     },
     {
       title: "GDSCommander (Project Lead)",
-      // github: "https://github.com/yourusername/project1",
-      description: "A discord bot that assists GDSCBME (Google Developer Student Club - Budapest University of Technology and Economics) members in GDSC-related inquiries and can give relevant information.\
+      description: "A discord bot programmed in Python that assists 130+ members of GDSCBME (Google Developer Student Club - Budapest University of Technology and Economics) in GDSC-related inquiries and can give relevant information.\
       So far, the bot can be used with 15 distinct commands, including trivia, event information, and more.",
       screenshot: "/assets/images/gdscommander.png",
       screenshotClass: "gdscommander-screenshot",
@@ -37,7 +36,6 @@ export class ProjectsComponent {
     },
     {
       title: "Certificate Generator (Project Lead)",
-      //   github: "https://github.com/yourusername/project1",
       description: "This generator is used to help automate the tedious process of manually editing and uploading the certificates of GDSC event participants or core team members. It takes in a CSV file with the necessary event information, filters it, generates certificates for each participant, and uploads them to Google Drive.",
       screenshot: "/assets/images/certificategenerator.png",
       technologies: ["Python", "Pandas", "Google API", "Tkinter", "Pillow"],
@@ -45,7 +43,7 @@ export class ProjectsComponent {
     {
       title: "Expense Tracker",
       github: "https://github.com/kabu03/expense-tracker",
-      description: "An Expense Tracker built in Java with a Swing-based GUI. This application helps users effortlessly manage and track their expenses, providing an intuitive interface for better financial oversight and budgeting.",
+      description: "An Expense Tracker built in Java with a Swing-based GUI. This application helps users effortlessly manage and track their expenses, providing an intuitive interface for better financial oversight and budgeting, and it also supports real-time currency conversion in over 30 currencies.",
       screenshot: "/assets/images/expensetracker.png",
       technologies: ["Java", "Swing GUI", "JUnit", "Mockito", "Maven"],
     },
