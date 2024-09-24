@@ -55,3 +55,31 @@
   background: #4caf50;
   width: 0;
 }
+
+/* Mobile Styling */
+@media (max-width: 768px) {
+  .card {
+    width: 100%;
+  }
+
+  .card-content {
+    flex-direction: column; /* Stack text and image vertically */
+    text-align: center;
+  }
+
+  .card-content-text {
+    margin-right: 0; /* Reset margin on mobile */
+    margin-bottom: 20px; /* Add spacing between text and image */
+  }
+
+  .card-content-text p{
+    font-size: 18px;
+  }
+
+  .card-content-image img {
+    max-width: 100%;
+  }
+  .about-body {
+    margin-top: 50px;
+  }
+}

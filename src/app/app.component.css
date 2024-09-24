@@ -62,18 +62,17 @@
     text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.7);
   }
   
-  /* Mobile responsiveness */
-  @media (max-width: 768px) {
-    mat-sidenav {
-      display: none;
-    }
-  
-    mat-sidenav.open {
-      display: block;
-    }
-  
-    mat-sidenav-content {
-      margin-left: 0;
-    }
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  mat-sidenav {
+    width: 100vw; /* Full width on mobile */
   }
+
+  mat-sidenav-content {
+    margin-left: 0;
+  }
+  .toolbar-text{
+    font-size: 20px;
+  }
+}
   

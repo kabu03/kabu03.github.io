@@ -33,3 +33,29 @@
     position: relative;
     width: 100%;
   }
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .hero-image {
+    height: 100%;
+    max-width: 100%;
+  }
+
+  .hero-text {
+    top: -8%; /* Adjust vertical position */
+    left: 5%;
+    right: 5%; /* Adjust horizontal position for mobile */
+    transform: none; /* Remove transform for mobile */
+    text-align: left; /* Keep text aligned to the left */
+
+  }
+
+  .hero-text h1 {
+    font-size: 1.7rem;
+  }
+
+  .hero-text p {
+    font-size: 20px;
+    margin-left: 0px;
+  }
+}

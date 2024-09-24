@@ -83,3 +83,11 @@
   z-index: 1;
 }
 
+@media (max-width: 768px) {
+  .contact-card {
+    width: 80%;
+    height: 280px;
+    border-radius: 50px;
+  }
+
+}

@@ -88,3 +88,15 @@ hr {
   height: 1px;
   background: #ccc;
 }
+
+@media (max-width: 768px) {
+  .project-card {
+    width: 100%;
+  }
+
+  
+.project-title{
+  font-size: 1.5rem;
+}
+
+}
