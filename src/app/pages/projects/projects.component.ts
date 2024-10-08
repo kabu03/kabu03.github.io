@@ -45,7 +45,7 @@ export class ProjectsComponent {
       github: "https://github.com/kabu03/expense-tracker",
       description: "An Expense Tracker built in Java with a Swing-based GUI. This application helps users effortlessly manage and track their expenses, providing an intuitive interface for better financial oversight and budgeting, and it also supports real-time currency conversion in over 30 currencies.",
       screenshot: "/assets/images/expensetracker.png",
-      technologies: ["Java", "Swing GUI", "JUnit", "Mockito", "Maven"],
+      technologies: ["Java", "Swing GUI", "JUnit", "Mockito", "MVC Design Pattern", "Maven"],
     },
     {
       title: "Stock Portfolio Manager",
