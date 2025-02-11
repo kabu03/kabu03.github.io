@@ -13,16 +13,26 @@
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-.card-header{
+.card-header {
   background-color: #113065;
-  height: 40px;
+  min-height: 40px; /* Ensures a minimum height */
+  padding: 10px 15px; /* Adds padding to prevent text from touching edges */
+  display: flex;
+  align-items: center; /* Aligns content vertically */
+  flex-wrap: wrap; /* Allows wrapping of text if necessary */
 }
+
 /* Project Header */
 .project-title {
   font-style: italic;
   font-size: 1.8rem;
   color: white;
+  word-wrap: break-word; /* Ensures long words break properly */
+  overflow-wrap: break-word; /* Breaks long words instead of overflowing */
+  white-space: normal; /* Allows text to wrap to the next line */
+  max-width: 90%; /* Prevents text from extending too far */
 }
+
 
 .github-link {
   font-size: 1.5rem;
