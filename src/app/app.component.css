@@ -11,9 +11,14 @@
     z-index: 2;
     background-color: #040133; /* Adjust the toolbar color */
   }
-  .toolbar-text{
-    color:white;
+  .toolbar-text {
+    color: white;
+    font-size: clamp(14px, 3vw, 28px); /* Makes text scale dynamically */
+    white-space: nowrap; /* Prevents wrapping */
+    overflow: hidden;
+    text-overflow: ellipsis; /* Adds '...' if text is too long */
   }
+  
   .spacer {
     flex: 1 1 auto;
   }
