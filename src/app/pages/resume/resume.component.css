@@ -1,29 +1,101 @@
-.resume h1, .resume p {
+/* Background Styling */
+.background {
+  background-image: url("/assets/images/cool-background_2.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+  animation: 1.5s ease-in-out;
+}
+
+/* Resume Content */
+.resume {
+  padding: 30px;
+  border-radius: 15px;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Heading Animation */
+.resume h1 {
+  font-size: 60px;
   color: white;
   text-shadow: 0 0 5px black, 0 0 5px black;
-}
-.resume h1{
-  font-size: 60px;
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: slideDown 1.5s ease-in-out forwards;
 }
 
-.resume p{
+/* Paragraph Animation */
+.resume p {
   font-size: 25px;
-}
-.resume .download-button{
-  font-size: 20px;
+  color: white;
+  text-shadow: 0 0 5px black, 0 0 5px black;
+  opacity: 0;
+  transform: translateY(-10px);
+  animation: slideDown 1.5s ease-in-out forwards 0.5s;
 }
 
+/* Slide Down Animation */
+@keyframes slideDown {
+  0% {
+      opacity: 0;
+      transform: translateY(-20px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+/* Button Styling */
 .download-button {
-    display: inline-block;
-    margin: 10px;
-    padding: 20px 20px;
-    background-color: #007bff;
-    color: #ffffff;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
+  display: inline-block;
+  margin-top: 20px;
+  padding: 15px 30px;
+  background-color: #007bff;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Pulse Animation for Button */
+.download-button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+  box-shadow: 0px 0px 15px rgba(0, 123, 255, 0.8);
+}
+
+/* Fade-In Effect */
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 1.5s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .resume h1 {
+      font-size: 40px;
   }
-  
-  .download-button:hover {
-    background-color: #0056b3;
+  .resume p {
+      font-size: 20px;
   }
+  .download-button {
+      font-size: 18px;
+      padding: 12px 25px;
+  }
+}

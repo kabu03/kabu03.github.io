@@ -1,7 +1,9 @@
 .sidenav-container {
-    display:flex;
-    height: 100vh;
-  }
+  display: flex;
+  min-height: 100vh;
+  height: 100%;
+}
+
   
   mat-toolbar {
     position: fixed;
@@ -26,7 +28,8 @@
   mat-sidenav {
     width: 150px; /* Adjust the width as needed */
     background-color: #040133;
-    color: white;
+    color: #040133;
+    border-radius: 0%;
   }
   
   mat-sidenav-content {
@@ -52,7 +55,7 @@
   }
 
   .fa-solid{
-    padding-right: 5px;
+  padding-right: 5px;
   }
   
   mat-nav-list mat-list-item a {

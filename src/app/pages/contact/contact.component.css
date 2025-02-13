@@ -1,93 +1,162 @@
-.contact-buttons {
-    text-align: center;
-  }
-  
-  .contact-title{
-    color: white;
-    font-size: 50px;
-    font-weight: 400;
-    text-align: center;
-    background-color: transparent;
-    background: fixed;
-    padding-top: 30px;
-  }
-
-  .contact-button {
-    display: inline-block;
-    margin: 10px;
-    padding: 10px 20px;
-    font-size: 20px;
-    color: white;
-    background-color: #007bff;
-    border-radius: 5px;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
-  }
-  
-  .contact-button.email {
-    background-color: #d44638; /* Gmail Red */
-  }
-  
-  .contact-button.linkedin {
-    background-color: #0077b5; /* LinkedIn Blue */
-  }
-  
-  .contact-button.github {
-    background-color: #333; /* GitHub Black */
-  }
-  
-  .contact-button i {
-    margin-right: 8px;
-  }
-  
-  .contact-button:hover {
-    opacity: 0.9;
-  }
-
-  .contact-background {
-    position: relative;
-    width: 100%;
-    min-height: 100vh; /* Ensures the background takes up the full viewport height */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.contact-card {
-  max-width: 600px;
-  width: 50%;
-  height: 150px;
-  background-color: #113065;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 90px;
-  text-align: center;
+/* Contact Page Container */
+.contact-background {
   position: relative;
-    z-index: 2; /* Ensure the card is above the background overlay */
-}
-
-.background-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
-  height: 100%;
-  background-color: #e5e5f7;
-  background-image: linear-gradient(135deg, #81b1ce 25%, transparent 25%), 
-                    linear-gradient(225deg, #81b1ce 25%, transparent 25%), 
-                    linear-gradient(45deg, #81b1ce 25%, transparent 25%), 
-                    linear-gradient(315deg, #81b1ce 25%, #e5e5f7 25%);
-  background-position: 10px 0, 10px 0, 0 0, 0 0;
-  background-size: 10px 10px;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  background-color: black;
+  background-image: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 25%, transparent 25%), 
+                    linear-gradient(225deg, rgba(255, 255, 255, 0.05) 25%, transparent 25%), 
+                    linear-gradient(45deg, rgba(255, 255, 255, 0.05) 25%, transparent 25%), 
+                    linear-gradient(315deg, rgba(255, 255, 255, 0.05) 25%, transparent 25%);
+  background-size: 20px 20px;
   background-repeat: repeat;
-  opacity: 0.9; /* Set the opacity of the background only */
-  z-index: 1;
 }
 
+/* Contact Card */
+.contact-card {
+  background-color: transparent;
+  position: relative;
+  z-index: 2;
+}
+
+/* Contact Title - Typing Effect & Cursor Fix */
+.contact-title {
+  font-size: 60px;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 20px;
+  overflow: hidden;
+  white-space: nowrap;
+  display: inline-block;
+  border-right: 3px solid white; /* Cursor effect */
+  animation: typing 2s steps(15, end) forwards, bounceIn 1.5s ease-in-out 2s forwards, hideCursor 0.1s 2.2s forwards;
+}
+
+/* Hide Cursor After Typing */
+@keyframes hideCursor {
+  to { border-right: none; }
+}
+
+/* Typing Effect */
+@keyframes typing {
+  from { width: 0; opacity: 1; }
+  to { width: 100%; opacity: 1; }
+}
+
+/* Bounce-In Effect After Typing
+@keyframes bounceIn {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+} */
+
+/* Contact Buttons - Fade-in Cascade Effect */
+.contact-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+}
+
+/* Individual Contact Button */
+.contact-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 220px;
+  padding: 10px 15px;
+  font-size: 18px;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  opacity: 0;
+}
+
+/* Button Icons */
+.contact-button i {
+  margin-right: 10px;
+}
+
+/* Hover Effect */
+.contact-button:hover {
+  transform: scale(1.08);
+  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.7);
+}
+
+/* Button Colors */
+.contact-button.email {
+  background-color: #d44638;
+  animation: fadeIn 1s ease-in-out 1s forwards;
+}
+
+.contact-button.linkedin {
+  background-color: #0077b5;
+  animation: fadeIn 1s ease-in-out 1.5s forwards;
+}
+
+.contact-button.github {
+  background-color: #333;
+  animation: fadeIn 1s ease-in-out 2s forwards;
+}
+
+/* Friendly Intro Text */
+.contact-intro {
+  font-size: 20px;
+  font-weight: 400;
+  color: #ddd;
+  margin-bottom: 15px;
+  animation: fadeIn 1.5s ease-in-out 0.5s forwards;
+  opacity: 0;
+}
+
+/* Waving Hand Animation */
+.wave {
+  display: inline-block;
+  animation: wave 1.5s infinite alternate ease-in-out;
+}
+
+@keyframes wave {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(20deg); }
+}
+
+
+/* Funny Joke */
+.contact-joke {
+  font-size: 18px;
+  font-weight: 500;
+  color: #bbb;
+  margin-top: 20px;
+  font-style: italic;
+  animation: fadeIn 1.5s ease-in-out 2.5s forwards;
+  opacity: 0;
+}
+
+
+/* Fade-In Animation */
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+/* Responsive Fix */
 @media (max-width: 768px) {
   .contact-card {
-    width: 80%;
-    height: 280px;
-    border-radius: 50px;
+      width: 90%;
   }
-
+  .contact-title {
+      font-size: 30px;
+  }
 }

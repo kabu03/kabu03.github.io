@@ -34,23 +34,7 @@ body {
   text-align: left;
 }
 
-.background {
-  background-image: url("./assets/images/cool-background.png");
-  background-size: cover;
-  /* Make sure the image covers the entire element */
-  background-position: center;
-  /* Center the image */
-  background-repeat: no-repeat;
-  /* Prevent the image from repeating */
-  height: 100vh;
-  /* Make the element full height */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  text-align: center;
-  padding: 20px;
-}
+
 
 /*
 -
