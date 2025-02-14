@@ -1,8 +1,11 @@
 <div class="projects-container">
-  <mat-card *ngFor="let project of projects" class="project-card">
+  <mat-card *ngFor="let project of projects; let i = index" 
+    class="project-card animate-fade-in" 
+    [style.animation-delay]="i * 0.2 + 's'">
+    
     <!-- Card Header: Title and GitHub Link -->
-    <mat-card-header class = "card-header">
-      <mat-card-title>
+    <mat-card-header class="card-header">
+      <mat-card-title class="title-container">
         <span class="project-title">{{ project.title }}</span>
         <a *ngIf="project.github" [href]="project.github" target="_blank" class="github-link">
           <i class="fab fa-github"></i>
@@ -10,23 +13,22 @@
       </mat-card-title>
     </mat-card-header>
 
-    <!-- Card Content: Description on the left, Image on the right -->
+    <!-- Card Content -->
     <mat-card-content class="project-content">
-      <div class="project-description">
+      <div class="project-description animate-text">
         <p [innerHTML]="project.description"></p>
       </div>
       <div class="project-image" *ngIf="project.screenshot && !isMobile()">
         <a [href]="project.screenshot" target="_blank">
-          <img [src]="project.screenshot" [alt]="project.title + ' Screenshot'" />
-          <div class="overlay">Click to view the image!</div>
+          <img [src]="project.screenshot" [alt]="project.title + ' Screenshot'" class="fade-in-image"/>
+          <div class="overlay animate-text">Click to view the image!</div>
         </a>
       </div>
-      
     </mat-card-content>
 
-    <!-- Card Footer: Technologies Used -->
+    <!-- Footer -->
     <mat-card-footer class="project-footer">
-      <p class="technologies-used">
+      <p class="technologies-used animate-text">
         <strong>Technologies used:</strong>
         <ng-container *ngFor="let tech of project.technologies; let last = last">
           <span class="technology">{{ tech }}</span>{{ !last ? ', ' : '' }}
@@ -34,5 +36,4 @@
       </p>
     </mat-card-footer>
   </mat-card>
-  <hr> <!-- Horizontal line after each project -->
 </div>

@@ -5,6 +5,14 @@
   justify-content: center; /* Center the items vertically */
   margin-top: 90px;
 }
+.title-container {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Adds spacing between title and GitHub link */
+  max-width: 100%;
+  opacity: 0; /* Start hidden */
+  animation: fadeInSlide 1s ease-out forwards;
+}
 
 .project-card {
   width:85%;
@@ -30,7 +38,7 @@
   word-wrap: break-word; /* Ensures long words break properly */
   overflow-wrap: break-word; /* Breaks long words instead of overflowing */
   white-space: normal; /* Allows text to wrap to the next line */
-  max-width: 90%; /* Prevents text from extending too far */
+  max-width: 100%; /* Prevents text from extending too far */
 }
 
 
@@ -39,10 +47,41 @@
   color: #aad6ec;
   text-decoration: none;
   margin-left: 10px;
+  transition: color 0.3s ease;
+}
+
+/* Image Fade-in */
+.fade-in-image {
+  opacity: 0; /* Start hidden */
+  transform: translateY(10px); /* Slight downward shift */
+  animation: fadeInImage 1s ease-out forwards;
+}
+
+/* Fade-in + Slide Animation */
+@keyframes fadeInImage {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .github-link:hover {
   color: white;
+}
+
+@keyframes fadeInSlide {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Project Content */
@@ -145,3 +184,26 @@ hr {
 }
 
 }
+
+/* Text Fade-in for Description and Footer */
+@keyframes fadeInText {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-text {
+  opacity: 0;
+  animation: fadeInText 1.2s ease-in forwards;
+}
+
+/* Delay Each Card to Stagger the Animations */
+.project-card:nth-child(1) { animation-delay: 0s; }
+.project-card:nth-child(2) { animation-delay: 0.2s; }
+.project-card:nth-child(3) { animation-delay: 0.4s; }
+.project-card:nth-child(4) { animation-delay: 0.6s; }
