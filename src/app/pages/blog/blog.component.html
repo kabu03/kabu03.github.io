@@ -1,6 +1,17 @@
+<div class="background">
+<div class="container">
+  <div class="row justify-content-center align-items-center">
+    <div class="col-12 col-md-8 col-lg-6 text-center blog-message">
+          <p>{{ message }}</p>
+    </div>
+  </div>
+</div>
+</div>
+
+<!--
 <div class="blogs-container">
   <mat-card *ngFor="let blogItem of blogList" class="blog-card">
-    <!-- Card Header: Title and Link to Blog -->
+    
     <mat-card-header class="card-header">
       <mat-card-title>
         <span class="blog-title">{{ blogItem.title }}</span>
@@ -8,16 +19,17 @@
       </mat-card-title>
     </mat-card-header>
 
-    <!-- Card Content: Blog body preview -->
+    
     <mat-card-content class="blog-content">
-      <p>{{ blogItem.body | slice:0:150 }}...</p> <!-- Show a 150-char preview of the blog body -->
+      <p>{{ blogItem.body | slice:0:150 }}...</p>
     </mat-card-content>
 
-    <!-- Optional Image -->
+    
     <div *ngIf="blogItem.image" class="blog-image">
       <img [src]="blogItem.image" alt="{{ blogItem.title }}" />
     </div>
 
   </mat-card>
 </div>
+-->
 

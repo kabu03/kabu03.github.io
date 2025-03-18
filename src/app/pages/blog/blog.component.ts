@@ -10,20 +10,18 @@ import { RouterModule } from '@angular/router';
 @Component({
   selector: 'app-blog',
   standalone: true,
-  imports: [MatCard, MatCardContent, MatCardTitle, MatCardHeader, NgFor, NgIf, RouterOutlet, RouterModule, CommonModule],
-  providers: [BlogService],
+  imports: [MatCard, MatCardContent, MatCardTitle, MatCardHeader, NgIf, CommonModule],
   templateUrl: './blog.component.html',
   styleUrls: ['./blog.component.css']
 })
 export class BlogComponent implements OnInit {
-  blogList: any[] = [];
+  message: string = '';
 
-  constructor(private blogService: BlogService, private titleService: Title) {
-  this.titleService.setTitle('Blog');
+  constructor(private titleService: Title) {
+    this.titleService.setTitle('Blog');
   }
+
   ngOnInit(): void {
-    this.blogService.getBlogs().subscribe(data => {
-      this.blogList = data;
-    });
+    this.message = "The blog feature is temporarily unavailable as I'm performing a migration. Please try again later!";
   }
 }

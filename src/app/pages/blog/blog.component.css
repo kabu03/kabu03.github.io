@@ -1,4 +1,47 @@
+.background {
+  background-image: url("/assets/images/water_bg.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 1;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+  animation: 1.5s ease-in-out;
+}
 
+.blog-message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full viewport height */
+  text-align: center;
+}
+
+.blog-message p {
+  font-size: 3rem; /* Adjust font size for readability */
+  color: white; /* Neutral color for text */
+  text-shadow: 0 0 20px black, 0 0 40px black, 0 0 80px black, 0 0 160px black, 0 0 240px black;
+  transform: translateY(-10px);
+  animation: slideDown 1.5s ease-in-out forwards 0.5s;
+}
+
+@keyframes slideDown {
+  0% {
+      opacity: 0;
+      transform: translateY(-20px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+/*
 .blogItem {
     color: whitesmoke;
     font-size: 50px;
@@ -18,3 +61,5 @@
   .blogs-container{
     margin-top:120px;
   }
+
+  */
