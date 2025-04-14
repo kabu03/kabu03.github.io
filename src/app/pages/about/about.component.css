@@ -60,7 +60,7 @@
 .fade-in {
   opacity: 0;
   transform: translateY(20px);
-  animation: fadeIn 1s ease-in forwards;
+  animation: fadeIn 0.3s ease-in forwards;
 }
 
 /* Stagger effect for each card */
@@ -77,16 +77,16 @@
 /* Fade-in animation for text inside cards */
 .fade-in-text {
   opacity: 0;
-  animation: fadeIn 1s ease-in forwards;
-  animation-delay: 0.8s;
+  animation: fadeIn 0.3s ease-in forwards;
+  animation-delay: 0.3s;
 }
 
 /* Fade-in animation for images */
 .fade-in-image {
   opacity: 0;
   transform: translateY(20px);
-  animation: fadeIn 1s ease-in forwards;
-  animation-delay: 1s;
+  animation: fadeIn 0.3s ease-in forwards;
+  animation-delay: 0.3s;
 }
 
 /* Keyframe for fade-in animation */
