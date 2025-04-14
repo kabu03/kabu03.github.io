@@ -67,14 +67,14 @@ export class ProjectsComponent {
     {
       title: "Stock Portfolio Manager",
       github: "https://github.com/kabu03/stock-portfolio-manager",
-      description: "A command-line interface stock portfolio management program that allows users to add, remove, and update stocks, as well as save and fetch stock data from external files.",
+      description: "A command-line interface stock portfolio management program that allows users to add, remove, and update stocks, as well as save and fetch stock data from external files. This was when I was first introduced to C++ and object-oriented programming, and I learned a lot about the language and its features.",
       screenshot: "/assets/images/stockportfoliomanager.png",
       technologies: ["C++"],
     },
     {
       title: "Hangman Game",
       github: "https://github.com/kabu03/hangman",
-      description: "A simple Hangman game developed in C. The user can select the difficulty level and guess the word by inputting letters. The game ends when the user guesses the word or runs out of attempts.",
+      description: "A simple Hangman game developed in C. The user can select the difficulty level and guess the word by inputting letters. The game ends when the user guesses the word or runs out of attempts. This was the first programming project I ever completed back in 2022, and it was a great learning experience!",
       screenshot: "/assets/images/hangman.png",
       technologies: ["C"],
     },
