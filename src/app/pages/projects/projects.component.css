@@ -10,8 +10,7 @@
   align-items: center;
   gap: 10px; /* Adds spacing between title and GitHub link */
   max-width: 100%;
-  opacity: 0; /* Start hidden */
-  animation: fadeInSlide 1s ease-out forwards;
+  animation: fadeInText 1s ease-in;
 }
 
 .project-card {
@@ -189,7 +188,7 @@ hr {
 @keyframes fadeInText {
   from {
     opacity: 0;
-    transform: translateY(15px);
+    transform: translateY(5px);
   }
   to {
     opacity: 1;
