@@ -17,12 +17,14 @@ p{
 }
 
 .blog-date{
+    font-weight: bold;
     font-size: 14px;
     color: purple;
     margin-bottom: 20px;
 }
 
 .blog-category{
+    font-weight: bold;
     font-size: 14px;
     color: purple;
     margin-bottom: 20px;

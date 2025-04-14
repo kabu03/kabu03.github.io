@@ -6,6 +6,6 @@
       <p class="blog-date">Published on {{ singleBlog.createdAt | date:'longDate' }}</p>
       <p class="blog-category" *ngIf="singleBlog.category">#{{ singleBlog.category }}</p>
       <!-- Render with newlines -->
-      <p [innerHTML]="singleBlog.body | nl2br"></p>
+      <p [innerHTML]="singleBlog.body | markdown"></p>
 </div>
 </div>

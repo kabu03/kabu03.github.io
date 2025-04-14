@@ -4,11 +4,13 @@ import { HttpClient } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { environment } from '../../environments/environment';
 import { Nl2brPipe } from '../nl2br.pipe';
+import { MarkdownPipe } from '../markdown.pipe';
+
 
 @Component({
   selector: 'app-blog-post',
   standalone: true,
-  imports: [CommonModule, Nl2brPipe],
+  imports: [CommonModule, Nl2brPipe, MarkdownPipe],
   templateUrl: './blog-post.component.html',
   styleUrls: ['./blog-post.component.css']
 })
@@ -27,16 +29,25 @@ export class BlogPostComponent implements OnInit {
 }
 
 // CAN USE THE BELOW FOR TESTING
-  // ngOnInit(): void {
-  //   // const slug = this.route.snapshot.paramMap.get('slug');
+//   ngOnInit(): void {
+//     // const slug = this.route.snapshot.paramMap.get('slug');
   
-  //   // Mock blog for testing
-  //   this.singleBlog = {
-  //     title: "Hello World",
-  //     slug: "hello-world",
-  //     category: "General",
-  //     body: "This is a test blog.\nNew lines will appear here.\nIsn't that great?",
-  //     image: null,
-  //     createdAt: new Date()
-  //   };
-  // }
+//     // Mock blog for testing
+//     this.singleBlog = {
+//       title: "Hello World",
+//       slug: "hello-world",
+//       category: "General",
+//       body:
+// `This is a test blog. 
+// New lines will appear here. 
+// This is a test blog. 
+
+// Isn't that great?  
+// **YO YO IS THIS BOLD** *ayy*  
+// [how was you feeling?](https://www.google.com)
+// `,
+//       image: null,
+//       createdAt: new Date()
+//     };
+//   }
+// }
