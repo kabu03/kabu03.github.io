@@ -62,6 +62,7 @@
 }
 
 .blog-meta {
+  font-weight: bold;
   margin: 0 16px; /* Some spacing around date */
   font-size: 0.85rem;
   color: purple;

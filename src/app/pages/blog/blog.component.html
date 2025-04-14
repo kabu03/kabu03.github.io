@@ -18,7 +18,7 @@
     </div>
 
     <mat-card-content class="blog-content">
-      <p>{{ blogItem.body | slice:0:150 }}...</p>
+      <p>{{ blogItem.body | slice:0:150 | markdown }}...</p>
     </mat-card-content>
 
     <div *ngIf="blogItem.image" class="blog-image">
