@@ -1,7 +1,8 @@
 # Kabu's Portfolio Website
 
-Welcome to the repository for my personal portfolio website! This site tells part of my story and projects as a developer. The frontend is built using Angular/TS/HTML/CSS and is hosted by GitHub Pages.
+Welcome to the repository for my personal portfolio website! This site tells part of my story and projects as a developer. The frontend is built using Angular/TS/HTML/CSS and hosted by GitHub Pages, and the backend is hosted on [Render](https://render.com/).
 
+- You can check the backend repo [here](https://github.com/kabu03/portfolio-backend).  
 - You can learn more about GitHub Pages hosting [here](https://pages.github.com/).  
 - Check out the live website here: [https://kabu03.github.io/](https://kabu03.github.io/)  
 - You can also find me on LinkedIn [here](https://www.linkedin.com/in/karam-abu-judom/).
@@ -16,7 +17,6 @@ Welcome to the repository for my personal portfolio website! This site tells par
 
 - `.gitignore`: Use this file to avoid committing `node_modules/`, `dist/`, environment files (if any are used by Angular), etc. to GitHub  
 
-___
 
 
 Thanks for visiting!
