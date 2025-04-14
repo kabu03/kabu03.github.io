@@ -1,0 +1,41 @@
+name: Deploy Angular App to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          
+      - name: Cache node_modules
+        uses: actions/cache@v3
+        with:
+            path: ~/.npm
+            key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
+            restore-keys: | 
+                ${{ runner.os }}-node-
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build Angular App
+        run: |
+          npm install -g @angular/cli
+          ng build --configuration=production --base-href=https://kabu03.github.io/
+
+      - name: Deploy to GitHub Pages
+        run: |
+          npx angular-cli-ghpages --dir=dist/kabu-website/browser --no-silent --name="Karam Abu Judom" --email="karam.abujudom@gmail.com"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
