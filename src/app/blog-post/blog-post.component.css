@@ -1,6 +1,7 @@
 .blogPostContainer{
     margin-top: 90px;
     margin-left: 20px;
+    margin-right: 20px;
 }
 
 h1{
@@ -10,11 +11,14 @@ h1{
     margin-bottom: 30px;
 }
 
-p{
+p {
     font-size: 18px;
     line-height: 1.5;
     margin-bottom: 20px;
-}
+    word-wrap: break-word; /* Break long words */
+    overflow-wrap: break-word; /* Ensure long words wrap */
+    white-space: normal; /* Allow text to wrap to the next line */
+  }
 
 .blog-date{
     font-weight: bold;

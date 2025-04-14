@@ -11,15 +11,17 @@
     #sidenav
     [mode]="isMobile ? 'over' : 'side'"
     [opened]="!isMobile"
-    class="sidenav"
-  >
+    class="sidenav">
+    
     <mat-nav-list>
       <div class="navItems">
         <mat-divider></mat-divider>
 
         <!-- Close sidenav only on mobile by checking `isMobile` -->
         <mat-list-item (click)="isMobile ? sidenav.close() : null">
-          <a matLine routerLink="/" class="itemText">
+          <a matLine routerLink="/" routerLinkActive="active-link"
+          [routerLinkActiveOptions]="{ exact: true }"
+          class="itemText">
             <i class="fa-solid fa-house"></i> Home
           </a>
         </mat-list-item>
@@ -27,7 +29,7 @@
         <mat-divider></mat-divider>
 
         <mat-list-item (click)="isMobile ? sidenav.close() : null">
-          <a matLine routerLink="/about" class="itemText">
+          <a matLine routerLink="/about" routerLinkActive="active-link" class="itemText">
             <i class="fa-solid fa-user"></i> About
           </a>
         </mat-list-item>
@@ -35,7 +37,7 @@
         <mat-divider></mat-divider>
 
         <mat-list-item (click)="isMobile ? sidenav.close() : null">
-          <a matLine routerLink="/projects" class="itemText">
+          <a matLine routerLink="/projects" routerLinkActive="active-link" class="itemText">
             <i class="fa-solid fa-laptop-code"></i> Projects
           </a>
         </mat-list-item>
@@ -43,7 +45,7 @@
         <mat-divider></mat-divider>
 
         <mat-list-item (click)="isMobile ? sidenav.close() : null">
-          <a matLine routerLink="/blog" class="itemText">
+          <a matLine routerLink="/blog" routerLinkActive="active-link" class="itemText">
             <i class="fa-solid fa-pen-to-square"></i> Blog
           </a>
         </mat-list-item>
@@ -51,7 +53,7 @@
         <mat-divider></mat-divider>
 
         <mat-list-item (click)="isMobile ? sidenav.close() : null">
-          <a matLine routerLink="/contact" class="itemText">
+          <a matLine routerLink="/contact" routerLinkActive="active-link" class="itemText">
             <i class="fa-solid fa-phone"></i> Contact
           </a>
         </mat-list-item>
@@ -59,7 +61,7 @@
         <mat-divider></mat-divider>
 
         <mat-list-item (click)="isMobile ? sidenav.close() : null">
-          <a matLine routerLink="/resume" class="itemText">
+          <a matLine routerLink="/resume" routerLinkActive="active-link" class="itemText">
             <i class="fa-solid fa-file"></i> Resume
           </a>
         </mat-list-item>
