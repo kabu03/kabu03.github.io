@@ -19,35 +19,35 @@ export class BlogPostComponent implements OnInit {
 
   constructor(private route: ActivatedRoute, private http: HttpClient) {}
 
-//   ngOnInit(): void {
-//     const slug = this.route.snapshot.paramMap.get('slug'); // Get slug from URL
-
-//     this.http.get(`${environment.apiUrl}/${slug}`).subscribe((data: any) => {
-//       this.singleBlog = data;
-//     });
-//   }
-// }
-
-// CAN USE THE BELOW FOR TESTING
   ngOnInit(): void {
-    // const slug = this.route.snapshot.paramMap.get('slug');
-  
-    // Mock blog for testing
-    this.singleBlog = {
-      title: "Hello World",
-      slug: "hello-world",
-      category: "General",
-      body:
-`This is a test blogssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssblogssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssblogssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss
-New lines will appear here. 
-This is a test blog. 
+    const slug = this.route.snapshot.paramMap.get('slug'); // Get slug from URL
 
-Isn't that great?  
-**YO YO IS THIS BOLD** *ayy*  
-[how was you feeling?](https://www.google.com)
-`,
-      image: null,
-      createdAt: new Date()
-    };
+    this.http.get(`${environment.apiUrl}/${slug}`).subscribe((data: any) => {
+      this.singleBlog = data;
+    });
   }
 }
+
+// CAN USE THE BELOW FOR TESTING
+//   ngOnInit(): void {
+//     // const slug = this.route.snapshot.paramMap.get('slug');
+  
+//     // Mock blog for testing
+//     this.singleBlog = {
+//       title: "Hello World",
+//       slug: "hello-world",
+//       category: "General",
+//       body:
+// `This is a test blogssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssblogssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssblogssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss
+// New lines will appear here. 
+// This is a test blog. 
+
+// Isn't that great?  
+// **YO YO IS THIS BOLD** *ayy*  
+// [how was you feeling?](https://www.google.com)
+// `,
+//       image: null,
+//       createdAt: new Date()
+//     };
+//   }
+// }
