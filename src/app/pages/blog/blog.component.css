@@ -1,19 +1,95 @@
-.blogItem {
-    color: whitesmoke;
-    font-size: 50px;
-    font-weight: 900;
-    text-align: center;
-    background-color: transparent;
-    background: fixed;
-    text-shadow: 0 0 50px black, 0 0 50px black;
-  }
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 400px; /* Adjust as needed */
+  margin-top: 200px;
+  text-align: center;
+  color: #333;
+}
 
-  .blog-title{margin-right: 10px;}
+.loading-container p {
+  margin-top: 16px;
+  font-size: 1.5rem;
+}
 
-  .blog-card{
-    margin: 30px;
-  }
+.blogs-container {
+  margin-top: 120px;
+  display: grid;
+  grid-template-columns: 1fr; /* Default: 1 column */
+  gap: 24px;
+  justify-items: center;
+  padding: 0 20px;
+}
 
-  .blogs-container{
-    margin-top:120px;
+@media screen and (min-width: 768px) {
+  .blogs-container {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on medium+ screens */
   }
+}
+
+.blog-card {
+  width: 100%;
+  max-width: 600px;
+}a
+
+.blog-card {
+  width: 90%;
+  max-width: 600px;
+  margin-bottom: 24px;
+  /* Add a subtle box-shadow or border if desired */
+}
+
+.card-header {
+  /* maybe reduce padding if it’s too big? */
+}
+
+.blog-title {
+  font-weight: 700;
+  margin-right: 10px;
+}
+
+.blog-link {
+  font-size: 0.9rem;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-bottom 0.2s;
+  margin-left: 16px;
+}
+.blog-link:hover {
+  border-bottom: 1px solid currentColor;
+}
+
+.blog-meta {
+  margin: 0 16px; /* Some spacing around date */
+  font-size: 0.85rem;
+  color: purple;
+  margin-top: 8px;
+}
+
+.blog-date {
+  display: block;
+  margin-bottom: 4px;
+}
+
+.blog-content {
+  margin: 16px;
+  /* text styling */
+}
+
+.blog-content p {
+  margin: 0 0 12px 0;
+  line-height: 1.4;
+}
+
+.blog-image {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.blog-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+}

@@ -2,6 +2,10 @@
 <div *ngIf="singleBlog">
   <h1>{{ singleBlog.title }}</h1>
   <img *ngIf="singleBlog.image" [src]="singleBlog.image" alt="{{ singleBlog.title }}">
-  <p>{{ singleBlog.body }}</p>
+      <!-- Display date -->
+      <p class="blog-date">Published on {{ singleBlog.createdAt | date:'longDate' }}</p>
+      <p class="blog-category" *ngIf="singleBlog.category">#{{ singleBlog.category }}</p>
+      <!-- Render with newlines -->
+      <p [innerHTML]="singleBlog.body | nl2br"></p>
 </div>
 </div>

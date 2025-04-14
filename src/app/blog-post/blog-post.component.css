@@ -15,3 +15,15 @@ p{
     line-height: 1.5;
     margin-bottom: 20px;
 }
+
+.blog-date{
+    font-size: 14px;
+    color: purple;
+    margin-bottom: 20px;
+}
+
+.blog-category{
+    font-size: 14px;
+    color: purple;
+    margin-bottom: 20px;
+}

@@ -1,6 +1,10 @@
-<div class="blogs-container">
+<div class="loading-container" *ngIf="loading">
+  <mat-progress-spinner mode="indeterminate"></mat-progress-spinner>
+  <p>Loading blog posts...</p>
+</div>
+
+<div class="blogs-container" *ngIf="!loading">
   <mat-card *ngFor="let blogItem of blogList" class="blog-card">
-    
     <mat-card-header class="card-header">
       <mat-card-title>
         <span class="blog-title">{{ blogItem.title }}</span>
@@ -8,16 +12,17 @@
       </mat-card-title>
     </mat-card-header>
 
-    
+    <div class="blog-meta">
+      <span class="blog-date">{{ blogItem.createdAt | date:'longDate' }}</span>
+      <span class="blog-category" *ngIf="blogItem.category">#{{ blogItem.category }}</span>
+    </div>
+
     <mat-card-content class="blog-content">
       <p>{{ blogItem.body | slice:0:150 }}...</p>
     </mat-card-content>
 
-    
     <div *ngIf="blogItem.image" class="blog-image">
       <img [src]="blogItem.image" alt="{{ blogItem.title }}" />
     </div>
-
   </mat-card>
 </div>
-

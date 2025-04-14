@@ -3,11 +3,12 @@ import { ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { environment } from '../../environments/environment';
+import { Nl2brPipe } from '../nl2br.pipe';
 
 @Component({
   selector: 'app-blog-post',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, Nl2brPipe],
   templateUrl: './blog-post.component.html',
   styleUrls: ['./blog-post.component.css']
 })
@@ -24,3 +25,18 @@ export class BlogPostComponent implements OnInit {
     });
   }
 }
+
+// CAN USE THE BELOW FOR TESTING
+  // ngOnInit(): void {
+  //   // const slug = this.route.snapshot.paramMap.get('slug');
+  
+  //   // Mock blog for testing
+  //   this.singleBlog = {
+  //     title: "Hello World",
+  //     slug: "hello-world",
+  //     category: "General",
+  //     body: "This is a test blog.\nNew lines will appear here.\nIsn't that great?",
+  //     image: null,
+  //     createdAt: new Date()
+  //   };
+  // }
