@@ -27,8 +27,7 @@ export class ProjectsComponent {
       "title": "Cliq Transactions App",
       "github": "https://github.com/kabu03/cliq-app",
       "description": 
-        `Cliq Transactions App is a full-stack web application for simulating payment transactions. The frontend is built with Angular and TypeScript, while the backend is developed using Java, Kotlin, and Spring. It provides a secure user authentication system where users can log in to view incoming and outgoing transactions, or add new transactions.<br><br>The project implements JWT-based authentication, PostgreSQL integration, and an Onion architecture to separate concerns cleanly between business logic, database interactions, and presentation layers.\n\ 
-        <br><br> Note: If the image is not clear, please right-click it and open in a new tab to see it more clearly.`,
+        `Cliq Transactions App is a full-stack web application for simulating payment transactions. The frontend is built with Angular and TypeScript, while the backend is developed using Java, Kotlin, and Spring. It provides a secure user authentication system where users can log in to view incoming and outgoing transactions, or add new transactions.<br><br>The project implements JWT-based authentication, PostgreSQL integration, and an Onion architecture to separate concerns cleanly between business logic, database interactions, and presentation layers.`,
       "screenshot": "/assets/images/cliqapp.png",
       "technologies": ["Java", "Spring Boot", "Kotlin", "PostgreSQL", "Hibernate", "JWT", "Angular", "TypeScript", "SCSS"]
   },  
