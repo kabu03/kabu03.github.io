@@ -1,27 +1,22 @@
-# KabuWebsite
+# Kabu's Portfolio Website
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.3.
+Welcome to the repository for my personal portfolio website! This site tells part of my story and projects as a developer. The frontend is built using Angular/TS/HTML/CSS and is hosted by GitHub Pages.
 
-## Development server
+- You can learn more about GitHub Pages hosting [here](https://pages.github.com/).  
+- Check out the live website here: [https://kabu03.github.io/](https://kabu03.github.io/)  
+- You can also find me on LinkedIn [here](https://www.linkedin.com/in/karam-abu-judom/).
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+#### Brief Explanation of Important Files and Folders
 
-## Code scaffolding
+- `angular.json`: This file is the primary configuration file for an Angular project. It stores information about the project's architecture, dependencies, build and test configurations, and other settings.  
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- `package.json`: This file lists the packages my project depends on, and specifies which versions of the packages to use. Uses semantic versioning rules, which you can read more about [here](https://docs.npmjs.com/about-semantic-versioning).  
 
-## Build
+- `src/`: This is where the main Angular code lives. It includes `app/`, `/assets`, etc.  
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- `.gitignore`: Use this file to avoid committing `node_modules/`, `dist/`, environment files (if any are used by Angular), etc. to GitHub  
 
-## Running unit tests
+___
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Thanks for visiting!
