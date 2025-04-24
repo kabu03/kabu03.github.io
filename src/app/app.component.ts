@@ -10,17 +10,17 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import {MatLine} from "@angular/material/core";
 import {MatIconButton} from "@angular/material/button";
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-import {NgIf} from "@angular/common";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, NgIf, RouterModule, MatSidenavModule, MatIconModule, MatButtonModule, MatToolbar, MatListModule, MatToolbarModule, MatLine, MatIconButton],
+  imports: [RouterOutlet, RouterModule, MatSidenavModule, MatIconModule, MatButtonModule, MatToolbar, MatListModule, MatToolbarModule, MatLine, MatIconButton],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent implements OnInit {
   isMobile = false;
+  isDarkMode = true;
   title = 'kabuWebsite';
 
   constructor(private breakpointObserver: BreakpointObserver) {}
@@ -29,5 +29,11 @@ export class AppComponent implements OnInit {
     this.breakpointObserver.observe([Breakpoints.Handset]).subscribe(result => {
       this.isMobile = result.matches;
     });
+  }
+ 
+  toggleTheme() {
+    this.isDarkMode = !this.isDarkMode;
+    document.body.classList.toggle('dark-theme', this.isDarkMode);
+    document.body.classList.toggle('light-theme', !this.isDarkMode);
   }
 }

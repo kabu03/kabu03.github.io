@@ -3,8 +3,10 @@
   flex-direction: column; /* Arrange cards in a column */
   align-items: center; /* Center the items horizontally */
   justify-content: center; /* Center the items vertically */
-  margin-top: 90px;
+  padding: 20px;
+  background-color: var(--background-color); /* Use CSS variables for dynamic theming */
 }
+
 .title-container {
   display: flex;
   align-items: center;
@@ -14,12 +16,15 @@
 }
 
 .project-card {
-  width:85%;
-  flex-direction: column;
-  margin-bottom: 2rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
+    background-color: var(--card-bg); /* Use CSS variables for dynamic theming */
+    color: var(--card-text); /* Use CSS variables for text color */
+    width: 80%;
+    margin-top: 70px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
 .card-header {
   background-color: #113065;
   min-height: 40px; /* Ensures a minimum height */
@@ -151,14 +156,14 @@
 
 .technologies-used {
   font-size: 0.9rem;
-  color: #555;
+  color: var(--text-color);
   margin-top: 10px;
   padding-left: 1rem;
   padding-right: 1rem;
 }
 
 .technology {
-  background-color: #eee;
+  background-color: var(--background-color);
   border-radius: 3px;
   padding: 2px 5px;
 }

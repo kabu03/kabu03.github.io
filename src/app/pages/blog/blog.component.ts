@@ -1,16 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
-import {CommonModule } from '@angular/common';
 import { BlogService } from '../../blogservice.service';
-import { MatCard, MatCardHeader, MatCardContent, MatCardTitle } from '@angular/material/card';
-import {NgFor, NgIf} from '@angular/common';
-import { RouterOutlet } from '@angular/router';
+import { LoadingTipsService } from '../../loadingservice.service';
+
+// standalone-component imports
+import { CommonModule, NgFor, NgIf } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { MatCard, MatCardContent, MatCardHeader, MatCardTitle } from '@angular/material/card';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MarkdownPipe } from '../../markdown.pipe';
 
-
-export interface BlogItem{
+export interface BlogItem {
   title: string;
   slug: string;
   category: string;
@@ -22,51 +22,79 @@ export interface BlogItem{
 @Component({
   selector: 'app-blog',
   standalone: true,
-  imports: [MatCard, MatCardContent, MatCardTitle, MatCardHeader, NgFor, NgIf, RouterOutlet, RouterModule, CommonModule, MatProgressSpinnerModule, MarkdownPipe],
+  imports: [
+    MatCard, MatCardContent, MatCardHeader, MatCardTitle,
+    NgFor, NgIf, RouterModule, CommonModule, MatProgressSpinnerModule,
+    MarkdownPipe
+  ],
   providers: [BlogService],
   templateUrl: './blog.component.html',
   styleUrls: ['./blog.component.css']
 })
-
-
-export class BlogComponent implements OnInit {
+export class BlogComponent implements OnInit, OnDestroy {
   blogList: BlogItem[] = [];
-  loading: boolean = true;
+  loading = true;
+  loadingMessage = 'This might take some time as the backend machine is currently booting up...';
+  tip = '';
 
-  constructor(private blogService: BlogService, private titleService: Title) {
-  this.titleService.setTitle('Blog');
-  }
+  private tipSub: any;
+
+  constructor(
+    private blogService: BlogService,
+    private titleService: Title,
+    public tipsSrv: LoadingTipsService  // public so template can read if desired
+  ) { this.titleService.setTitle('Blog'); }
+
   ngOnInit(): void {
-    this.blogService.getBlogs().subscribe(
-      data => {
+    // ---------- LIVE MODE ----------
+    this.tipsSrv.start();
+    this.tipSub = this.tipsSrv.tip$.subscribe(t => this.tip = t);
+
+    this.blogService.getBlogs().subscribe({
+      next: data => {
         this.blogList = data;
-        this.loading = false; // data loaded
+        this.finishLoading();
       },
-      error => {
-        this.loading = false; // even on error, stop spinner
-      }
-    );
+      error: _ => this.finishLoading()
+    });
+
+    //---------- MOCK MODE ----------
+    // Uncomment to test UI without backend
+    // this.tipsSrv.start();
+    // this.tipSub = this.tipsSrv.tip$.subscribe(t => this.tip = t);
+
+    // setTimeout(() => {
+    //   this.blogList = [
+    //     {
+    //       title: 'Hello World',
+    //       slug: 'hello-world',
+    //       category: 'General',
+    //       body: 'This is a **mock** blog.\nGreat for local testing.',
+    //       image: null,
+    //       createdAt: new Date()
+    //     },
+    //     {
+    //       title: 'Another Post',
+    //       slug: 'another-post',
+    //       category: 'Tech',
+    //       body: '*Markdown* works here too!',
+    //       image: null,
+    //       createdAt: new Date()
+    //     }
+    //   ];
+    //   this.finishLoading();
+    // }, 10000);
+    // ---------------------------------
+  }
+
+  finishLoading() {
+    this.loading = false;
+    this.tipsSrv.stop();
+    this.tipSub?.unsubscribe();
+  }
+
+  ngOnDestroy(): void {
+    this.tipsSrv.stop();
+    this.tipSub?.unsubscribe();
   }
 }
-
-// CAN USE THE BELOW FOR TESTING
-//   this.blogList = [
-//     {
-//       title: "Hello World",
-//       slug: "hello-world",
-//       category: "General",
-//       body: "This is a test blog.\nNew lines will appear here.\nIsn't that great?",
-//       image: null,
-//       createdAt: new Date()
-//     },
-//     {
-//       title: "Another Blog",
-//       slug: "another-blog",
-//       category: "Tech",
-//       body: "This is another test blog.\nIt **has** some more content.\nEnjoy!",
-//       image: null,
-//       createdAt: new Date()
-//     }
-//   ]
-// }
-// }

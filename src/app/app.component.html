@@ -2,6 +2,9 @@
   <button mat-icon-button (click)="sidenav.toggle()">
     <mat-icon>menu</mat-icon>
   </button>
+  <button mat-icon-button (click)="toggleTheme()">
+    <mat-icon>{{ isDarkMode ? 'light_mode' : 'dark_mode' }}</mat-icon>
+  </button>  
   <span class="toolbar-text">Karam Abu Judom - Portfolio Website</span>
   <span class="spacer"></span>
 </mat-toolbar>

@@ -1,6 +1,9 @@
-<div class="loading-container" *ngIf="loading">
-  <mat-progress-spinner mode="indeterminate"></mat-progress-spinner>
-  <p>Loading blog posts...</p>
+<div class = "blogComponentWrapper">
+<div *ngIf="loading" class="loading-container">
+  <mat-progress-spinner diameter="60" mode="indeterminate" color="accent"></mat-progress-spinner>
+  <p>Loading blog posts…</p>
+  <p>{{ loadingMessage }}</p>
+  <p><em>{{ tip }}</em></p>
 </div>
 
 <div class="blogs-container" *ngIf="!loading">
@@ -25,4 +28,5 @@
       <img [src]="blogItem.image" alt="{{ blogItem.title }}" />
     </div>
   </mat-card>
+</div>
 </div>

@@ -1,0 +1,151 @@
+@use '@angular/material' as mat;
+
+// Include Material core styles
+@include mat.core();
+
+// Define palettes for the light theme
+$light-theme-primary: mat.m2-define-palette(mat.$m2-indigo-palette, A400, A100, A700);
+$light-theme-accent: mat.m2-define-palette(mat.$m2-pink-palette);
+$light-theme-warn: mat.m2-define-palette(mat.$m2-red-palette);
+
+$light-theme: mat.m2-define-light-theme((
+  color: (
+    primary: $light-theme-primary,
+    accent: $light-theme-accent,
+    warn: $light-theme-warn,
+  )
+));
+
+// Define palettes for the dark theme
+$dark-theme-primary: mat.m2-define-palette(mat.$m2-deep-purple-palette, A400, A100, A700);
+$dark-theme-accent: mat.m2-define-palette(mat.$m2-amber-palette);
+$dark-theme-warn: mat.m2-define-palette(mat.$m2-red-palette);
+
+$dark-theme: mat.m2-define-dark-theme((
+  color: (
+    primary: $dark-theme-primary,
+    accent: $dark-theme-accent,
+    warn: $dark-theme-warn,
+  )
+));
+
+// Apply the light theme
+.light-theme {
+  @include mat.all-component-themes($light-theme);
+}
+
+// Apply the dark theme
+.dark-theme {
+  @include mat.all-component-themes($dark-theme);
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+body.light-theme {
+  background-color: #f4f4f4; /* Light background */
+  color: #333; /* Dark text */
+  --card-bg: #ffffff; /* White background for cards */
+  --card-text: #333333; /* Dark text for cards */
+  --background-color: #f4f4f4; /* Light background */
+}
+
+body.dark-theme {
+  background-color: #333; /* Dark background */
+  color: #f4f4f4; /* Light text */
+  --card-bg: #444444; /* Gray background for cards */
+  --card-text: #ffffff; /* White text for cards */
+  --background-color: black; /* Dark background */
+}
+
+.typical-section {
+  padding: 10px;
+  padding-top: 30px;
+  text-align: center;
+  color: black;
+}
+
+.typical-section h1 {
+  font-size: 50px;
+}
+
+.typical-section p {
+  font-size: 22px;
+  margin: 50px;
+  text-align: left;
+}
+
+
+
+/*
+-
+-
+MOBILE SPECIFIC ADJUSTMENTS 
+-
+-
+*/
+
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+    /* Show hamburger menu on small screens */
+  }
+
+  .blog {
+    font-size: 40px;
+    /* Smaller font size for mobile */
+  }
+
+  .contact-button {
+    font-size: 14px;
+    /* Smaller size for mobile */
+  }
+
+
+  .typical-section h1 {
+    padding-top: 70px;
+  }
+
+  nav ul {
+    display: none;
+    /* Hide nav links by default */
+    flex-direction: column;
+    /* Stack links vertically */
+    align-items: center;
+    /* Center them */
+  }
+
+  nav ul.show {
+    display: flex;
+    /* Show nav links when hamburger is clicked */
+  }
+
+  nav ul li {
+    margin: 10px 0;
+    /* Adds vertical space between list items on small screens */
+  }
+
+  .about-body p {
+    font-size: 15px;
+    margin: 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  header {
+    padding: 0.5rem 0;
+    /* Adjust header padding for smaller screens */
+  }
+
+  nav ul li a {
+    font-size: 1rem;
+    /* Adjust font size for smaller screens */
+  }
+}
+

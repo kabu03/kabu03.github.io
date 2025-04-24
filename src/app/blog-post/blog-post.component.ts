@@ -1,53 +1,72 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
-import { CommonModule } from '@angular/common';
 import { environment } from '../../environments/environment';
-import { Nl2brPipe } from '../nl2br.pipe';
-import { MarkdownPipe } from '../markdown.pipe';
+import { LoadingTipsService } from '../loadingservice.service';
 
+// standalone-component imports
+import { CommonModule } from '@angular/common';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MarkdownPipe } from '../markdown.pipe';
 
 @Component({
   selector: 'app-blog-post',
   standalone: true,
-  imports: [CommonModule, Nl2brPipe, MarkdownPipe],
+  imports: [CommonModule, MatProgressSpinnerModule, MarkdownPipe],
   templateUrl: './blog-post.component.html',
   styleUrls: ['./blog-post.component.css']
 })
-export class BlogPostComponent implements OnInit {
+export class BlogPostComponent implements OnInit, OnDestroy {
   singleBlog: any;
+  loading = true;
+  loadingMessage = 'Fetching the blog post… backend may be waking up.';
+  tip = '';
+  private tipSub: any;
 
-  constructor(private route: ActivatedRoute, private http: HttpClient) {}
+  constructor(
+    private route: ActivatedRoute,
+    private http: HttpClient,
+    public tipsSrv: LoadingTipsService
+  ) {}
 
   ngOnInit(): void {
-    const slug = this.route.snapshot.paramMap.get('slug'); // Get slug from URL
-
-    this.http.get(`${environment.apiUrl}/${slug}`).subscribe((data: any) => {
-      this.singleBlog = data;
+    // ---------- LIVE MODE ----------
+    this.startTips();
+    const slug = this.route.snapshot.paramMap.get('slug');
+    this.http.get(`${environment.apiUrl}/${slug}`).subscribe({
+      next: data => { this.singleBlog = data; this.finish(); },
+      error: _ => this.finish()
     });
+
+// ---------- MOCK MODE ----------
+    // this.startTips();
+    // setTimeout(() => {
+    //   this.singleBlog = {
+    //     title: 'Mock Blog',
+    //     slug: 'mock-blog',
+    //     category: 'General',
+    //     body: 'A *mock* blog post for single view testing.',
+    //     image: null,
+    //     createdAt: new Date()
+    //   };
+    //   this.finish();
+    // }, 10000);
+  //  ---------------------------------
+  }
+
+  startTips() {
+    this.tipsSrv.start();
+    this.tipSub = this.tipsSrv.tip$.subscribe(t => this.tip = t);
+  }
+
+  finish() {
+    this.loading = false;
+    this.tipsSrv.stop();
+    this.tipSub?.unsubscribe();
+  }
+
+  ngOnDestroy(): void {
+    this.tipsSrv.stop();
+    this.tipSub?.unsubscribe();
   }
 }
-
-// CAN USE THE BELOW FOR TESTING
-//   ngOnInit(): void {
-//     // const slug = this.route.snapshot.paramMap.get('slug');
-  
-//     // Mock blog for testing
-//     this.singleBlog = {
-//       title: "Hello World",
-//       slug: "hello-world",
-//       category: "General",
-//       body:
-// `This is a test blogssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssblogssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssblogssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss
-// New lines will appear here. 
-// This is a test blog. 
-
-// Isn't that great?  
-// **YO YO IS THIS BOLD** *ayy*  
-// [how was you feeling?](https://www.google.com)
-// `,
-//       image: null,
-//       createdAt: new Date()
-//     };
-//   }
-// }

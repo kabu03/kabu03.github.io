@@ -1,14 +1,16 @@
 .about-body {
-  margin-top: 100px;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 20px;
+  background-color: var(--background-color); /* Use CSS variables for dynamic theming */
 }
 
 .card {
+  background-color: var(--card-bg); /* Use CSS variables for dynamic theming */
+  color: var(--card-text); /* Use CSS variables for text color */
   width: 80%;
-  margin-bottom: 20px;
+  margin-top: 70px;
   display: flex;
   flex-direction: column;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
@@ -20,6 +22,16 @@
   font-style: italic;
   text-align: center;
   padding:10px;
+}
+
+.card-title {
+  font-style: italic;
+  font-size: 1.8rem;
+  color: white;
+  word-wrap: break-word; /* Ensures long words break properly */
+  overflow-wrap: break-word; /* Breaks long words instead of overflowing */
+  white-space: normal; /* Allows text to wrap to the next line */
+  max-width: 100%; /* Prevents text from extending too far */
 }
 
 .card-content {
