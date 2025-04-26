@@ -42,10 +42,11 @@
     display: grid;
     grid-template-columns: 1fr; /* Default: 1 column */
     gap: 24px;
-    justify-items: center;
-    padding: 0 20px;
+    /* Removed justify-items: center; */
+    padding: 20px; /* Added horizontal padding back */
     background-color: var(--background-color);
-
+    align-items: stretch; /* Make items stretch vertically */
+    /* grid-auto-rows: auto; is the default, no need to set explicitly */
   }
 
 @media screen and (min-width: 768px) {
@@ -58,13 +59,23 @@
   text-decoration: none; /* Remove underline from the link */
   color: inherit; /* Inherit text color */
   display: block; /* Make the link block-level to wrap the card */
+  height: 100%; /* Ensure it takes full height of the card */
+  
 }
 
 .blog-card {
-  width: 90%;
-  max-width: 600px;
-  margin-bottom: 24px;
+  width: 100%; /* Fill the link width */
+  height: 100%; /* Fill the link height */
+  /* Removed width: 90% and max-width: 600px */
+  margin-bottom: 0; /* Grid gap handles spacing, remove margin if not needed */
+  display: flex; /* Use flexbox for internal layout */
+  flex-direction: column; /* Stack content vertically */
+  /* Optional: Distribute space if cards stretch significantly */
+  /* justify-content: space-between; */
   transition: transform 0.2s, background-color 0.2s;
+  background-color: var(--card-bg); /* Use CSS var */
+  color: var(--card-text); /* Use CSS var */
+  box-sizing: border-box; /* Include padding/border in height/width */
 }
 
 .blog-card:hover {
@@ -74,6 +85,7 @@
 }
 
 .blog-title {
+  font-size: 2rem;
   font-weight: 700;
   margin-right: 10px;
 }
@@ -93,8 +105,11 @@
   font-weight: bold;
   margin: 0 16px; /* Some spacing around date */
   font-size: 0.85rem;
-  color: blue;
+  color: teal;
   margin-top: 8px;
+}
+.card-header, .blog-meta, .blog-content, .blog-image {
+  flex-shrink: 0; /* Prevent these sections from shrinking disproportionately */
 }
 
 .blog-date {
@@ -104,6 +119,7 @@
 
 .blog-content {
   margin: 16px;
+  flex-grow: 1;
   /* text styling */
 }
 

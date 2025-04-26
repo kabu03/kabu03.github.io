@@ -83,7 +83,7 @@ export class BlogComponent implements OnInit, OnDestroy {
     //     }
     //   ];
     //   this.finishLoading();
-    // }, 10000);
+    // }, 1000);
     // ---------------------------------
   }
 
