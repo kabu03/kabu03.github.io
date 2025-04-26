@@ -8,7 +8,6 @@
   height: 400px; /* Adjust as needed */
   margin-top: 200px;
   text-align: center;
-  color: #333;
 }
 
 .loading-container p {
@@ -19,7 +18,6 @@
 .loading-message {
   text-align: center;
   margin-top: 100px;
-  color: #555;
   font-size: 18px;
 }
 
@@ -27,7 +25,6 @@
   margin-top: 10px;
   font-style: italic;
   font-size: 16px;
-  color: #777;
 }
 
 /* ----------------- BLOG STYLES ----------------- */
@@ -40,15 +37,16 @@
   flex-direction: column;
   }
 
-.blogs-container {
-  margin-top: 120px;
-  display: grid;
-  grid-template-columns: 1fr; /* Default: 1 column */
-  gap: 24px;
-  justify-items: center;
-  padding: 0 20px;
-  background-color: var(--background-color);
-}
+  .blogs-container {
+    margin-top: 120px;
+    display: grid;
+    grid-template-columns: 1fr; /* Default: 1 column */
+    gap: 24px;
+    justify-items: center;
+    padding: 0 20px;
+    background-color: var(--background-color);
+
+  }
 
 @media screen and (min-width: 768px) {
   .blogs-container {
@@ -56,16 +54,23 @@
   }
 }
 
-.blog-card {
-  width: 100%;
-  max-width: 600px;
-}a
+.blog-card-link {
+  text-decoration: none; /* Remove underline from the link */
+  color: inherit; /* Inherit text color */
+  display: block; /* Make the link block-level to wrap the card */
+}
 
 .blog-card {
   width: 90%;
   max-width: 600px;
   margin-bottom: 24px;
-  /* Add a subtle box-shadow or border if desired */
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+.blog-card:hover {
+  transform: translateY(-5px); /* Slightly lift the card */
+  background-color: #9DB2BF;
+  cursor: pointer; /* Show pointer cursor */
 }
 
 .blog-title {
@@ -88,7 +93,7 @@
   font-weight: bold;
   margin: 0 16px; /* Some spacing around date */
   font-size: 0.85rem;
-  color: purple;
+  color: blue;
   margin-top: 8px;
 }
 
