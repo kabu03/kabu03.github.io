@@ -50,15 +50,15 @@ body {
 body.light-theme {
   background-color: #f4f4f4; /* Light background */
   color: #333; /* Dark text */
-  --card-bg: #ffffff; /* White background for cards */
-  --card-text: #333333; /* Dark text for cards */
+  --card-bg: #040133; /* White background for cards */
+  --card-text: white;
   --background-color: #f4f4f4; /* Light background */
 }
 
 body.dark-theme {
   background-color: #333; /* Dark background */
   color: #f4f4f4; /* Light text */
-  --card-bg: #444444; /* Gray background for cards */
+  --card-bg: #040133; /* Gray background for cards */
   --card-text: #ffffff; /* White text for cards */
   --background-color: black; /* Dark background */
 }

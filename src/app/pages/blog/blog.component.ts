@@ -70,7 +70,7 @@ export class BlogComponent implements OnInit, OnDestroy {
     //       slug: 'hello-world',
     //       category: 'General',
     //       body: 'This is a **mock** blog.\nGreat for local testing. SSSSSsssshhhhhh',
-    //       image: null,
+    //       image: '../../../../assets/images/cliqapp.png',
     //       createdAt: new Date()
     //     },
     //     {
@@ -78,7 +78,7 @@ export class BlogComponent implements OnInit, OnDestroy {
     //       slug: 'another-post',
     //       category: 'Tech',
     //       body: '*Markdown* works here too! sssssssssssssssssssssssssssssssssssssssss',
-    //       image: null,
+    //       image: '../../../../assets/images/bme.jpg',
     //       createdAt: new Date()
     //     }
     //   ];

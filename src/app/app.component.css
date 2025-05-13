@@ -5,8 +5,8 @@
 }
 
 a.active-link::before {
-  content: '▶'; /* Add an arrow or any symbol */
-  color: purple; /* Match the active color */
+  content: '➤'; /* Add an arrow or any symbol */
+  color: teal; /* Match the active color */
   margin-right: 8px; /* Add spacing between the icon and text */
   font-size: 1.2rem;
 }

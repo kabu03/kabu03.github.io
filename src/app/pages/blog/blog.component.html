@@ -21,7 +21,7 @@
       </div>
 
       <mat-card-content class="blog-content">
-        <div [innerHTML]="((blogItem.body | slice:0:150) + '...') | markdown"></div>
+        <div [innerHTML]="((blogItem.body | slice:0:200) + '...') | markdown"></div>
       </mat-card-content>
 
       <div *ngIf="blogItem.image" class="blog-image">
