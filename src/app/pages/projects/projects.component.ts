@@ -16,6 +16,12 @@ export class ProjectsComponent {
   }
   projects = [
     {
+      title: "Quantum Binary Classification",
+      github: "https://github.com/kabu03/quantum-binary-classification",
+      description: "This project compares the performance of classical and quantum support vector machines (SVMs) for binary classification tasks using metrics such as accuracy, precision, and F1-Score.<br><br>Working on this project was a great opportunity to learn about quantum computing and its applications in machine learning!",
+      technologies: ["Python", "Qiskit", "Scikit-learn", "Pandas", "Matplotlib"],
+    },
+    {
       "title": "Stoic Path",
       "github": "https://github.com/kabu03/stoic-path",
       "description": 

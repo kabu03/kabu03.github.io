@@ -1,37 +1,48 @@
 .projects-container {
   display: flex;
-  flex-direction: column; /* Arrange cards in a column */
-  align-items: center; /* Center the items horizontally */
-  justify-content: center; /* Center the items vertically */
+  flex-direction: column;
+  /* Arrange cards in a column */
+  align-items: center;
+  /* Center the items horizontally */
+  justify-content: center;
+  /* Center the items vertically */
   padding: 20px;
-  background-color: var(--background-color); /* Use CSS variables for dynamic theming */
+  background-color: var(--background-color);
+  /* Use CSS variables for dynamic theming */
 }
 
 .title-container {
   display: flex;
   align-items: center;
-  gap: 10px; /* Adds spacing between title and GitHub link */
+  gap: 10px;
+  /* Adds spacing between title and GitHub link */
   max-width: 100%;
   animation: fadeInText 0.3s ease-in;
 }
 
 .project-card {
-    background-color: var(--card-bg); /* Use CSS variables for dynamic theming */
-    color: var(--card-text); /* Use CSS variables for text color */
-    width: 80%;
-    margin-top: 70px;
-    display: flex;
-    flex-direction: column;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-  }
+  background-color: var(--card-bg);
+  /* Use CSS variables for dynamic theming */
+  color: var(--card-text);
+  /* Use CSS variables for text color */
+  width: 80%;
+  margin-top: 70px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
 
 .card-header {
   background-color: #113065;
-  min-height: 40px; /* Ensures a minimum height */
-  padding: 10px 15px; /* Adds padding to prevent text from touching edges */
+  min-height: 40px;
+  /* Ensures a minimum height */
+  padding: 10px 15px;
+  /* Adds padding to prevent text from touching edges */
   display: flex;
-  align-items: center; /* Aligns content vertically */
-  flex-wrap: wrap; /* Allows wrapping of text if necessary */
+  align-items: center;
+  /* Aligns content vertically */
+  flex-wrap: wrap;
+  /* Allows wrapping of text if necessary */
 }
 
 /* Project Header */
@@ -39,16 +50,20 @@
   font-style: italic;
   font-size: 1.8rem;
   color: white;
-  word-wrap: break-word; /* Ensures long words break properly */
-  overflow-wrap: break-word; /* Breaks long words instead of overflowing */
-  white-space: normal; /* Allows text to wrap to the next line */
-  max-width: 100%; /* Prevents text from extending too far */
+  word-wrap: break-word;
+  /* Ensures long words break properly */
+  overflow-wrap: break-word;
+  /* Breaks long words instead of overflowing */
+  white-space: normal;
+  /* Allows text to wrap to the next line */
+  max-width: 100%;
+  /* Prevents text from extending too far */
 }
 
 
 .github-link {
   font-size: 1.5rem;
-  color: #aad6ec;
+  color: teal;
   text-decoration: none;
   margin-left: 10px;
   transition: color 0.3s ease;
@@ -56,8 +71,10 @@
 
 /* Image Fade-in */
 .fade-in-image {
-  opacity: 0; /* Start hidden */
-  transform: translateY(10px); /* Slight downward shift */
+  opacity: 0;
+  /* Start hidden */
+  transform: translateY(10px);
+  /* Slight downward shift */
   animation: fadeInImage 0.3s ease-out forwards;
 }
 
@@ -67,6 +84,7 @@
     opacity: 0;
     transform: translateY(10px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -82,6 +100,7 @@
     opacity: 0;
     transform: translateY(-10px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -91,40 +110,76 @@
 /* Project Content */
 .project-content {
   display: flex;
-  justify-content: space-between;
-  align-items: left;
-  padding: 1rem 0;
+  /* align-items: flex-start; Align items to the top if their heights differ */
+  align-items: stretch;
+  /* Makes description and image areas potentially same height */
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  /* Removed padding-left and padding-right from here, will add to children */
 }
 
 .project-description {
   flex: 1;
+  /* Takes up the remaining space on the left */
   padding-left: 1rem;
-  padding-right: 1rem;
+  /* Padding for the description text */
+  padding-right: 1.5rem;
+  /* Space before the vertical separator */
   font-size: 19px;
+  display: flex;
+  /* To help with vertical alignment if needed, e.g., align-items: center; */
+  flex-direction: column;
+  justify-content: center;
+  /* Centers description text vertically if it's shorter */
 }
 
-/* Image Manipulation */
+/* Image Manipulation - This is the reserved section on the right */
 .project-image {
+  flex: 0 0 250px;
+  /* Do not grow, do not shrink, base width of 250px (adjust as needed) */
+  /* This width should accommodate your image (200px) + padding + border */
+  padding-left: 1.5rem;
+  /* Space after the vertical separator */
   padding-right: 1rem;
-  position: relative;
-  width: 300px;
-  height: 300px;
+  /* Padding on the far right of the card */
+  border-left: 2px solid teal;
+  /* The vertical separating line, adjust color/thickness */
+  display: flex;
+  align-items: center;
+  /* Vertically center the content (the <a> tag) */
+  justify-content: center;
+  /* Horizontally center the content (the <a> tag) */
   overflow: hidden;
+  /* Keep this */
+}
+
+/* The <a> tag acts as the direct container for the image and overlay */
+.project-image a {
+  display: flex;
+  /* Make it a flex container to center its children if needed, though overlay is absolute */
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  text-decoration: none;
+  width: 200px;
+  /* Explicit width for the clickable area / image size */
+  height: 200px;
+  /* Explicit height for the clickable area / image size */
 }
 
 .project-image img {
+  /* Ensure image fits within the 200x200 'a' tag */
   max-width: 100%;
   max-height: 100%;
-  width: 300px;
-  height: 300px;
+  width: 100%;
+  /* Make image fill the 'a' tag */
+  height: 100%;
+  /* Make image fill the 'a' tag */
+  object-fit: cover;
+  /* Or 'contain' if you don't want cropping */
   border-radius: 8px;
   border: 2px solid #000;
-}
-
-.project-image a {
-  display: block;
-  position: relative;
-  text-decoration: none;
+  filter: blur(5px);
 }
 
 .project-image .overlay {
@@ -132,20 +187,40 @@
   top: 0;
   left: 0;
   width: 100%;
+  /* Overlay covers the 'a' tag (which is 200x200) */
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.8); /* Cloudy dark overlay */
+  /* Overlay covers the 'a' tag */
   color: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
+  /* For multi-line text in overlay */
   font-size: 1.2rem;
   font-weight: bold;
   opacity: 1;
   transition: opacity 0.3s;
   border-radius: 8px;
+  /* Match image border-radius */
 }
 
-.project-image, .project-image img, .project-image .overlay {
+.overlay p {
+  margin-left: 0;
+  /* Centered text, so margin-left might not be needed */
+  padding: 5px;
+  /* Add some padding inside the overlay text */
+  color: teal;
+  -webkit-text-stroke-width: 2px;
+  /* Adjusted for potentially smaller area */
+  -webkit-text-stroke-color: #000;
+  paint-order: stroke fill;
+  font-weight: bold;
+  /* Often helps with the appearance of stroked text */
+}
+
+.project-image,
+.project-image img,
+.project-image .overlay {
   box-sizing: border-box;
 }
 
@@ -182,10 +257,10 @@ hr {
     width: 100%;
   }
 
-  
-.project-title{
-  font-size: 1.5rem;
-}
+
+  .project-title {
+    font-size: 1.5rem;
+  }
 
 }
 
@@ -195,6 +270,7 @@ hr {
     opacity: 0;
     transform: translateY(5px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -207,7 +283,18 @@ hr {
 }
 
 /* Delay Each Card to Stagger the Animations */
-.project-card:nth-child(1) { animation-delay: 0s; }
-.project-card:nth-child(2) { animation-delay: 0.2s; }
-.project-card:nth-child(3) { animation-delay: 0.4s; }
-.project-card:nth-child(4) { animation-delay: 0.6s; }
+.project-card:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.project-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.project-card:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+.project-card:nth-child(4) {
+  animation-delay: 0.6s;
+}

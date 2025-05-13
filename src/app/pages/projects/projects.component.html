@@ -21,7 +21,7 @@
       <div class="project-image" *ngIf="project.screenshot && !isMobile()">
         <a [href]="project.screenshot" target="_blank">
           <img [src]="project.screenshot" [alt]="project.title + ' Screenshot'" class="fade-in-image"/>
-          <div class="overlay animate-text">Click to view the image!</div>
+          <div class="overlay animate-text"><p>Click to view the image!</p></div>
         </a>
       </div>
     </mat-card-content>
