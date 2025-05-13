@@ -1,46 +1,49 @@
-<h2>{{pageTitle}}</h2>
-<form (ngSubmit)="onSubmit()" #blogForm="ngForm">
-  <div>
-    <label for="title">Title:</label>
-    <input type="text" id="title" required [(ngModel)]="post.title" name="title" #title="ngModel">
-    <div *ngIf="title.invalid && (title.dirty || title.touched)" class="alert alert-danger">
-      Title is required.
+<div class="admin-create-post-wrapper">
+  <h2>{{ pageTitle }}</h2>
+  <form (ngSubmit)="onSubmit()" #blogForm="ngForm">
+    <div>
+      <label for="title">Title:</label>
+      <input type="text" id="title" required [(ngModel)]="post.title" name="title" #title="ngModel">
+      <div *ngIf="title.invalid && (title.dirty || title.touched)" class="alert alert-danger">
+        Title is required.
+      </div>
     </div>
-  </div>
 
-  <div>
-    <label for="body">Body (Markdown):</label>
-    <textarea id="body" required [(ngModel)]="post.body" name="body" #bodyModel="ngModel" rows="10"></textarea>
-    <div *ngIf="bodyModel.invalid && (bodyModel.dirty || bodyModel.touched)" class="alert alert-danger">
-      Body is required.
+    <div>
+      <label for="body">Body (Markdown):</label>
+      <textarea id="body" required [(ngModel)]="post.body" name="body" #bodyModel="ngModel" rows="10"></textarea>
+      <div *ngIf="bodyModel.invalid && (bodyModel.dirty || bodyModel.touched)" class="alert alert-danger">
+        Body is required.
+      </div>
     </div>
-  </div>
 
-  <div>
-    <label for="image">Image URL:</label>
-    <input type="url" id="image" [(ngModel)]="post.image" name="image">
-  </div>
-
-  <div>
-    <label for="category">Category:</label>
-    <input type="text" id="category" [(ngModel)]="post.category" name="category">
-  </div>
-
-  <div>
-    <label for="password">Password:</label>
-    <input type="password" id="password" required [(ngModel)]="post.pw" name="password" #pw="ngModel">
-    <div *ngIf="pw.invalid && (pw.dirty || pw.touched)" class="alert alert-danger">
-      Password is required.
+    <div>
+      <label for="image">Image URL:</label>
+      <input type="url" id="image" [(ngModel)]="post.image" name="image">
     </div>
-  </div>
+
+    <div>
+      <label for="category">Category:</label>
+      <input type="text" id="category" [(ngModel)]="post.category" name="category">
+    </div>
+
+    <div>
+      <label for="password">Password:</label>
+      <input type="password" id="password" required [(ngModel)]="post.pw" name="password" #pw="ngModel">
+      <div *ngIf="pw.invalid && (pw.dirty || pw.touched)" class="alert alert-danger">
+        Password is required.
+      </div>
+    </div>
+
     <button type="submit" [disabled]="!blogForm.form.valid || (!post.pw && isEditMode && !originalSlug)">{{ submitButtonText }}</button>
-</form>
+  </form>
 
-<div *ngIf="submissionMessage" class="submission-message" [ngClass]="{'success': !submissionError, 'error': submissionError}">
-  {{ submissionMessage }}
-</div>
+  <div *ngIf="submissionMessage" class="submission-message" [ngClass]="{'success': !submissionError, 'error': submissionError}">
+    {{ submissionMessage }}
+  </div>
 
-<h3>Markdown Preview</h3>
-<div class="preview-area">
-  <markdown [data]="post.body"></markdown>
+  <h3>Preview</h3>
+  <div class="preview-area">
+    <markdown [data]="post.body"></markdown>
+  </div>
 </div>
