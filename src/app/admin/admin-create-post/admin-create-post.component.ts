@@ -29,7 +29,7 @@ export class AdminCreatePostComponent {
   submissionMessage: string | null = null;
   submissionError: boolean = false;
 
-  private apiUrl = `${environment.apiUrl}/api/blogs`;
+  private apiUrl = `${environment.apiUrl}`;
 
   constructor(private http: HttpClient) { }
 
