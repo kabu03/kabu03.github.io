@@ -6,6 +6,7 @@ import { BlogComponent } from './pages/blog/blog.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { ResumeComponent } from './pages/resume/resume.component';
 import { BlogPostComponent } from './blog-post/blog-post.component';
+import { AdminCreatePostComponent } from './admin/admin-create-post/admin-create-post.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent }, // Default to home
@@ -15,5 +16,6 @@ export const routes: Routes = [
   { path: 'contact', component: ContactComponent },
   { path: 'blog/:slug', component: BlogPostComponent }, // Single blog post
   { path: 'resume', component: ResumeComponent },
+  { path: 'admin/create-post', component:AdminCreatePostComponent },
   { path: '**', redirectTo: '' }, // Fallback to home on invalid routes
 ];
