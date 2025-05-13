@@ -17,5 +17,6 @@ export const routes: Routes = [
   { path: 'blog/:slug', component: BlogPostComponent }, // Single blog post
   { path: 'resume', component: ResumeComponent },
   { path: 'admin/create-post', component:AdminCreatePostComponent },
+  { path: 'admin/edit-post/:slug', component:AdminCreatePostComponent },
   { path: '**', redirectTo: '' }, // Fallback to home on invalid routes
 ];

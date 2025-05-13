@@ -1,4 +1,4 @@
-<h2>Create New Blog Post</h2>
+<h2>{{pageTitle}}</h2>
 <form (ngSubmit)="onSubmit()" #blogForm="ngForm">
   <div>
     <label for="title">Title:</label>
@@ -33,8 +33,7 @@
       Password is required.
     </div>
   </div>
-
-  <button type="submit" [disabled]="!blogForm.form.valid">Create Post</button>
+    <button type="submit" [disabled]="!blogForm.form.valid || (!post.pw && isEditMode && !originalSlug)">{{ submitButtonText }}</button>
 </form>
 
 <div *ngIf="submissionMessage" class="submission-message" [ngClass]="{'success': !submissionError, 'error': submissionError}">

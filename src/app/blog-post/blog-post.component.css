@@ -42,8 +42,12 @@
 
 .blogPostContainer{
     margin-top: 90px;
-    margin-left: 20px;
-    margin-right: 20px;
+    margin-left: auto; /* Center the container */
+    margin-right: auto; /* Center the container */
+    padding-left: 20px; /* Keep padding for content */
+    padding-right: 20px; /* Keep padding for content */
+    max-width: 800px; /* Add a max-width to the content container */
+    width: 100%; /* Ensure it uses available space up to max-width */
     background-color: var(--background-color);
 }
 
@@ -52,6 +56,19 @@ h1{
     text-align: center;
     font-weight: 800;
     margin-bottom: 30px;
+}
+
+/* Styles for the main image in the blog post */
+.blogPostContainer img {
+  display: block; /* Allows margin auto for horizontal centering */
+  max-width: 100%; /* Image will be at most the width of .blogPostContainer (800px) */
+  /* If 100% (i.e., 800px) is still too wide, you can use a more specific max-width here, e.g., max-width: 700px; */
+  height: auto;   /* Maintains the image's aspect ratio */
+  margin-left: auto; /* Centers the image within its container */
+  margin-right: auto; /* Centers the image within its container */
+  margin-top: 20px; /* Space above the image */
+  margin-bottom: 25px; /* Space between the image and the date/category below it */
+  border-radius: 8px; /* Optional: for rounded corners */
 }
 
 p {
