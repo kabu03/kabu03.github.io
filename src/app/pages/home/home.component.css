@@ -1,13 +1,18 @@
 .homepage-container {
+  position: relative;
   display: flex;
+  flex-direction: column; /* Align items vertically */
   align-items: center;
   justify-content: center;
   background: url('/assets/images/computer_and_electronics.png');
   background-size: cover;
-  height: 100vh; /* Make sure it's full height */
+  background-position: center center;
+  height: 100%;
   text-align: center;
   opacity: 0;
-  animation: fadeInUp 1.5s ease-out forwards;
+  animation: fadeInUp 0.5s ease-out forwards;
+  padding: 20px; /* Add some padding for smaller screens */
+  box-sizing: border-box; /* Include padding in height calculation */
 }
 
 .homepage-overlay {
@@ -16,38 +21,63 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.85); /* Dark overlay, adjust opacity as needed */
+  background-color: rgba(0, 0, 0, 0.92); /* Slightly adjusted overlay for potentially better text readability */
+}
+
+.profile-image-container {
+  perspective: 1000px;
 }
 
 .profile-image {
   width: 100%;
-  max-width: 300px;
-  border-radius: 50%;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  max-width: 400px;
+  border-radius: 20px;
+  transform: rotateY(5deg);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.profile-image:hover {
+  transform: rotateY(0deg) scale(1.05);
+  box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.5);
+  cursor: crosshair /* Change cursor to pointer */
 }
 
 /* Ensure text stays responsive */
 h1 {
-  font-size: clamp(24px, 5vw, 48px);
+  font-size: clamp(2rem, 5vw, 3rem); /* Adjusted clamp values */
   color: beige;
+  margin-top: 0; /* Remove any default top margin if present */
 }
 
 p {
-  font-size: clamp(14px, 2vw, 20px);
+  font-size: clamp(1rem, 2.5vw, 1.25rem); /* Adjusted clamp values */
   color: beige;
+  max-width: 550px; /* Constrain paragraph width for readability */
+  margin-left: auto; /* Center the paragraph if max-width is applied */
+  margin-right: auto; /* Center the paragraph if max-width is applied */
 }
 
-@media (max-width: 768px) {  /* Applies only on small screens */
-  .homepage-text {
-    margin-top: 20px;
-    margin-left: 5px;
-    margin-right: 5px;
+/* Removed .text class as it's no longer used in HTML */
+
+@media (max-width: 768px) {
+  .profile-image {
+    max-width: 250px; /* Slightly smaller image on small screens */
+  }
+  h1 {
+    font-size: clamp(1.8rem, 6vw, 2.5rem);
+  }
+  p {
+    font-size: clamp(0.9rem, 3vw, 1.1rem);
+  }
+  .homepage-container {
+    padding: 15px; /* Adjust padding for smaller screens */
   }
 }
 
 @keyframes fadeInUp {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from { opacity: 0; transform: translateY(20px); } /* Added slight Y transform for effect */
+  to { opacity: 1; transform: translateY(0); }
 }
 
 
