@@ -105,16 +105,6 @@
   animation: fadeIn 1s ease-in-out 2s forwards;
 }
 
-/* Friendly Intro Text */
-.contact-intro {
-  font-size: 20px;
-  font-weight: 400;
-  color: #ddd;
-  margin-bottom: 15px;
-  animation: fadeIn 1.5s ease-in-out 0.5s forwards;
-  opacity: 0;
-}
-
 /* Waving Hand Animation */
 .wave {
   display: inline-block;
@@ -127,19 +117,6 @@
 }
 
 
-/* Funny Joke */
-.contact-joke {
-  font-size: 18px;
-  font-weight: 500;
-  color: #bbb;
-  margin-top: 20px;
-  font-style: italic;
-  animation: fadeIn 1.5s ease-in-out 2.5s forwards;
-  opacity: 0;
-}
-
-
-/* Fade-In Animation */
 @keyframes fadeIn {
   from {
       opacity: 0;
@@ -151,7 +128,6 @@
   }
 }
 
-/* Responsive Fix */
 @media (max-width: 768px) {
   .contact-card {
       width: 90%;

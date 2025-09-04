@@ -1,7 +1,7 @@
 .homepage-container {
   position: relative;
   display: flex;
-  flex-direction: column; /* Align items vertically */
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   background: url('/assets/images/computer_and_electronics.png');
@@ -11,8 +11,8 @@
   text-align: center;
   opacity: 0;
   animation: fadeInUp 0.5s ease-out forwards;
-  padding: 20px; /* Add some padding for smaller screens */
-  box-sizing: border-box; /* Include padding in height calculation */
+  padding: 20px;
+  box-sizing: border-box;
 }
 
 .homepage-overlay {
@@ -21,64 +21,76 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.92); /* Slightly adjusted overlay for potentially better text readability */
-}
-
-.profile-image-container {
-  perspective: 1000px;
+  background-color: rgba(0, 0, 0, 0.92);
+  /* Slightly adjusted overlay for potentially better text readability */
 }
 
 .profile-image {
   width: 100%;
   max-width: 400px;
-  border-radius: 20px;
-  transform: rotateY(5deg);
+  border-radius: 200px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
 }
 
-.profile-image:hover {
-  transform: rotateY(0deg) scale(1.05);
-  box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.5);
-  cursor: crosshair /* Change cursor to pointer */
-}
-
-/* Ensure text stays responsive */
 h1 {
-  font-size: clamp(2rem, 5vw, 3rem); /* Adjusted clamp values */
+  font-size: clamp(2rem, 5vw, 4rem);
   color: beige;
-  margin-top: 0; /* Remove any default top margin if present */
+  margin-top: 0;
 }
 
 p {
-  font-size: clamp(1rem, 2.5vw, 1.25rem); /* Adjusted clamp values */
+  font-size: clamp(1rem, 2.5vw, 2rem);
   color: beige;
-  max-width: 550px; /* Constrain paragraph width for readability */
-  margin-left: auto; /* Center the paragraph if max-width is applied */
-  margin-right: auto; /* Center the paragraph if max-width is applied */
+  max-width: 550px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-/* Removed .text class as it's no longer used in HTML */
+.hero-stack {
+  display: flex;
+  flex-direction: column !important;
+  align-items: center;
+  text-align: center;
+  gap: clamp(20px, 4vw, 36px);
+}
+
+.hero-stack .profile-image {
+  display: block;
+  margin: 0 auto;
+}
 
 @media (max-width: 768px) {
-  .profile-image {
-    max-width: 250px; /* Slightly smaller image on small screens */
+  .hero-stack {
+    gap: clamp(24px, 6vw, 48px);
   }
+
+  .profile-image {
+    margin-bottom: 30px;
+    max-width: 250px;
+  }
+
   h1 {
     font-size: clamp(1.8rem, 6vw, 2.5rem);
   }
+
   p {
     font-size: clamp(0.9rem, 3vw, 1.1rem);
   }
+
   .homepage-container {
-    padding: 15px; /* Adjust padding for smaller screens */
+    padding: 15px;
   }
 }
 
 @keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(20px); } /* Added slight Y transform for effect */
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  /* Added slight Y transform for effect */
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
-
-
-

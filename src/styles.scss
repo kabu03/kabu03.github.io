@@ -1,33 +1,47 @@
-@use '@angular/material' as mat;
+@use "@angular/material" as mat;
 
 // Include Material core styles
 @include mat.core();
 
 // Define palettes for the light theme
-$light-theme-primary: mat.m2-define-palette(mat.$m2-indigo-palette, A400, A100, A700);
+$light-theme-primary: mat.m2-define-palette(
+  mat.$m2-indigo-palette,
+  A400,
+  A100,
+  A700
+);
 $light-theme-accent: mat.m2-define-palette(mat.$m2-pink-palette);
 $light-theme-warn: mat.m2-define-palette(mat.$m2-red-palette);
 
-$light-theme: mat.m2-define-light-theme((
-  color: (
-    primary: $light-theme-primary,
-    accent: $light-theme-accent,
-    warn: $light-theme-warn,
+$light-theme: mat.m2-define-light-theme(
+  (
+    color: (
+      primary: $light-theme-primary,
+      accent: $light-theme-accent,
+      warn: $light-theme-warn,
+    ),
   )
-));
+);
 
 // Define palettes for the dark theme
-$dark-theme-primary: mat.m2-define-palette(mat.$m2-deep-purple-palette, A400, A100, A700);
+$dark-theme-primary: mat.m2-define-palette(
+  mat.$m2-deep-purple-palette,
+  A400,
+  A100,
+  A700
+);
 $dark-theme-accent: mat.m2-define-palette(mat.$m2-amber-palette);
 $dark-theme-warn: mat.m2-define-palette(mat.$m2-red-palette);
 
-$dark-theme: mat.m2-define-dark-theme((
-  color: (
-    primary: $dark-theme-primary,
-    accent: $dark-theme-accent,
-    warn: $dark-theme-warn,
+$dark-theme: mat.m2-define-dark-theme(
+  (
+    color: (
+      primary: $dark-theme-primary,
+      accent: $dark-theme-accent,
+      warn: $dark-theme-warn,
+    ),
   )
-));
+);
 
 // Apply the light theme
 .light-theme {
@@ -48,19 +62,31 @@ body {
 }
 
 body.light-theme {
-  background-color: #f4f4f4; /* Light background */
-  color: #333; /* Dark text */
-  --card-bg: #040133; /* White background for cards */
-  --card-text: white;
-  --background-color: #f4f4f4; /* Light background */
+  background-color: #f4f4f4;
+  color: #333;
+  --card-bg: #040133;
+  --card-text: #ffffff;
+  --background-color: #f4f4f4;
+
+  /* Add/override */
+  --text-color: #222; /* global text for light theme */
+  --chip-bg: #e9eef7; /* light chip background */
+  --chip-text: #0b1330; /* dark text on light chip */
+  --chip-border: rgba(0, 0, 0, 0.15);
 }
 
 body.dark-theme {
-  background-color: #333; /* Dark background */
-  color: #f4f4f4; /* Light text */
-  --card-bg: #040133; /* Gray background for cards */
-  --card-text: #ffffff; /* White text for cards */
-  --background-color: black; /* Dark background */
+  background-color: #333;
+  color: #f4f4f4;
+  --card-bg: #040133;
+  --card-text: #ffffff;
+  --background-color: black;
+
+  /* Add/override */
+  --text-color: #f4f4f4; /* global text for dark theme */
+  --chip-bg: rgba(255, 255, 255, 0.12); /* dark chip background */
+  --chip-text: #ffffff; /* light text on dark chip */
+  --chip-border: rgba(255, 255, 255, 0.25);
 }
 
 .typical-section {
@@ -80,8 +106,6 @@ body.dark-theme {
   text-align: left;
 }
 
-
-
 /*
 -
 -
@@ -89,7 +113,6 @@ MOBILE SPECIFIC ADJUSTMENTS
 -
 -
 */
-
 
 @media (max-width: 768px) {
   .hamburger {
@@ -106,7 +129,6 @@ MOBILE SPECIFIC ADJUSTMENTS
     font-size: 14px;
     /* Smaller size for mobile */
   }
-
 
   .typical-section h1 {
     padding-top: 70px;
@@ -148,4 +170,3 @@ MOBILE SPECIFIC ADJUSTMENTS
     /* Adjust font size for smaller screens */
   }
 }
-
