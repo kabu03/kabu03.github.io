@@ -1,29 +1,45 @@
 <mat-toolbar color="primary">
-  <button mat-icon-button (click)="sidenav.toggle()">
+  <button mat-icon-button (click)="sidenav.toggle()" *ngIf="isMobile">
     <mat-icon>menu</mat-icon>
   </button>
   <button mat-icon-button (click)="toggleTheme()">
     <mat-icon>{{ isDarkMode ? 'light_mode' : 'dark_mode' }}</mat-icon>
-  </button>  
+  </button>
   <span class="toolbar-text">Karam Abu Judom - Portfolio Website</span>
   <span class="spacer"></span>
+
+  <div *ngIf="!isMobile" class="desktop-nav">
+    <a mat-button routerLink="/" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">
+      <i class="fa-solid fa-house"></i> Home
+    </a>
+    <a mat-button routerLink="/about" routerLinkActive="active-link">
+      <i class="fa-solid fa-user"></i> About
+    </a>
+    <a mat-button routerLink="/projects" routerLinkActive="active-link">
+      <i class="fa-solid fa-laptop-code"></i> Projects
+    </a>
+    <a mat-button href="https://kabu.bearblog.dev/blog/" target="_blank">
+      <i class="fa-solid fa-pen-to-square"></i> Blog
+    </a>
+    <a mat-button routerLink="/contact" routerLinkActive="active-link">
+      <i class="fa-solid fa-phone"></i> Contact
+    </a>
+    <a mat-button routerLink="/resume" routerLinkActive="active-link">
+      <i class="fa-solid fa-file"></i> Resume
+    </a>
+  </div>
 </mat-toolbar>
 
 <mat-sidenav-container fullscreen class="sidenav-container">
-  <mat-sidenav
-    #sidenav
-    [mode]="isMobile ? 'over' : 'side'"
-    [opened]="!isMobile"
-    class="sidenav">
-    
+  <mat-sidenav #sidenav [mode]="'over'" [opened]="false" class="sidenav">
+
     <mat-nav-list>
       <div class="navItems">
 
         <!-- Close sidenav only on mobile by checking `isMobile` -->
         <mat-list-item (click)="isMobile ? sidenav.close() : null">
-          <a matLine routerLink="/" routerLinkActive="active-link"
-          [routerLinkActiveOptions]="{ exact: true }"
-          class="itemText">
+          <a matLine routerLink="/" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }"
+            class="itemText">
             <i class="fa-solid fa-house"></i> Home
           </a>
         </mat-list-item>
@@ -44,7 +60,7 @@
 
 
         <mat-list-item (click)="isMobile ? sidenav.close() : null">
-          <a matLine routerLink="/blog" routerLinkActive="active-link" class="itemText">
+          <a matLine href="https://kabu.bearblog.dev/blog/" class="itemText">
             <i class="fa-solid fa-pen-to-square"></i> Blog
           </a>
         </mat-list-item>

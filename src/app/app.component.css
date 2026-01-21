@@ -4,28 +4,54 @@
   height: 100%;
 }
 
-a.active-link::before {
-  content: '➤'; /* Add an arrow or any symbol */
-  color: teal; /* Match the active color */
-  margin-right: 8px; /* Add spacing between the icon and text */
+/* Sidenav Active Link Style */
+mat-sidenav a.active-link::before {
+  content: '➤';
+  /* Add an arrow or any symbol */
+  color: teal;
+  /* Match the active color */
+  margin-right: 8px;
+  /* Add spacing between the icon and text */
   font-size: 1.2rem;
 }
 
+/* Desktop Nav Active Link Style */
+.desktop-nav a.active-link {
+  color: #64ffda;
+  /* Teal-ish color for active state */
+  border-bottom: 2px solid #64ffda;
+  border-radius: 0;
+}
+
 mat-toolbar {
-  position:fixed;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 2;
-  background-color: #040133; /* Adjust the toolbar color */
+  background-color: #040133;
+  /* Adjust the toolbar color */
 }
 
 .toolbar-text {
   color: white;
-  font-size: clamp(14px, 3vw, 28px); /* Makes text scale dynamically */
-  white-space: nowrap; /* Prevents wrapping */
+  font-size: clamp(14px, 3vw, 28px);
+  /* Makes text scale dynamically */
+  white-space: nowrap;
+  /* Prevents wrapping */
   overflow: hidden;
-  text-overflow: ellipsis; /* Adds '...' if text is too long */
+  text-overflow: ellipsis;
+  /* Adds '...' if text is too long */
+}
+
+.desktop-nav a {
+  color: white;
+  margin-left: 8px;
+  font-size: 16px;
+}
+
+.desktop-nav a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 .spacer {
@@ -33,7 +59,8 @@ mat-toolbar {
 }
 
 mat-sidenav {
-  width: 170px; /* Adjust the width as needed */
+  width: 170px;
+  /* Adjust the width as needed */
   background-color: #040133;
   color: #040133;
   border-radius: 0%;
@@ -41,7 +68,7 @@ mat-sidenav {
 
 mat-sidenav-content {
   background: #f4f4f9;
-  flex-grow:1;
+  flex-grow: 1;
 }
 
 mat-nav-list mat-list-item {
@@ -59,8 +86,8 @@ mat-nav-list mat-list-item {
   text-decoration: none;
 }
 
-.fa-solid{
-padding-right: 5px;
+.fa-solid {
+  padding-right: 5px;
 }
 
 mat-nav-list mat-list-item a {
@@ -78,14 +105,15 @@ mat-nav-list mat-list-item:hover {
 /* Mobile responsiveness */
 @media (max-width: 768px) {
   mat-sidenav {
-    width: 100vw; /* Full width on mobile */
+    width: 100vw;
+    /* Full width on mobile */
   }
 
   mat-sidenav-content {
     margin-left: 0;
   }
-  .toolbar-text{
+
+  .toolbar-text {
     font-size: 20px;
   }
 }
-  
