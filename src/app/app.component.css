@@ -18,8 +18,7 @@ mat-sidenav a.active-link::before {
 /* Desktop Nav Active Link Style */
 .desktop-nav a.active-link {
   color: #64ffda;
-  /* Teal-ish color for active state */
-  border-bottom: 2px solid #64ffda;
+  border-bottom: 2px solid #64ffda; /* Teal-ish color for active state */
   border-radius: 0;
 }
 
@@ -77,10 +76,6 @@ mat-sidenav-content {
 
 mat-nav-list mat-list-item {
   padding: 15px 20px;
-}
-
-.navItems {
-  margin-top: 55px;
 }
 
 .itemText {
