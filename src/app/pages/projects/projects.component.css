@@ -25,7 +25,7 @@
   /* Use CSS variables for dynamic theming */
   color: var(--card-text);
   /* Use CSS variables for text color */
-  width: 80%;
+  width: 60%;
   margin-top: 70px;
   display: flex;
   flex-direction: column;
@@ -35,19 +35,15 @@
 .card-header {
   background-color: #113065;
   min-height: 40px;
-  /* Ensures a minimum height */
   padding: 10px 15px;
-  /* Adds padding to prevent text from touching edges */
   display: flex;
   align-items: center;
-  /* Aligns content vertically */
   flex-wrap: wrap;
-  /* Allows wrapping of text if necessary */
 }
 
 /* Project Header */
 .project-title {
-  font-style: italic;
+  padding-left: 15px;
   font-size: 1.8rem;
   color: white;
   word-wrap: break-word;

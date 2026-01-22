@@ -41,7 +41,7 @@ export class ProjectsComponent {
       title: "Pipes in the Desert",
       github: "https://github.com/kabu03/plumbers-and-saboteurs",
       description:
-        "Pipes in the Desert is a Java-based game developed by five students. In this game, two teams—plumbers and saboteurs—compete strategically to win. It combines elements of strategy and teamwork.\
+        "Pipes in the Desert is a Java-based game developed by five students. In this game, two teams, plumbers and saboteurs, compete strategically to win. It combines elements of strategy and teamwork.\
         <br><br>Plumbers attempt to use the pipe system to transport water from the spring to the cisterns through the pipe system in the harsh desert, while saboteurs try to prevent them\n\
         from doing so by puncturing pipes and changing the direction of the pumped water. <br><br>The water leaked through the desert and the water that reached the cisterns are displayed on the screen and compared at the end of the timer\
         thus determining the winner.",
@@ -50,7 +50,7 @@ export class ProjectsComponent {
     },
     {
       title: "GDSCommander (Project Lead)",
-      description: "A discord bot programmed in Python that assists 130+ members of GDSCBME (Google Developer Student Club - Budapest University of Technology and Economics) in GDSC-related inquiries and can give relevant information.\
+      description: "GDSCommander is a discord bot programmed in Python that assists 130+ members of GDSCBME (Google Developer Student Club - Budapest University of Technology and Economics) in GDSC-related inquiries.\
       <br><br>So far, the bot can be used with 15 distinct commands, including trivia, event information, and more.",
       screenshot: "/assets/images/gdscommander.png",
       screenshotClass: "gdscommander-screenshot",

@@ -46,8 +46,12 @@ mat-toolbar {
 
 .desktop-nav a {
   color: white;
-  margin-left: 8px;
-  font-size: 16px;
+  margin-left: 15px;
+  /* Increased spacing */
+  font-size: 20px;
+  /* Larger text */
+  padding: 0 25px;
+  /* Wider buttons */
 }
 
 .desktop-nav a:hover {

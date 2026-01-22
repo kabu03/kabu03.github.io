@@ -18,14 +18,8 @@
     <a mat-button routerLink="/projects" routerLinkActive="active-link">
       <i class="fa-solid fa-laptop-code"></i> Projects
     </a>
-    <a mat-button href="https://kabu.bearblog.dev/blog/" target="_blank">
-      <i class="fa-solid fa-pen-to-square"></i> Blog
-    </a>
     <a mat-button routerLink="/contact" routerLinkActive="active-link">
       <i class="fa-solid fa-phone"></i> Contact
-    </a>
-    <a mat-button routerLink="/resume" routerLinkActive="active-link">
-      <i class="fa-solid fa-file"></i> Resume
     </a>
   </div>
 </mat-toolbar>
@@ -60,22 +54,8 @@
 
 
         <mat-list-item (click)="isMobile ? sidenav.close() : null">
-          <a matLine href="https://kabu.bearblog.dev/blog/" class="itemText">
-            <i class="fa-solid fa-pen-to-square"></i> Blog
-          </a>
-        </mat-list-item>
-
-
-        <mat-list-item (click)="isMobile ? sidenav.close() : null">
           <a matLine routerLink="/contact" routerLinkActive="active-link" class="itemText">
             <i class="fa-solid fa-phone"></i> Contact
-          </a>
-        </mat-list-item>
-
-
-        <mat-list-item (click)="isMobile ? sidenav.close() : null">
-          <a matLine routerLink="/resume" routerLinkActive="active-link" class="itemText">
-            <i class="fa-solid fa-file"></i> Resume
           </a>
         </mat-list-item>
 

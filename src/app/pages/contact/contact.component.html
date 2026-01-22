@@ -3,21 +3,57 @@
     <div class="container d-flex justify-content-center align-items-center min-vh-100">
         <div class="card contact-card text-center">
             <div class="card-body">
-                
+
                 <h1 class="contact-title">Contact Me <span class="wave">👋</span></h1>
 
-                <div class="contact-buttons">
-                    <a href="mailto:karam.abujudom@gmail.com" class="contact-button email animate-fade-in">
-                        <i class="fas fa-envelope"></i> Email
-                    </a>
-                    <a href="https://www.linkedin.com/in/karam-abu-judom/" class="contact-button linkedin animate-fade-in">
+                <!-- Contact Form Section -->
+                <div *ngIf="!showSuccessMessage; else successTemplate" class="contact-form-container">
+                    <form (ngSubmit)="onSubmit()" #contactForm="ngForm" class="contact-form">
+                        <div class="form-group">
+                            <input type="text" name="name" [(ngModel)]="formData.name" required placeholder="Your Name"
+                                class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" [(ngModel)]="formData.email" required email
+                                placeholder="Your Email" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <textarea name="message" [(ngModel)]="formData.message" required placeholder="Your Message"
+                                class="form-control" rows="5"></textarea>
+                        </div>
+                        <button type="submit" [disabled]="!contactForm.form.valid || isLoading"
+                            class="contact-button submit-btn">
+                            {{ isLoading ? 'Sending...' : 'Send Message' }} <i class="fas fa-paper-plane"
+                                style="margin-left: 8px;"></i>
+                        </button>
+                    </form>
+                    <div *ngIf="errorMessage" class="error-message">
+                        {{ errorMessage }}
+                    </div>
+                </div>
+
+                <ng-template #successTemplate>
+                    <div class="success-message">
+                        <h2>Thanks! I'll be in touch soon.</h2>
+                        <button (click)="resetForm()" class="contact-button submit-btn">Send another message</button>
+                    </div>
+                </ng-template>
+
+                <div class="contact-buttons-footer">
+                    <a href="https://www.linkedin.com/in/karam-abu-judom/"
+                        class="contact-button linkedin animate-fade-in">
                         <i class="fab fa-linkedin"></i> LinkedIn
                     </a>
                     <a href="https://github.com/kabu03" class="contact-button github animate-fade-in">
                         <i class="fab fa-github"></i> GitHub
                     </a>
-                    
                 </div>
+
+                <!-- Extra Note for Resume -->
+                <div class="resume-note" style="margin-top: 20px; color: rgba(255, 255, 255, 0.7); font-size: 14px;">
+                    <p><em>Resume available upon request.</em></p>
+                </div>
+
             </div>
         </div>
     </div>

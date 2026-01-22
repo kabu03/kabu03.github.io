@@ -9,10 +9,10 @@
   flex-direction: column;
   text-align: center;
   background-color: black;
-  background-image: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 25%, transparent 25%), 
-                    linear-gradient(225deg, rgba(255, 255, 255, 0.05) 25%, transparent 25%), 
-                    linear-gradient(45deg, rgba(255, 255, 255, 0.05) 25%, transparent 25%), 
-                    linear-gradient(315deg, rgba(255, 255, 255, 0.05) 25%, transparent 25%);
+  background-image: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 25%, transparent 25%),
+    linear-gradient(225deg, rgba(255, 255, 255, 0.05) 25%, transparent 25%),
+    linear-gradient(45deg, rgba(255, 255, 255, 0.05) 25%, transparent 25%),
+    linear-gradient(315deg, rgba(255, 255, 255, 0.05) 25%, transparent 25%);
   background-size: 20px 20px;
   background-repeat: repeat;
 }
@@ -33,19 +33,29 @@
   overflow: hidden;
   white-space: nowrap;
   display: inline-block;
-  border-right: 3px solid white; /* Cursor effect */
+  border-right: 3px solid white;
+  /* Cursor effect */
   animation: typing 2s steps(15, end) forwards, bounceIn 1.5s ease-in-out 2s forwards, hideCursor 0.1s 2.2s forwards;
 }
 
 /* Hide Cursor After Typing */
 @keyframes hideCursor {
-  to { border-right: none; }
+  to {
+    border-right: none;
+  }
 }
 
 /* Typing Effect */
 @keyframes typing {
-  from { width: 0; opacity: 1; }
-  to { width: 100%; opacity: 1; }
+  from {
+    width: 0;
+    opacity: 1;
+  }
+
+  to {
+    width: 100%;
+    opacity: 1;
+  }
 }
 
 /* Bounce-In Effect After Typing
@@ -56,11 +66,13 @@
 } */
 
 /* Contact Buttons - Fade-in Cascade Effect */
-.contact-buttons {
+/* .contact-buttons class is replaced by .contact-buttons-footer for social links */
+.contact-buttons-footer {
   display: flex;
-  flex-direction: column;
   gap: 15px;
   align-items: center;
+  justify-content: center;
+  margin-top: 20px;
 }
 
 /* Individual Contact Button */
@@ -112,27 +124,131 @@
 }
 
 @keyframes wave {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(20deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(20deg);
+  }
 }
 
 
 @keyframes fadeIn {
   from {
-      opacity: 0;
-      transform: translateY(20px);
+    opacity: 0;
+    transform: translateY(20px);
   }
+
   to {
-      opacity: 1;
-      transform: translateY(0);
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
 @media (max-width: 768px) {
   .contact-card {
-      width: 90%;
+    width: 90%;
   }
+
   .contact-title {
-      font-size: 30px;
+    font-size: 30px;
   }
+}
+
+/* Contact Form Styles */
+.contact-form-container {
+  width: 100%;
+  max-width: 500px;
+  /* Limit form width */
+  margin: 0 auto 30px auto;
+  /* Center it */
+  animation: fadeIn 1s ease-in-out;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-group {
+  width: 100%;
+}
+
+.form-control {
+  width: 100%;
+  padding: 12px 15px;
+  border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+  /* Ensure padding doesn't affect width */
+}
+
+.form-control::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: #64ffda;
+  /* Teal accent */
+  background-color: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 8px rgba(100, 255, 218, 0.3);
+}
+
+/* Submit Button */
+.submit-btn {
+  width: 100%;
+  background-color: #2e7d32;
+  /* Green for submit */
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+  font-weight: bold;
+  opacity: 1;
+  /* Override default 0 from .contact-button */
+  animation: fadeIn 1s ease-in-out 0.5s forwards;
+}
+
+.submit-btn:hover {
+  background-color: #388e3c;
+  transform: scale(1.02);
+}
+
+.submit-btn:disabled {
+  background-color: #555;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Success & Error Messages */
+.success-message {
+  color: #64ffda;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.success-message h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.error-message {
+  color: #ff5252;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+/* Footer layout for social buttons */
+.contact-buttons-footer {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+  flex-wrap: wrap;
 }
