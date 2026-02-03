@@ -3,13 +3,16 @@
   flex-direction: column;
   align-items: center;
   padding: 20px;
-  background-color: var(--background-color); /* Use CSS variables for dynamic theming */
+  background-color: var(--background-color);
+  /* Use CSS variables for dynamic theming */
 }
 
 .card {
-  background-color: var(--card-bg); /* Use CSS variables for dynamic theming */
-  color: var(--card-text); /* Use CSS variables for text color */
-  width: 50%;
+  background-color: var(--card-bg);
+  /* Use CSS variables for dynamic theming */
+  color: var(--card-text);
+  /* Use CSS variables for text color */
+  width: 65%;
   margin-top: 70px;
   display: flex;
   flex-direction: column;
@@ -27,10 +30,14 @@
   padding-left: 15px;
   font-size: 1.8rem;
   color: white;
-  word-wrap: break-word; /* Ensures long words break properly */
-  overflow-wrap: break-word; /* Breaks long words instead of overflowing */
-  white-space: normal; /* Allows text to wrap to the next line */
-  max-width: 100%; /* Prevents text from extending too far */
+  word-wrap: break-word;
+  /* Ensures long words break properly */
+  overflow-wrap: break-word;
+  /* Breaks long words instead of overflowing */
+  white-space: normal;
+  /* Allows text to wrap to the next line */
+  max-width: 100%;
+  /* Prevents text from extending too far */
 }
 
 .card-content {
@@ -47,9 +54,66 @@
 }
 
 .card-content-image img {
-  max-width: 300px;
+  max-width: 250px;
   border-radius: 10px;
   border: 2px solid black;
+}
+
+.tech-stack {
+  flex-direction: column;
+  align-items: stretch;
+  gap: 20px;
+}
+
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(220px, 1fr));
+  gap: 10px;
+  align-items: stretch;
+  overflow-x: auto;
+  padding-bottom: 6px;
+}
+
+.tech-group {
+  background: rgba(17, 48, 101, 0.06);
+  border: 1px solid rgba(17, 48, 101, 0.15);
+  border-radius: 12px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.tech-group h3 {
+  margin: 0 0 12px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #64ffda;
+  letter-spacing: 0.3px;
+}
+
+.tech-items {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  flex: 1;
+}
+
+.tech-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 10px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.6);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  font-weight: 600;
+  color: #1b1f2a;
+}
+
+.tech-item img {
+  width: 26px;
+  height: 26px;
 }
 
 /* General fade-in effect */
@@ -63,9 +127,11 @@
 .card:nth-child(1) {
   animation-delay: 0.2s;
 }
+
 .card:nth-child(2) {
   animation-delay: 0.4s;
 }
+
 .card:nth-child(3) {
   animation-delay: 0.6s;
 }
@@ -91,6 +157,7 @@
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -98,10 +165,14 @@
 }
 
 .cropped-img {
-  width: 250px; /* Desired width */
-  height: 300px; /* Desired height */
-  object-fit: cover; /* Keeps aspect ratio, crops excess */
-  object-position: top; /* Optional: Focus on the center (default), top, etc. */
+  width: 250px;
+  /* Desired width */
+  height: 300px;
+  /* Desired height */
+  object-fit: cover;
+  /* Keeps aspect ratio, crops excess */
+  object-position: top;
+  /* Optional: Focus on the center (default), top, etc. */
 }
 
 /* Mobile Styling */
@@ -111,33 +182,38 @@
   }
 
   .card-content {
-    flex-direction: column; /* Stack text and image vertically */
+    flex-direction: column;
+    /* Stack text and image vertically */
     text-align: center;
   }
 
   .card-content-text {
-    margin-right: 0; /* Reset margin on mobile */
-    margin-bottom: 20px; /* Add spacing between text and image */
+    margin-right: 0;
+    /* Reset margin on mobile */
+    margin-bottom: 20px;
+    /* Add spacing between text and image */
   }
 
-  .card-content-text p{
+  .card-content-text p {
     font-size: 18px;
   }
 
   .card-content-image img {
     max-width: 100%;
   }
+
   .about-body {
     margin-top: 50px;
   }
-}.blog-link {
-    color: purple;
-    font-weight: bold;
-    text-decoration: none;
-    transition: color 0.3s ease;
-  }
-  
-  .blog-link:hover {
-    color: blue;
-    text-decoration: underline;
-  }
+}
+
+.blog-link {
+  color: purple;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.blog-link:hover {
+  text-decoration: underline;
+}
