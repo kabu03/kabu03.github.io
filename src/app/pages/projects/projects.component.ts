@@ -16,38 +16,33 @@ export class ProjectsComponent {
   }
   projects = [
     {
+      title: "AI-Powered Traffic Anomaly Detection System",
+      github: "https://github.com/kabu03/traffic-anomaly-detection-system",
+      description: "An end-to-end Machine Learning pipeline for detecting anomalies in urban traffic flow. This project conducts a comparative analysis of Statistical, Traditional Machine Learning, and Deep Learning approaches, evaluating their performance across varying feature sets and architectural scopes (Global vs. Local).",
+      technologies: ["Python", "TensorFlow", "Keras", "Scikit-learn", "Streamlit"],
+      screenshot: "/assets/images/ai-powered-traffic-ad-system.png",
+    },
+    {
+      title: "TSAD Benchmark Suite",
+      github: "https://github.com/kabu03/tsad-benchmark",
+      description: "A unified framework for Time Series Anomaly Detection (TSAD) research that systematically evaluates anomaly detection algorithms on time-series data.",
+      technologies: ["Python", "Docker", "MLflow", "TensorFlow", "Keras", "Scikit-learn"],
+      screenshot: "/assets/images/tsad-benchmark.png",
+    },
+    {
       title: "Quantum Binary Classification",
       github: "https://github.com/kabu03/quantum-binary-classification",
       description: "This project compares the performance of classical and quantum support vector machines (SVMs) for binary classification tasks using metrics such as accuracy, precision, and F1-Score.<br><br>Working on this project was a great opportunity to learn about quantum computing and its applications in machine learning!",
-      technologies: ["Python", "Qiskit", "Scikit-learn", "Pandas", "Matplotlib"],
+      technologies: ["Python", "Qiskit", "Scikit-learn"],
     },
     {
-      "title": "Stoic Path",
-      "github": "https://github.com/kabu03/stoic-path",
-      "description": 
-          "Stoic Path is an Android app built with Kotlin that introduces users to the ancient philosophy of Stoicism. The app offers a modern, user-friendly experience for exploring Stoic wisdom, featuring daily motivational quotes, detailed profiles of prominent Stoic philosophers, and dark mode support. <br><br>Users can favorite philosophers, receive daily motivational notifications, and save preferences through persistent data storage, making it perfect for philosophy enthusiasts and mindfulness practitioners looking to apply Stoic principles in their lives.",
-      "screenshot": "/assets/images/stoicpath.png",
-      "technologies": ["Kotlin", "Android Studio", "Retrofit", "API Integration"]
-  },  
-    {
-      "title": "Cliq Transactions App",
-      "github": "https://github.com/kabu03/cliq-app",
-      "description": 
-        `Cliq Transactions App is a full-stack web application for simulating payment transactions. The frontend is built with Angular and TypeScript, while the backend is developed using Java, Kotlin, and Spring. It provides a secure user authentication system where users can log in to view incoming and outgoing transactions, or add new transactions.<br><br>The project implements JWT-based authentication, PostgreSQL integration, and an Onion architecture to separate concerns cleanly between business logic, database interactions, and presentation layers.`,
-      "screenshot": "/assets/images/cliqapp.png",
-      "technologies": ["Java", "Spring Boot", "Kotlin", "PostgreSQL", "Hibernate", "JWT", "Angular", "TypeScript", "SCSS"]
-  },  
-    {
-      title: "Pipes in the Desert",
-      github: "https://github.com/kabu03/plumbers-and-saboteurs",
-      description:
-        "Pipes in the Desert is a Java-based game developed by five students. In this game, two teams, plumbers and saboteurs, compete strategically to win. It combines elements of strategy and teamwork.\
-        <br><br>Plumbers attempt to use the pipe system to transport water from the spring to the cisterns through the pipe system in the harsh desert, while saboteurs try to prevent them\n\
-        from doing so by puncturing pipes and changing the direction of the pumped water. <br><br>The water leaked through the desert and the water that reached the cisterns are displayed on the screen and compared at the end of the timer\
-        thus determining the winner.",
-      screenshot: "/assets/images/pipesinthedesert.png",
-      technologies: ["Java", "Swing GUI"],
-    },
+      title: "Cliq Transactions App",
+      github: "https://github.com/kabu03/cliq-app",
+      description: `Cliq Transactions App is a full-stack web application for simulating payment transactions.
+      The frontend is built with Angular and TypeScript, while the backend is developed using Java, Kotlin, and Spring. It provides a secure user authentication system where users can log in to view incoming and outgoing transactions,
+      or add new transactions.<br><br>The project implements JWT-based authentication, PostgreSQL integration, and an Onion architecture to separate concerns cleanly between business logic, database interactions, and presentation layers.`,
+      technologies: ["Java", "Spring Boot", "Kotlin", "PostgreSQL", "Hibernate", "JWT", "Angular", "TypeScript", "SCSS"]
+    },  
     {
       title: "GDSCommander (Project Lead)",
       description: "GDSCommander is a discord bot programmed in Python that assists 130+ members of GDSCBME (Google Developer Student Club - Budapest University of Technology and Economics) in GDSC-related inquiries.\
@@ -63,27 +58,31 @@ export class ProjectsComponent {
       technologies: ["Python", "Pandas", "Google API", "Tkinter", "Pillow"],
     },
     {
+      title: "Pipes in the Desert",
+      github: "https://github.com/kabu03/plumbers-and-saboteurs",
+      description:
+        "Pipes in the Desert is a Java-based game developed by five students. In this game, two teams, plumbers and saboteurs, compete strategically to win. It combines elements of strategy and teamwork.\
+        <br><br>Plumbers attempt to use the pipe system to transport water from the spring to the cisterns through the pipe system in the harsh desert, while saboteurs try to prevent them\n\
+        from doing so by puncturing pipes and changing the direction of the pumped water. <br><br>The water leaked through the desert and the water that reached the cisterns are displayed on the screen and compared at the end of the timer\
+        thus determining the winner.",
+      screenshot: "/assets/images/pipesinthedesert.png",
+      technologies: ["Java", "Swing GUI"],
+    },
+    {
       title: "Expense Tracker",
       github: "https://github.com/kabu03/expense-tracker",
       description: "An Expense Tracker built in Java with a Swing-based GUI. This application helps users effortlessly manage and track their expenses, providing an intuitive interface for better financial oversight and budgeting, and it also supports real-time currency conversion in over 30 currencies.",
       screenshot: "/assets/images/expensetracker.png",
-      technologies: ["Java", "Swing GUI", "JUnit", "Mockito", "MVC Design Pattern", "Maven"],
+      technologies: ["Java", "Swing GUI", "JUnit", "Mockito", "Maven"],
     },
     {
-      title: "Stock Portfolio Manager",
-      github: "https://github.com/kabu03/stock-portfolio-manager",
-      description: "A command-line interface stock portfolio management program that allows users to add, remove, and update stocks, as well as save and fetch stock data from external files.<br><br>This was when I was first introduced to C++ and object-oriented programming, and I learned a lot about the language and its features.",
-      screenshot: "/assets/images/stockportfoliomanager.png",
-      technologies: ["C++"],
-    },
-    {
-      title: "Hangman Game",
-      github: "https://github.com/kabu03/hangman",
-      description: "A simple Hangman game developed in C. The user can select the difficulty level and guess the word by inputting letters. The game ends when the user guesses the word or runs out of attempts.<br><br>This was the first programming project I ever completed back in 2022, and it was a great learning experience!",
-      screenshot: "/assets/images/hangman.png",
-      technologies: ["C"],
-    },
-    // Add more projects as needed
+      "title": "Stoic Path",
+      "github": "https://github.com/kabu03/stoic-path",
+      "description": 
+          "Stoic Path is an Android app built with Kotlin that introduces users to the ancient philosophy of Stoicism. The app offers a modern, user-friendly experience for exploring Stoic wisdom, featuring daily motivational quotes, detailed profiles of prominent Stoic philosophers, and dark mode support. <br><br>Users can favorite philosophers, receive daily motivational notifications, and save preferences through persistent data storage, making it perfect for philosophy enthusiasts and mindfulness practitioners looking to apply Stoic principles in their lives.",
+      "screenshot": "/assets/images/stoicpath.png",
+      "technologies": ["Kotlin", "Android Studio", "Retrofit", "API Integration"]
+    },  
   ];
   isMobile(): boolean {
     return window.innerWidth <= 768; // Define breakpoint for mobile devices
