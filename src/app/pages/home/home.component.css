@@ -1,96 +1,155 @@
-.homepage-container {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background: url('/assets/images/computer_and_electronics.png');
-  background-size: cover;
-  background-position: center center;
-  height: 100%;
-  text-align: center;
-  opacity: 0;
-  animation: fadeInUp 0.5s ease-out forwards;
-  padding: 20px;
-  box-sizing: border-box;
+:host {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    /* Use CSS variable for background, fallback to black if undefined */
+    background-color: var(--background-color, #000);
+    font-family: 'Courier New', Courier, monospace;
+    color: #fff;
+    padding: 84px 20px 20px 20px;
+    /* 64px header + 20px spacing */
+    box-sizing: border-box;
+    transition: background-color 0.3s ease;
 }
 
-.homepage-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.92);
-  /* Slightly adjusted overlay for potentially better text readability */
+.terminal-container {
+    width: 100%;
+    max-width: 800px;
+    background-color: #300a24;
+    /* Ubuntu terminal purple-ish dark */
+    color: #fff;
+    border-radius: 6px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    border: 1px solid #4a4a4a;
 }
 
-.profile-image {
-  width: 100%;
-  max-width: 400px;
-  border-radius: 200px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+.terminal-header {
+    background-color: #3e3e3e;
+    /* Dark grey header */
+    padding: 8px 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #222;
 }
 
-h1 {
-  font-size: clamp(2rem, 5vw, 4rem);
-  color: beige;
-  margin-top: 0;
+.terminal-title {
+    font-size: 0.9rem;
+    color: #ddd;
+    font-weight: bold;
 }
 
-p {
-  font-size: clamp(1rem, 2.5vw, 2rem);
-  color: beige;
-  max-width: 550px;
-  margin-left: auto;
-  margin-right: auto;
+.terminal-controls {
+    display: flex;
+    gap: 8px;
 }
 
-.hero-stack {
-  display: flex;
-  flex-direction: column !important;
-  align-items: center;
-  text-align: center;
-  gap: clamp(20px, 4vw, 36px);
+.control-btn {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 10px;
+    cursor: pointer;
+    background-color: #5f5f5f;
+    transition: background-color 0.2s;
 }
 
-.hero-stack .profile-image {
-  display: block;
-  margin: 0 auto;
+.control-btn:hover {
+    background-color: #777;
 }
 
-@media (max-width: 768px) {
-  .hero-stack {
-    gap: clamp(24px, 6vw, 48px);
-  }
-
-  .profile-image {
-    margin-bottom: 30px;
-    max-width: 250px;
-  }
-
-  h1 {
-    font-size: clamp(1.8rem, 6vw, 2.5rem);
-  }
-
-  p {
-    font-size: clamp(0.9rem, 3vw, 1.1rem);
-  }
-
-  .homepage-container {
-    padding: 15px;
-  }
+/* Simulate icons using CSS content or borders */
+.control-btn.minimize::before {
+    content: '_';
+    position: relative;
+    top: -2px;
 }
 
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
+.control-btn.maximize::before {
+    content: '□';
+    font-size: 12px;
+}
 
-  /* Added slight Y transform for effect */
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.control-btn.close {
+    background-color: #e95420;
+    /* Ubuntu orange for close */
+}
+
+.control-btn.close:hover {
+    background-color: #c74212;
+}
+
+.control-btn.close::before {
+    content: '✕';
+}
+
+.terminal-body {
+    padding: 20px;
+    background-color: #300a24;
+    /* Match container bg */
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #fff;
+    min-height: 300px;
+}
+
+.command-line {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.prompt {
+    color: #8ae234;
+    /* Green prompt */
+    font-weight: bold;
+}
+
+.command {
+    color: #fff;
+}
+
+.output p {
+    margin: 0;
+    color: #fff;
+    /* White text for output is common in Ubuntu terminal */
+    white-space: pre-wrap;
+}
+
+.cursor {
+    display: inline-block;
+    width: 10px;
+    height: 1.2rem;
+    background-color: #fff;
+    animation: blink 1s step-end infinite;
+    vertical-align: middle;
+    margin-left: 5px;
+}
+
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
+
+@media (max-width: 600px) {
+    .terminal-body {
+        font-size: 1rem;
+    }
+
+    .cursor {
+        height: 1rem;
+    }
 }
