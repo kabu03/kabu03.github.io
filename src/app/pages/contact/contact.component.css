@@ -251,3 +251,12 @@
   margin-top: 20px;
   flex-wrap: wrap;
 }
+
+/* Resume Note Animation */
+.resume-note {
+  margin-top: 20px;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 14px;
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out 2.5s forwards;
+}

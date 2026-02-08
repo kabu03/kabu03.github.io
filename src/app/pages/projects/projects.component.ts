@@ -16,24 +16,29 @@ export class ProjectsComponent {
   }
   projects = [
     {
+      title: "ML Model Backdoor",
+      github: "https://github.com/kabu03/ml-model-backdoor",
+      description: "This project investigates Data-Centric AI and MLOps Security by demonstrating how unverified data ingestion can compromise a model.<br>It features a custom CNN trained on <b>CIFAR-10</b> with a hidden trigger injected into the data, effectively teaching the model a malicious rule.<br>The project includes an interactive demo hosted on <a href='https://huggingface.co/spaces/kabu03/ml-model-backdoor' target='_blank'>Hugging Face Spaces</a>, which uses <b>GradCAM</b> to visualize the attack.",
+      technologies: ["PyTorch", "Gradio", "GitHub Actions", "uv"],
+    },
+    {
       title: "AI-Powered Traffic Anomaly Detection System",
       github: "https://github.com/kabu03/traffic-anomaly-detection-system",
-      description: "An end-to-end Machine Learning pipeline for detecting anomalies in urban traffic flow. This project conducts a comparative analysis of Statistical, Traditional Machine Learning, and Deep Learning approaches, evaluating their performance across varying feature sets and architectural scopes (Global vs. Local).",
-      technologies: ["Python", "TensorFlow", "Keras", "Scikit-learn", "Streamlit"],
-      screenshot: "/assets/images/ai-powered-traffic-ad-system.png",
+      description: "An end-to-end Machine Learning pipeline for detecting anomalies in urban traffic flow.<br>This project conducts a comparative analysis of <b>Statistical, Traditional Machine Learning, and Deep Learning approaches</b>, evaluating their performance across varying feature sets and architectural scopes (Global vs. Local).",
+      technologies: ["TensorFlow", "Keras", "Scikit-learn", "Streamlit"],
     },
     {
       title: "TSAD Benchmark Suite",
       github: "https://github.com/kabu03/tsad-benchmark",
       description: "A unified framework for Time Series Anomaly Detection (TSAD) research that systematically evaluates anomaly detection algorithms on time-series data.",
-      technologies: ["Python", "Docker", "MLflow", "TensorFlow", "Keras", "Scikit-learn"],
+      technologies: ["Docker", "MLflow", "TensorFlow", "Keras", "Scikit-learn"],
       screenshot: "/assets/images/tsad-benchmark.png",
     },
     {
       title: "Quantum Binary Classification",
       github: "https://github.com/kabu03/quantum-binary-classification",
       description: "This project compares the performance of classical and quantum support vector machines (SVMs) for binary classification tasks using metrics such as accuracy, precision, and F1-Score.<br><br>Working on this project was a great opportunity to learn about quantum computing and its applications in machine learning!",
-      technologies: ["Python", "Qiskit", "Scikit-learn"],
+      technologies: ["Qiskit", "Scikit-learn"],
     },
     {
       title: "Cliq Transactions App",
@@ -61,10 +66,7 @@ export class ProjectsComponent {
       title: "Pipes in the Desert",
       github: "https://github.com/kabu03/plumbers-and-saboteurs",
       description:
-        "Pipes in the Desert is a Java-based game developed by five students. In this game, two teams, plumbers and saboteurs, compete strategically to win. It combines elements of strategy and teamwork.\
-        <br><br>Plumbers attempt to use the pipe system to transport water from the spring to the cisterns through the pipe system in the harsh desert, while saboteurs try to prevent them\n\
-        from doing so by puncturing pipes and changing the direction of the pumped water. <br><br>The water leaked through the desert and the water that reached the cisterns are displayed on the screen and compared at the end of the timer\
-        thus determining the winner.",
+        "Pipes in the Desert is a Java-based game developed by five students. In this game, two teams, plumbers and saboteurs, compete strategically to win. It combines elements of strategy and teamwork.",
       screenshot: "/assets/images/pipesinthedesert.png",
       technologies: ["Java", "Swing GUI"],
     },
@@ -79,7 +81,7 @@ export class ProjectsComponent {
       "title": "Stoic Path",
       "github": "https://github.com/kabu03/stoic-path",
       "description": 
-          "Stoic Path is an Android app built with Kotlin that introduces users to the ancient philosophy of Stoicism. The app offers a modern, user-friendly experience for exploring Stoic wisdom, featuring daily motivational quotes, detailed profiles of prominent Stoic philosophers, and dark mode support. <br><br>Users can favorite philosophers, receive daily motivational notifications, and save preferences through persistent data storage, making it perfect for philosophy enthusiasts and mindfulness practitioners looking to apply Stoic principles in their lives.",
+          "Stoic Path is an Android app built with Kotlin that introduces users to the ancient philosophy of Stoicism. The app offers a modern, user-friendly experience for exploring Stoic wisdom, featuring daily motivational quotes, detailed profiles of prominent Stoic philosophers, and dark mode support.",
       "screenshot": "/assets/images/stoicpath.png",
       "technologies": ["Kotlin", "Android Studio", "Retrofit", "API Integration"]
     },  
