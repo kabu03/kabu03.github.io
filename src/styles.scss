@@ -74,6 +74,11 @@ body.light-theme {
   --chip-bg: #e9eef7; /* light chip background */
   --chip-text: #0b1330; /* dark text on light chip */
   --chip-border: rgba(0, 0, 0, 0.15);
+  
+  /* Form Input Visibility */
+  --input-bg: #d6dfe8; /* Darker than chip-bg for better visibility */
+  --input-border: rgba(0, 0, 0, 0.4); /* Stronger border */
+  --input-placeholder-opacity: 0.8;
 }
 
 body.dark-theme {
@@ -88,6 +93,11 @@ body.dark-theme {
   --chip-bg: rgba(255, 255, 255, 0.12); /* dark chip background */
   --chip-text: #ffffff; /* light text on dark chip */
   --chip-border: rgba(255, 255, 255, 0.25);
+  
+  /* Form Input Visibility (Dark Mode - keep similar to chips) */
+  --input-bg: rgba(255, 255, 255, 0.12);
+  --input-border: rgba(255, 255, 255, 0.25);
+  --input-placeholder-opacity: 0.6;
 }
 
 .typical-section {
@@ -200,7 +210,6 @@ mat-card-header.common-card-header {
 }
 
 mat-card-title.common-card-title {
-  padding-left: 15px;
   font-size: 1.5rem !important; /* Force override of Material default */
   color: white;
   word-wrap: break-word;

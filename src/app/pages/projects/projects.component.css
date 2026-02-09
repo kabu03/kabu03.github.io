@@ -32,7 +32,6 @@
 .project-description {
   flex: 1;
   /* Takes up the remaining space on the left */
-  padding-left: 1rem;
   /* Padding for the description text */
   padding-right: 1.5rem;
   /* Space before the vertical separator */
