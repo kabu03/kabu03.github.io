@@ -7,56 +7,17 @@
   /* Use CSS variables for dynamic theming */
 }
 
-.card {
-  background-color: var(--card-bg);
-  /* Use CSS variables for dynamic theming */
-  color: var(--card-text);
-  /* Use CSS variables for text color */
-  width: 65%;
-  margin-top: 70px;
-  display: flex;
-  flex-direction: column;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.card-header {
-  background-color: #113065;
-  color: white;
-  text-align: center;
-  padding: 10px;
-}
-
-.card-title {
-  padding-left: 15px;
-  font-size: 1.8rem;
-  color: white;
-  word-wrap: break-word;
-  /* Ensures long words break properly */
-  overflow-wrap: break-word;
-  /* Breaks long words instead of overflowing */
-  white-space: normal;
-  /* Allows text to wrap to the next line */
-  max-width: 100%;
-  /* Prevents text from extending too far */
-}
-
-.card-content {
-  display: flex;
+/* Layout specific for About card content */
+/* Layout specific for About card content */
+.about-content-layout {
+  display: flex !important;
+  flex-direction: row !important;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
-  font-size: 18px;
 }
 
 .card-content-text {
   flex: 1;
-  margin-right: 50px;
-}
-
-.card-content-image img {
-  max-width: 250px;
-  border-radius: 10px;
-  border: 2px solid black;
 }
 
 .tech-stack {
@@ -67,7 +28,8 @@
 
 .tech-grid {
   display: grid;
-  grid-template-columns: repeat(5, minmax(220px, 1fr));
+  grid-template-columns: repeat(4, minmax(200px, 250px));
+  justify-content: center;
   gap: 10px;
   align-items: stretch;
   overflow-x: auto;
@@ -75,8 +37,8 @@
 }
 
 .tech-group {
-  background: rgba(17, 48, 101, 0.06);
-  border: 1px solid rgba(17, 48, 101, 0.15);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(100, 255, 218, 0.15);
   border-radius: 12px;
   padding: 10px;
   display: flex;
@@ -116,46 +78,73 @@
   height: 26px;
 }
 
+/* Hover Effects */
+.tech-item {
+  transition: transform 0.3s ease,
+    box-shadow 0.3s ease,
+    background-color 0.3s ease,
+    color 0.3s ease,
+    filter 0.3s ease,
+    opacity 0.3s ease;
+}
+
+.tech-item:hover {
+  transform: scale(1.15);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  background-color: var(--text-color);
+  /* Adaptive high contrast */
+  color: var(--background-color);
+  /* Adaptive high contrast */
+  z-index: 10;
+  cursor: default;
+}
+
+/* Dim other items when one is hovered */
+.tech-grid:has(.tech-item:hover) .tech-item:not(:hover) {
+  opacity: 0.4;
+  filter: blur(2px) grayscale(60%);
+  transform: scale(0.95);
+}
+
+/* General fade-in effect */
 /* General fade-in effect */
 .fade-in {
   opacity: 0;
-  transform: translateY(20px);
+  transform: translateY(5px);
   animation: fadeIn 0.3s ease-in forwards;
 }
 
 /* Stagger effect for each card */
-.card:nth-child(1) {
+.common-card:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.common-card:nth-child(2) {
   animation-delay: 0.2s;
 }
 
-.card:nth-child(2) {
+.common-card:nth-child(3) {
   animation-delay: 0.4s;
-}
-
-.card:nth-child(3) {
-  animation-delay: 0.6s;
 }
 
 /* Fade-in animation for text inside cards */
 .fade-in-text {
   opacity: 0;
   animation: fadeIn 0.3s ease-in forwards;
-  animation-delay: 0.3s;
 }
 
 /* Fade-in animation for images */
 .fade-in-image {
   opacity: 0;
-  transform: translateY(20px);
+  transform: translateY(5px);
   animation: fadeIn 0.3s ease-in forwards;
-  animation-delay: 0.3s;
 }
 
 /* Keyframe for fade-in animation */
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(5px);
   }
 
   to {
@@ -177,11 +166,7 @@
 
 /* Mobile Styling */
 @media (max-width: 768px) {
-  .card {
-    width: 100%;
-  }
-
-  .card-content {
+  .about-content-layout {
     flex-direction: column;
     /* Stack text and image vertically */
     text-align: center;
@@ -198,22 +183,18 @@
     font-size: 18px;
   }
 
-  .card-content-image img {
-    max-width: 100%;
-  }
-
   .about-body {
     margin-top: 50px;
   }
 }
 
-.blog-link {
+.link {
   color: purple;
   font-weight: bold;
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
-.blog-link:hover {
+.link:hover {
   text-decoration: underline;
 }

@@ -59,6 +59,7 @@ body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+  transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
 }
 
 body.light-theme {
@@ -168,5 +169,64 @@ MOBILE SPECIFIC ADJUSTMENTS
   nav ul li a {
     font-size: 1rem;
     /* Adjust font size for smaller screens */
+  }
+}
+
+/* Common Card Styles */
+/* Common Card Styles */
+mat-card.common-card {
+  background-color: var(--card-bg);
+  /* Use CSS variables for dynamic theming */
+  color: var(--card-text);
+  /* Use CSS variables for text color */
+  width: 60%;
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+mat-card.common-card:first-of-type {
+  margin-top: 70px;
+}
+
+mat-card-header.common-card-header {
+  background-color: #113065;
+  min-height: 40px;
+  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+mat-card-title.common-card-title {
+  padding-left: 15px;
+  font-size: 1.5rem !important; /* Force override of Material default */
+  color: white;
+  word-wrap: break-word;
+  white-space: normal;
+  max-width: 100%;
+}
+
+/* 
+   About component uses 'card-content' with flex-direction column/row depending on content.
+   Projects uses 'project-content' with flex-direction row (mostly).
+   We'll define a base 'common-card-content' that provides common padding and font-size.
+*/
+.common-card-content {
+  padding: 1rem; 
+  margin-top: 10px; /* Add spacing between header and content */
+  font-size: 17px; 
+  display: flex;
+  flex-direction: row; /* Default to row */
+}
+
+@media (max-width: 768px) {
+  mat-card.common-card {
+    width: 100%;
+  }
+  
+  .common-card-content {
+    flex-direction: column;
   }
 }

@@ -7,7 +7,7 @@
   justify-content: center;
   /* Center the items vertically */
   padding: 20px;
-  background-color: var(--background-color);
+  /* Use CSS variables for dynamic theming */
   /* Use CSS variables for dynamic theming */
 }
 
@@ -20,102 +20,13 @@
   animation: fadeInText 0.3s ease-in;
 }
 
-.project-card {
-  background-color: var(--card-bg);
-  /* Use CSS variables for dynamic theming */
-  color: var(--card-text);
-  /* Use CSS variables for text color */
-  width: 60%;
-  margin-top: 40px;
-  display: flex;
-  flex-direction: column;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.project-card:first-of-type {
-  margin-top: 70px;
-}
-
-.card-header {
-  background-color: #113065;
-  min-height: 40px;
-  padding: 10px 15px;
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-/* Project Header */
-.project-title {
-  padding-left: 15px;
-  font-size: 1.5rem;
-  color: white;
-  word-wrap: break-word;
-  /* Ensures long words break properly */
-  overflow-wrap: break-word;
-  /* Breaks long words instead of overflowing */
-  white-space: normal;
-  /* Allows text to wrap to the next line */
-  max-width: 100%;
-  /* Prevents text from extending too far */
-}
-
-
-.github-link {
-  font-size: 1.5rem;
-  color: teal;
-  text-decoration: none;
-  margin-left: 10px;
-  transition: color 0.3s ease;
-}
-
-/* Image Fade-in */
-.fade-in-image {
-  opacity: 0;
-  /* Start hidden */
-  transform: translateY(10px);
-  /* Slight downward shift */
-  animation: fadeInImage 0.3s ease-out forwards;
-}
-
-/* Fade-in + Slide Animation */
-@keyframes fadeInImage {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.github-link:hover {
-  color: white;
-}
-
-@keyframes fadeInSlide {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Project Content */
-.project-content {
-  display: flex;
-  /* align-items: flex-start; Align items to the top if their heights differ */
+/* Layout specific for Project card content */
+/* Layout specific for Project card content */
+.project-content-layout {
+  display: flex !important;
+  flex-direction: row !important;
   align-items: stretch;
-  /* Makes description and image areas potentially same height */
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  /* Removed padding-left and padding-right from here, will add to children */
+  justify-content: space-between;
 }
 
 .project-description {

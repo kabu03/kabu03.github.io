@@ -1,12 +1,11 @@
 <div class="projects-container">
-  <mat-card *ngFor="let project of projects; let i = index" 
-    class="project-card animate-fade-in" 
+  <mat-card *ngFor="let project of projects; let i = index" class="common-card animate-fade-in"
     [style.animation-delay]="i * 0.2 + 's'">
-    
+
     <!-- Card Header: Title and GitHub Link -->
-    <mat-card-header class="card-header">
-      <mat-card-title class="title-container">
-        <span class="project-title">{{ project.title }}</span>
+    <mat-card-header class="common-card-header">
+      <mat-card-title class="common-card-title title-container">
+        <span>{{ project.title }}</span>
         <a *ngIf="project.github" [href]="project.github" target="_blank" class="github-link">
           <i class="fab fa-github"></i>
         </a>
@@ -14,14 +13,16 @@
     </mat-card-header>
 
     <!-- Card Content -->
-    <mat-card-content class="project-content">
+    <mat-card-content class="common-card-content project-content-layout">
       <div class="project-description animate-text">
         <p [innerHTML]="project.description"></p>
       </div>
       <div class="project-image" *ngIf="project.screenshot && !isMobile()">
         <a [href]="project.screenshot" target="_blank">
-          <img [src]="project.screenshot" [alt]="project.title + ' Screenshot'" class="fade-in-image"/>
-          <div class="overlay animate-text"><p>Click to view the image!</p></div>
+          <img [src]="project.screenshot" [alt]="project.title + ' Screenshot'" class="fade-in-image" />
+          <div class="overlay animate-text">
+            <p>Click to view the image!</p>
+          </div>
         </a>
       </div>
     </mat-card-content>

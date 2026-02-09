@@ -4,13 +4,12 @@
     align-items: center;
     min-height: 100vh;
     /* Use CSS variable for background, fallback to black if undefined */
-    background-color: var(--background-color, #000);
+    /* background-color and transition handled globally */
     font-family: 'Courier New', Courier, monospace;
     color: #fff;
     padding: 84px 20px 20px 20px;
     /* 64px header + 20px spacing */
     box-sizing: border-box;
-    transition: background-color 0.3s ease;
 }
 
 .terminal-container {
