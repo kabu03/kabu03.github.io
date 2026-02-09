@@ -14,26 +14,31 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "@angular/animations": "19.2.6",
+    "@angular/animations": "19.2.18",
     "@angular/cdk": "19.2.6",
-    "@angular/cli": "19.2.6",
-    "@angular/common": "19.2.6",
-    "@angular/compiler": "19.2.6",
-    "@angular/compiler-cli": "19.2.6",
-    "@angular/core": "19.2.6",
-    "@angular/forms": "19.2.6",
+    "@angular/cli": "19.2.19",
+    "@angular/common": "19.2.18",
+    "@angular/compiler": "19.2.18",
+    "@angular/compiler-cli": "19.2.18",
+    "@angular/core": "19.2.18",
+    "@angular/forms": "19.2.18",
     "@angular/material": "19.2.6",
-    "@angular/platform-browser": "19.2.6",
-    "@angular/platform-browser-dynamic": "19.2.6",
-    "@angular/router": "19.2.6",
+    "@angular/platform-browser": "19.2.18",
+    "@angular/platform-browser-dynamic": "19.2.18",
+    "@angular/router": "19.2.18",
     "bootstrap": "^5.3.5",
     "marked": "^15.0.8",
     "ngx-markdown": "^19.1.1",
     "zone.js": "^0.15.0"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "19.2.6",
-    "@angular/cli": "19.2.6",
+    "@angular-devkit/build-angular": "19.2.19",
     "typescript": "5.5.4"
+  },
+  "overrides": {
+    "lodash-es": "4.17.23",
+    "tar": "^7.5.7",
+    "webpack": "^5.105.0",
+    "mermaid": "^11.12.2"
   }
 }
