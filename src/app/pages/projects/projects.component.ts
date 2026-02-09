@@ -41,9 +41,9 @@ export class ProjectsComponent {
       technologies: ["Qiskit", "Scikit-learn"],
     },
     {
-      title: "Cliq Transactions App",
-      github: "https://github.com/kabu03/cliq-app",
-      description: `Cliq Transactions App is a full-stack web application for simulating payment transactions.
+      title: "Payment Transactions App",
+      github: "https://github.com/kabu03/payment-transactions-app",
+      description: `Payment Transactions App is a full-stack web application for simulating payment transactions.
       The frontend is built with Angular and TypeScript, while the backend is developed using Java, Kotlin, and Spring. It provides a secure user authentication system where users can log in to view incoming and outgoing transactions,
       or add new transactions.<br><br>The project implements JWT-based authentication, PostgreSQL integration, and an Onion architecture to separate concerns cleanly between business logic, database interactions, and presentation layers.`,
       technologies: ["Java", "Spring Boot", "Kotlin", "PostgreSQL", "Hibernate", "JWT", "Angular", "TypeScript", "SCSS"]
@@ -61,14 +61,6 @@ export class ProjectsComponent {
       description: "This generator is used to help automate the tedious process of manually editing and uploading the certificates of GDSC event participants or core team members. It takes in a CSV file with the necessary event information, filters it, generates certificates for each participant, and uploads them to Google Drive.",
       screenshot: "/assets/images/certificategenerator.png",
       technologies: ["Python", "Pandas", "Google API", "Tkinter", "Pillow"],
-    },
-    {
-      title: "Pipes in the Desert",
-      github: "https://github.com/kabu03/plumbers-and-saboteurs",
-      description:
-        "Pipes in the Desert is a Java-based game developed by five students. In this game, two teams, plumbers and saboteurs, compete strategically to win. It combines elements of strategy and teamwork.",
-      screenshot: "/assets/images/pipesinthedesert.png",
-      technologies: ["Java", "Swing GUI"],
     },
     {
       title: "Expense Tracker",
