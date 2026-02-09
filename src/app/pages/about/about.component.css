@@ -106,26 +106,9 @@
   transform: scale(0.95);
 }
 
-/* General fade-in effect */
-/* General fade-in effect */
-.fade-in {
-  opacity: 0;
-  transform: translateY(5px);
-  animation: fadeIn 0.3s ease-in forwards;
-}
 
-/* Stagger effect for each card */
-.common-card:nth-child(1) {
-  animation-delay: 0s;
-}
 
-.common-card:nth-child(2) {
-  animation-delay: 0.2s;
-}
 
-.common-card:nth-child(3) {
-  animation-delay: 0.4s;
-}
 
 /* Fade-in animation for text inside cards */
 .fade-in-text {
@@ -140,18 +123,7 @@
   animation: fadeIn 0.3s ease-in forwards;
 }
 
-/* Keyframe for fade-in animation */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(5px);
-  }
 
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 
 .cropped-img {
   width: 250px;

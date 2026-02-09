@@ -239,3 +239,47 @@ mat-card-title.common-card-title {
     flex-direction: column;
   }
 }
+
+/* Staggered Fade-in Animation Delays */
+.common-card:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.common-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.common-card:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+.common-card:nth-child(4) {
+  animation-delay: 0.6s;
+}
+
+.common-card:nth-child(5) {
+  animation-delay: 0.8s;
+}
+
+.common-card:nth-child(6) {
+  animation-delay: 1.0s;
+}
+
+/* Global Fade In Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  opacity: 0;
+  transform: translateY(5px);
+  animation: fadeIn 0.3s ease-in forwards;
+}
