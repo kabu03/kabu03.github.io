@@ -16,6 +16,13 @@ export class ProjectsComponent {
   }
   projects = [
     {
+      title: "Memoize",
+      github: "https://github.com/kabu03/memoize",
+      externalLink: "https://memoize-fawn.vercel.app",
+      description: "Memoize is an agentic flashcard generator engineered to solve the quality consistency issues common in standard LLM outputs. Unlike typical wrappers, Memoize implements a <b>multi-agent pipeline</b> featuring a \"Generator-Critic\" architecture with an autonomous self-correction loop. Built with Next.js and TypeScript on a serverless infrastructure, it optimizes for high-fidelity technical learning while maintaining a privacy-first, BYOK design.",
+      technologies: ["Next.js", "TypeScript", "Vercel"],
+    },
+    {
       title: "ML Model Backdoor",
       github: "https://github.com/kabu03/ml-model-backdoor",
       externalLink: "https://huggingface.co/spaces/kabu03/ml-model-backdoor",
