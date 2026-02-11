@@ -18,7 +18,8 @@ export class ProjectsComponent {
     {
       title: "ML Model Backdoor",
       github: "https://github.com/kabu03/ml-model-backdoor",
-      description: "This project investigates Data-Centric AI and MLOps Security by demonstrating how unverified data ingestion can compromise a model.<br>It features a custom CNN trained on <b>CIFAR-10</b> with a hidden trigger injected into the data, effectively teaching the model a malicious rule.<br>The project includes an interactive demo hosted on <a href='https://huggingface.co/spaces/kabu03/ml-model-backdoor' target='_blank'>Hugging Face Spaces</a>, which uses <b>GradCAM</b> to visualize the attack.",
+      externalLink: "https://huggingface.co/spaces/kabu03/ml-model-backdoor",
+      description: "This project investigates Data-Centric AI and MLOps Security by demonstrating how unverified data ingestion can compromise a model.<br>It features a custom CNN trained on <b>CIFAR-10</b> with a hidden trigger injected into the data, effectively teaching the model a malicious rule.<br>The project includes an interactive demo on Hugging Face Spaces, which uses <b>GradCAM</b> to visualize the attack.",
       technologies: ["PyTorch", "Gradio", "GitHub Actions", "uv"],
     },
     {

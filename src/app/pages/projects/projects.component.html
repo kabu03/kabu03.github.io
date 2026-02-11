@@ -8,6 +8,9 @@
         <a *ngIf="project.github" [href]="project.github" target="_blank" class="github-link">
           <i class="fab fa-github"></i>
         </a>
+        <a *ngIf="project.externalLink" [href]="project.externalLink" target="_blank" class="external-link">
+          <i class="fas fa-arrow-up-right-from-square"></i>
+        </a>
       </mat-card-title>
     </mat-card-header>
 
