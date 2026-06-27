@@ -36,9 +36,17 @@ export class AppComponent implements OnInit {
   isDarkMode = true;
   title = 'kabuWebsite';
 
+  private static readonly THEME_KEY = 'theme';
+
   constructor(private breakpointObserver: BreakpointObserver) {}
 
   ngOnInit(): void {
+    const savedTheme = localStorage.getItem(AppComponent.THEME_KEY);
+    if (savedTheme) {
+      this.isDarkMode = savedTheme === 'dark';
+    }
+    this.applyTheme();
+
     this.breakpointObserver
       .observe([Breakpoints.Handset])
       .subscribe((result) => {
@@ -48,6 +56,11 @@ export class AppComponent implements OnInit {
 
   toggleTheme() {
     this.isDarkMode = !this.isDarkMode;
+    localStorage.setItem(AppComponent.THEME_KEY, this.isDarkMode ? 'dark' : 'light');
+    this.applyTheme();
+  }
+
+  private applyTheme() {
     document.body.classList.toggle('dark-theme', this.isDarkMode);
     document.body.classList.toggle('light-theme', !this.isDarkMode);
   }
