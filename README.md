@@ -3,7 +3,7 @@
 Welcome to the repository for my personal portfolio website! This site tells part of my story and projects as a developer. The website is built using Angular/TS/HTML/CSS and hosted by GitHub Pages.
 
 - You can learn more about GitHub Pages hosting [here](https://pages.github.com/).  
-- Check out the live website here: [https://kabu03.github.io/](https://kabu03.github.io/)  
+- Check out the live website here: [https://kabujudom.github.io/](https://kabujudom.github.io/)  
 - You can also find me on LinkedIn [here](https://www.linkedin.com/in/karam-abu-judom/).
 
 #### Brief Explanation of Important Files and Folders

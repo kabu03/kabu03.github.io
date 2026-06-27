@@ -17,40 +17,40 @@ export class ProjectsComponent {
   projects = [
     {
       title: "Memoize",
-      github: "https://github.com/kabu03/memoize",
+      github: "https://github.com/kabujudom/memoize",
       externalLink: "https://memoize-fawn.vercel.app",
       description: "Memoize is an agentic flashcard generator engineered to solve the quality consistency issues common in standard LLM outputs. Unlike typical wrappers, Memoize implements a <b>multi-agent pipeline</b> featuring a \"Generator-Critic\" architecture with an autonomous self-correction loop. Built with Next.js and TypeScript on a serverless infrastructure, it optimizes for high-fidelity technical learning while maintaining a privacy-first, BYOK design.",
       technologies: ["Next.js", "TypeScript", "Vercel"],
     },
     {
       title: "ML Model Backdoor",
-      github: "https://github.com/kabu03/ml-model-backdoor",
-      externalLink: "https://huggingface.co/spaces/kabu03/ml-model-backdoor",
+      github: "https://github.com/kabujudom/ml-model-backdoor",
+      externalLink: "https://huggingface.co/spaces/kabujudom/ml-model-backdoor",
       description: "This project investigates Data-Centric AI and MLOps Security by demonstrating how unverified data ingestion can compromise a model.<br>It features a custom CNN trained on <b>CIFAR-10</b> with a hidden trigger injected into the data, effectively teaching the model a malicious rule.<br>The project includes an interactive demo on Hugging Face Spaces, which uses <b>GradCAM</b> to visualize the attack.",
       technologies: ["PyTorch", "Gradio", "GitHub Actions", "uv"],
     },
     {
       title: "AI-Powered Traffic Anomaly Detection System",
-      github: "https://github.com/kabu03/traffic-anomaly-detection-system",
+      github: "https://github.com/kabujudom/traffic-anomaly-detection-system",
       description: "An end-to-end Machine Learning pipeline for detecting anomalies in urban traffic flow.<br>This project conducts a comparative analysis of <b>Statistical, Traditional Machine Learning, and Deep Learning approaches</b>, evaluating their performance across varying feature sets and architectural scopes (Global vs. Local).",
       technologies: ["TensorFlow", "Keras", "Scikit-learn", "Streamlit"],
     },
     {
       title: "TSAD Benchmark Suite",
-      github: "https://github.com/kabu03/tsad-benchmark",
+      github: "https://github.com/kabujudom/tsad-benchmark",
       description: "A unified framework for Time Series Anomaly Detection (TSAD) research that systematically evaluates anomaly detection algorithms on time-series data.",
       technologies: ["Docker", "MLflow", "TensorFlow", "Keras", "Scikit-learn"],
       screenshot: "/assets/images/tsad-benchmark.png",
     },
     {
       title: "Quantum Binary Classification",
-      github: "https://github.com/kabu03/quantum-binary-classification",
+      github: "https://github.com/kabujudom/quantum-binary-classification",
       description: "This project compares the performance of classical and quantum support vector machines (SVMs) for binary classification tasks using metrics such as accuracy, precision, and F1-Score.<br><br>Working on this project was a great opportunity to learn about quantum computing and its applications in machine learning!",
       technologies: ["Qiskit", "Scikit-learn"],
     },
     {
       title: "Payment Transactions App",
-      github: "https://github.com/kabu03/payment-transactions-app",
+      github: "https://github.com/kabujudom/payment-transactions-app",
       description: `Payment Transactions App is a full-stack web application for simulating payment transactions.
       The frontend is built with Angular and TypeScript, while the backend is developed using Java, Kotlin, and Spring. It provides a secure user authentication system where users can log in to view incoming and outgoing transactions,
       or add new transactions.<br><br>The project implements JWT-based authentication, PostgreSQL integration, and an Onion architecture to separate concerns cleanly between business logic, database interactions, and presentation layers.`,
@@ -72,14 +72,14 @@ export class ProjectsComponent {
     },
     {
       title: "Expense Tracker",
-      github: "https://github.com/kabu03/expense-tracker",
+      github: "https://github.com/kabujudom/expense-tracker",
       description: "An Expense Tracker built in Java with a Swing-based GUI. This application helps users effortlessly manage and track their expenses, providing an intuitive interface for better financial oversight and budgeting, and it also supports real-time currency conversion in over 30 currencies.",
       screenshot: "/assets/images/expensetracker.png",
       technologies: ["Java", "Swing GUI", "JUnit", "Mockito", "Maven"],
     },
     {
       "title": "Stoic Path",
-      "github": "https://github.com/kabu03/stoic-path",
+      "github": "https://github.com/kabujudom/stoic-path",
       "description": 
           "Stoic Path is an Android app built with Kotlin that introduces users to the ancient philosophy of Stoicism. The app offers a modern, user-friendly experience for exploring Stoic wisdom, featuring daily motivational quotes, detailed profiles of prominent Stoic philosophers, and dark mode support.",
       "screenshot": "/assets/images/stoicpath.png",
