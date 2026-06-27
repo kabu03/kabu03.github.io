@@ -32,14 +32,14 @@ jobs:
       - name: Build Angular App
         run: |
           npm install -g @angular/cli
-          ng build --configuration=production --base-href=https://kabu03.github.io/
+          ng build --configuration=production --base-href=https://kabujudom.github.io/
 
       - name: Deploy to GitHub Pages
         run: |
             npx angular-cli-ghpages --dir=dist/kabu-website/browser \
                 --name="Karam Abu Judom" \
                 --email="karam.abujudom@gmail.com" \
-                --repo="https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/kabu03/kabu03.github.io.git" \
+                --repo="https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/kabujudom/kabujudom.github.io.git" \
                 --no-silent
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
