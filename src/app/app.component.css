@@ -28,38 +28,47 @@ mat-toolbar {
   top: 0;
   left: 0;
   width: 100%;
+  height: 64px; /* definite height so children can fill it with height: 100% */
+  padding: 0; /* drop Material's default side padding so end buttons reach the edges */
   z-index: 2;
   background-color: #040133;
-  /* Adjust the toolbar color */
 }
 
-.toolbar-text {
+.theme-toggle {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: white;
-  font-size: clamp(14px, 3vw, 28px);
-  /* Makes text scale dynamically */
-  white-space: nowrap;
-  /* Prevents wrapping */
-  overflow: hidden;
-  text-overflow: ellipsis;
-  /* Adds '...' if text is too long */
+  border-radius: 0;
+}
+
+.theme-toggle mat-icon {
+  font-size: 24px; /* override Material shrinking icons inside buttons, to match nav icons */
+  width: 24px;
+  height: 24px;
+}
+
+.desktop-nav {
+  flex: 1 1 auto;
+  align-self: stretch;
+  display: flex;
+  align-items: stretch;
 }
 
 .desktop-nav a {
+  flex: 1 1 0;
+  height: 100%; /* fill toolbar height; overrides Material's fixed button height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: white;
-  margin-left: 15px;
-  /* Increased spacing */
   font-size: 20px;
-  /* Larger text */
-  padding: 0 25px;
-  /* Wider buttons */
+  border-radius: 0;
 }
 
 .desktop-nav a:hover {
   background-color: rgba(255, 255, 255, 0.1);
-}
-
-.spacer {
-  flex: 1 1 auto;
 }
 
 mat-sidenav {
@@ -112,9 +121,5 @@ mat-nav-list mat-list-item:hover {
 
   mat-sidenav-content {
     margin-left: 0;
-  }
-
-  .toolbar-text {
-    font-size: 20px;
   }
 }

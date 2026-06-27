@@ -2,11 +2,9 @@
   <button mat-icon-button (click)="sidenav.toggle()" *ngIf="isMobile">
     <mat-icon>menu</mat-icon>
   </button>
-  <button mat-icon-button (click)="toggleTheme()">
+  <button mat-button class="theme-toggle" (click)="toggleTheme()">
     <mat-icon>{{ isDarkMode ? 'light_mode' : 'dark_mode' }}</mat-icon>
   </button>
-  <span class="toolbar-text">Karam Abu Judom - Portfolio Website</span>
-  <span class="spacer"></span>
 
   <div *ngIf="!isMobile" class="desktop-nav">
     <a mat-button routerLink="/" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">
