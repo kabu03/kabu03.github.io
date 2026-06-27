@@ -117,7 +117,6 @@
 .output p {
     margin: 0;
     color: #fff;
-    /* White text for output is common in Ubuntu terminal */
     white-space: pre-wrap;
 }
 
@@ -127,8 +126,7 @@
     height: 1.2rem;
     background-color: #fff;
     animation: blink 1s step-end infinite;
-    vertical-align: middle;
-    margin-left: 5px;
+    vertical-align: text-top;
 }
 
 @keyframes blink {
